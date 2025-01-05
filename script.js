@@ -39,6 +39,12 @@ const tires = [
         image: "tire3.jpg",
         price: "$200 each",
     },
+    {
+    name: "Off-Road Tire D",
+    description: "Built tough for rugged terrain and heavy-duty use.",
+    image: "tire4.jpg",
+    price: "$180 each",
+}
 ];
 
 // Function to load tires dynamically
