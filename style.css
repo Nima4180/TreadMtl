@@ -1,0 +1,57 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Section Styles */
+header {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#logo {
+    max-width: 150px;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h2 {
+    color: #1d3557;
+}
+
+/* Tire Details Styling */
+.tire {
+    display: flex;
+    margin-top: 20px;
+}
+
+.tire-image {
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.tire-details {
+    max-width: 400px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
