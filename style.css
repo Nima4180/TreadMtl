@@ -3,14 +3,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
 }
 
-/* Header Section Styles */
+/* Header Styles */
 header {
-    background-color: #1d3557;
+    background-color: #4c4c4c;
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -26,7 +26,7 @@ header {
     padding: 0 20px;
 }
 
-#logo {
+#logo img {
     max-width: 150px;
 }
 
@@ -42,106 +42,117 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #1d3557;
     text-decoration: none;
     font-size: 16px;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
+    color: #1976d2;
 }
 
-/* Search Section Styles */
-#search {
-    padding: 20px;
-    background-color: #e0f7fa;
-    text-align: center;
-}
-
-#search h2 {
-    color: #1d3557;
-}
-
-#search form {
-    margin-top: 20px;
-}
-
-#search input {
-    margin: 5px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#search button {
-    padding: 10px 20px;
-    background-color: #1d3557;
+.language-switch a {
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    margin-left: 10px;
 }
 
-#search button:hover {
-    background-color: #1976d2;
-}
-
-/* Featured Tire Section Styles */
+/* Section Styles */
 section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 40px 20px;
+    margin: 40px auto;
     width: 80%;
     max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.tire {
+#home {
+    background-color: #e5e5e5;
+}
+
+#about, #contact {
+    background-color: #f9f9f9;
+}
+
+#tires {
+    background-color: #e5e5e5;
+}
+
+/* Search Section */
+#search form {
     display: flex;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.tire-image {
-    max-width: 200px;
-    margin-right: 20px;
-}
-
-.tire-details {
-    max-width: 400px;
+#search input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .button {
-    padding: 10px 20px;
+    padding: 12px 25px;
     background-color: #1d3557;
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .button:hover {
     background-color: #1976d2;
 }
 
-/* About Section */
-#about {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Contact Section */
-#contact {
-    background-color: #e0f7fa;
-    padding: 20px;
-    text-align: center;
-}
-
 /* Footer Styles */
 footer {
-    background-color: #1d3557;
+    background-color: #4c4c4c;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: absolute;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 40px;
     width: 100%;
-    bottom: 0;
 }
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.contact-footer {
+    text-align: left;
+    font-size: 14px;
+}
+
+.contact-footer p {
+    margin: 5px 0;
+}
+
+.contact-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 14px;
+}
+
+/* Add spacing between footer elements */
+footer .footer-content {
+    margin
