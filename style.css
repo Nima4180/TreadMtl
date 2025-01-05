@@ -140,40 +140,8 @@ footer {
     background-color: #1d3557;
     color: white;
     text-align: center;
-    padding: 20px 0;
-    position: relative;
-    margin-top: 40px;
+    padding: 10px 0;
+    position: absolute;
     width: 100%;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px;
-}
-
-.contact-footer {
-    text-align: left;
-    font-size: 14px;
-}
-
-.contact-footer p {
-    margin: 5px 0;
-}
-
-.contact-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-.contact-footer a:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    text-align: right;
-    font-size: 14px;
+    bottom: 0;
 }
