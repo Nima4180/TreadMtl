@@ -3,156 +3,108 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4; /* Light gray background for the body */
 }
 
 /* Header Styles */
 header {
-    background-color: #4c4c4c;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-container {
+    background-color: #001f3d; /* Navy background */
+    color: white; /* White text */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
-#logo img {
-    max-width: 150px;
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+header nav {
     display: flex;
+    gap: 20px;
 }
 
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #1d3557;
+header nav a {
+    color: white; /* White text for links */
     text-decoration: none;
     font-size: 16px;
 }
 
-nav ul li a:hover {
+header nav a:hover {
     text-decoration: underline;
-    color: #1976d2;
+}
+
+/* Language Switch */
+.language-switch {
+    display: flex;
+    gap: 10px;
 }
 
 .language-switch a {
     color: white;
-    text-decoration: none;
-    margin-left: 10px;
-}
-
-/* Section Styles */
-section {
-    padding: 40px 20px;
-    margin: 40px auto;
-    width: 80%;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#home {
-    background-color: #e5e5e5;
-}
-
-#about, #contact {
-    background-color: #f9f9f9;
-}
-
-#tires {
-    background-color: #e5e5e5;
-}
-
-/* Search Section */
-#search form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-#search input[type="text"] {
-    padding: 10px;
     font-size: 16px;
-    width: 100%;
-    max-width: 500px;
 }
 
-.button {
-    padding: 12px 25px;
-    background-color: #1d3557;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    width: 200px;
-    margin: 0 auto;
+/* Main Search Section */
+.search-section {
+    background-color: #e6e6e6; /* Light gray for contrast */
+    padding: 30px 20px;
     text-align: center;
 }
 
-.button:hover {
-    background-color: #1976d2;
+.search-section input,
+.search-section select {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #4c4c4c;
-    color: white;
+    background-color: #001f3d; /* Navy background */
+    color: white; /* White text */
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
-    position: relative;
-    margin-top: 40px;
-    width: 100%;
+    margin-top: 50px;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 20px;
+footer .contact-info {
+    margin-bottom: 10px;
 }
 
-.contact-footer {
-    text-align: left;
-    font-size: 14px;
-}
-
-.contact-footer p {
-    margin: 5px 0;
-}
-
-.contact-footer a {
+/* Links in Footer */
+footer a {
     color: white;
     text-decoration: none;
 }
 
-.contact-footer a:hover {
+footer a:hover {
     text-decoration: underline;
 }
 
-.copyright {
-    text-align: right;
-    font-size: 14px;
+/* General section styles */
+section {
+    padding: 50px 20px;
 }
 
-/* Add spacing between footer elements */
-footer .footer-content {
-    margin
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-section {
+        text-align: center;
+    }
+}
