@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
         if (carModel || tireSize) {
             alert(`Searching for tires for: ${carModel || tireSize}`);
             // You can add logic to filter or redirect to a results page based on the input values.
+            window.location.href = `tire-size-page.html?size=${tireSize}`;
         } else {
             alert('Please enter a car model or tire size.');
         }
     });
 });
-
