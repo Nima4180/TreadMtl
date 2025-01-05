@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TreadMtl - Your Tire Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
-
-    <!-- Header Section with Navigation -->
+    <!-- Header Section with Navigation at the Top -->
     <header>
         <div class="nav-container">
             <div class="logo">
@@ -20,36 +19,27 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="#tires">Tires</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Home Section -->
-    <section id="home">
-        <h2>Welcome to TreadMtl</h2>
-        <p>Your one-stop shop for high-quality tires. Find the best tire options for your vehicle.</p>
+    <!-- Search Section for Car Model or Tire Size -->
+    <section id="search">
+        <h2>Find Your Perfect Tire</h2>
+        <p>Enter your car model or tire size to find the best tires for your vehicle.</p>
+        <form id="search-form">
+            <label for="car-model">Car Model:</label>
+            <input type="text" id="car-model" name="car-model" placeholder="e.g., Honda Civic">
+            <label for="tire-size">Tire Size (e.g., 205/55R16):</label>
+            <input type="text" id="tire-size" name="tire-size" placeholder="e.g., 205/55R16">
+            <button type="submit">Search</button>
+        </form>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>TreadMtl is your trusted tire supplier based in Laval, Quebec. We offer the best tire brands, including Toyo Tires, with competitive prices and a wide selection of sizes to fit your vehicle’s needs.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, feel free to reach out!</p>
-        <p>Email: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a></p>
-        <p>Phone: (438)-838-8480</p>
-    </section>
-
-    <!-- Tire Section -->
-    <section id="tires">
-        <h2>Our Featured Tires</h2>
-        <p>Check out our wide range of tire sizes to find the perfect fit for your vehicle.</p>
+    <!-- Featured Tire Section -->
+    <section>
+        <h2>Our Featured Tire: Toyo Gsi-6 LS</h2>
         <div class="tire">
             <img src="tire1.jpg.png" alt="Toyo Tires Gsi-6 LS" class="tire-image">
             <div class="tire-details">
@@ -60,6 +50,20 @@
                 <a href="tire-size-page.html?size=205/55R16" class="button">View Tires in This Size</a>
             </div>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>TreadMtl is your trusted tire supplier in Laval, Quebec. We offer the best tire brands, including Toyo Tires, with competitive prices and a wide selection of sizes to fit your vehicle's needs.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need help, feel free to reach out!</p>
+        <p>Email: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a></p>
+        <p>Phone: (438)-838-8480</p>
     </section>
 
     <!-- Footer Section -->
@@ -76,6 +80,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to the JS file -->
 </body>
 </html>
