@@ -1,19 +1,34 @@
-// Simple script for handling the search form submission
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('search-form');
+// script.js
+
+// Handle the search form submission (example behavior)
+document.getElementById('search').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
     
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // Get the values of car info and tire dimensions
+    const carInfo = document.getElementById('car-info').value;
+    const tireDimensions = document.getElementById('tire-dimensions').value;
+    
+    // For now, we'll just log the values to the console.
+    // In a real application, this would send the data to a backend or filter the tires.
+    console.log('Car Info:', carInfo);
+    console.log('Tire Dimensions:', tireDimensions);
 
-        const carModel = document.getElementById('car-model').value;
-        const tireSize = document.getElementById('tire-size').value;
+    // You can perform any actions you want with the data here.
+    alert('Searching for tires...');
+});
 
-        if (carModel || tireSize) {
-            alert(`Searching for tires for: ${carModel || tireSize}`);
-            // You can add logic to filter or redirect to a results page based on the input values.
-            window.location.href = `tire-size-page.html?size=${tireSize}`;
+// Language Switch (for demonstration purposes)
+const languageSwitch = document.querySelectorAll('.language-switch a');
+languageSwitch.forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default behavior
+        
+        // Toggle language (this is just an example, you'd implement actual language switching here)
+        const currentLang = event.target.textContent;
+        if (currentLang === 'EN') {
+            alert('Switching to English');
         } else {
-            alert('Please enter a car model or tire size.');
+            alert('Switching to French');
         }
     });
 });
