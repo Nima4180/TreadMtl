@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TreadMtl - Your Tire Shop</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+    <title>TreadMtl - Tire Shop</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <img src="toyo-tires-.png" alt="TreadMtl Logo" id="logo">
-        <h1>Welcome to TreadMtl - Your Tire Shop in Laval</h1>
+        <div class="logo">
+            <img src="logo.png" alt="TreadMtl Logo"> <!-- Replace with your actual logo -->
+        </div>
+        <div class="lang-toggle">
+            <button onclick="toggleLanguage()">English / Français</button>
+        </div>
     </header>
 
-    <!-- Featured Tire Section -->
-    <section>
-        <h2>Our Featured Tire: Toyo Gsi-6 LS</h2>
-        <div class="tire">
-            <img src="tire1.jpg.png" alt="Toyo Tires Gsi-6 LS" class="tire-image">
-            <div class="tire-details">
-                <p><strong>Brand:</strong> Toyo Tires</p>
-                <p><strong>Model:</strong> Gsi-6 LS</p>
-                <p><strong>Size:</strong> 205/55R16</p>
-                <p><strong>Price:</strong> $120 each</p>
-            </div>
-        </div>
+    <section class="promo">
+        <h1>Welcome to TreadMtl!</h1>
+        <p>Get a 12% discount on any purchase over $500 before tax on 4 tires!</p>
     </section>
 
-    <!-- Footer Section -->
+    <section class="tire-search">
+        <h2>Find Your Tires</h2>
+        <form id="search-form">
+            <label for="car-model">Enter your car model or tire dimensions:</label>
+            <input type="text" id="car-model" placeholder="e.g., 205/55R16 or Honda Civic">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
     <footer>
-        <p>Contact us at: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a> | Phone: (438)-838-8480</p>
+        <p>&copy; 2025 TreadMtl - Located in Laval</p>
     </footer>
 
-    <script src="script.js"></script> <!-- Link to the JS file -->
+    <script src="script.js"></script>
 </body>
 </html>
