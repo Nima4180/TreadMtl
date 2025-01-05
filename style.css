@@ -49,6 +49,44 @@ header {
     margin-top: 10px;
 }
 
+.tire-products {
+    margin: 20px;
+    text-align: center;
+}
+
+.tire-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tire-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tire-item img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.tire-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.tire-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+
 footer {
     background-color: #1A1A2E;
     color: white;
