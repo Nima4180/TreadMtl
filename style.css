@@ -1,57 +1,60 @@
-/* Global Styles */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
-/* Header Section Styles */
 header {
-    background-color: #1d3557;
+    background-color: #1A1A2E; /* Navy Blue */
     color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-#logo {
-    max-width: 150px;
-}
-
-/* Section Styles */
-section {
-    padding: 20px;
-    margin: 0 auto;
-    width: 80%;
-    max-width: 1200px;
-}
-
-h2 {
-    color: #1d3557;
-}
-
-/* Tire Details Styling */
-.tire {
+    padding: 10px 20px;
     display: flex;
-    margin-top: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.tire-image {
-    max-width: 200px;
-    margin-right: 20px;
+.logo img {
+    height: 50px;
 }
 
-.tire-details {
-    max-width: 400px;
+.lang-toggle button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
-/* Footer Styling */
+.lang-toggle button:hover {
+    background-color: #45a049;
+}
+
+.promo {
+    background-color: #999; /* Gray */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.tire-search {
+    margin: 20px;
+    text-align: center;
+}
+
+.tire-search input {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+}
+
 footer {
-    background-color: #1d3557;
+    background-color: #1A1A2E;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    width: 100%;
+    padding: 10px;
+    position: fixed;
     bottom: 0;
+    width: 100%;
 }
