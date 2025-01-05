@@ -45,56 +45,37 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+    text-align: center;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Search Section Styles */
-#search {
-    padding: 20px;
-    background-color: #e0f7fa;
-    text-align: center;
-}
-
-#search h2 {
-    color: #1d3557;
-}
-
-#search form {
-    margin-top: 20px;
-}
-
-#search input {
-    margin: 5px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#search button {
-    padding: 10px 20px;
-    background-color: #1d3557;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#search button:hover {
-    background-color: #1976d2;
-}
-
-/* Featured Tire Section Styles */
+/* Section Styles */
 section {
     padding: 20px;
     margin: 20px auto;
     width: 80%;
     max-width: 1200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+#home {
+    background-color: #e0f7fa;
+}
+
+#about, #contact {
+    background-color: #f4f4f4;
+}
+
+#tires {
+    background-color: #e0f7fa;
+}
+
+/* Tire Section */
 .tire {
     display: flex;
     margin-top: 20px;
@@ -121,27 +102,50 @@ section {
     background-color: #1976d2;
 }
 
-/* About Section */
-#about {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Contact Section */
-#contact {
-    background-color: #e0f7fa;
-    padding: 20px;
-    text-align: center;
-}
-
 /* Footer Styles */
 footer {
     background-color: #1d3557;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: absolute;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 40px;
     width: 100%;
-    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.contact-footer {
+    text-align: left;
+    font-size: 14px;
+}
+
+.contact-footer p {
+    margin: 5px 0;
+}
+
+.contact-footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: right;
+    font-size: 14px;
+}
+
+/* Scroll to Section Styles */
+html {
+    scroll-behavior: smooth;
 }
