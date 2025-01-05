@@ -3,14 +3,14 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0; /* Light background for overall contrast */
 }
 
 /* Header Section Styles */
 header {
-    background-color: #1d3557;
+    background-color: #4c4c4c; /* Dark Gray for the background */
     color: white;
-    padding: 10px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -42,7 +42,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #1d3557; /* Navy Blue for navigation text */
     text-decoration: none;
     font-size: 16px;
     text-align: center;
@@ -50,12 +50,13 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+    color: #1976d2; /* Lighter blue when hovering */
 }
 
 /* Section Styles */
 section {
-    padding: 20px;
-    margin: 20px auto;
+    padding: 40px 20px;
+    margin: 40px auto;
     width: 80%;
     max-width: 1200px;
     background-color: #fff;
@@ -63,16 +64,17 @@ section {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Home Section */
 #home {
-    background-color: #e0f7fa;
+    background-color: #e5e5e5; /* Light Gray for home section */
 }
 
 #about, #contact {
-    background-color: #f4f4f4;
+    background-color: #f9f9f9; /* Slightly lighter gray for about/contact */
 }
 
 #tires {
-    background-color: #e0f7fa;
+    background-color: #e5e5e5; /* Light Gray for tire section */
 }
 
 /* Tire Section */
@@ -91,20 +93,20 @@ section {
 }
 
 .button {
-    padding: 10px 20px;
-    background-color: #1d3557;
+    padding: 12px 25px;
+    background-color: #1d3557; /* Navy Blue button */
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
 .button:hover {
-    background-color: #1976d2;
+    background-color: #1976d2; /* Lighter blue on hover */
 }
 
 /* Footer Styles */
 footer {
-    background-color: #1d3557;
+    background-color: #4c4c4c; /* Dark Gray background for footer */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -148,4 +150,23 @@ footer {
 /* Scroll to Section Styles */
 html {
     scroll-behavior: smooth;
+}
+
+/* Add spacing between footer elements */
+footer .footer-content {
+    margin-top: 20px;
+}
+
+footer .footer-content div {
+    margin-right: 20px;
+}
+
+/* Adjust text color and spacing in footer */
+footer p {
+    margin: 5px 0;
+}
+
+/* Add padding to all sections for better spacing */
+section {
+    padding: 50px 30px;
 }
