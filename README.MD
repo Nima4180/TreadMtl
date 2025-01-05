@@ -6,7 +6,7 @@ Welcome to TreadMtl, your go-to tire shop in Laval, Quebec. We specialize in off
 - **Tire Search**: Find the perfect tire by car model or tire size.
 - **Featured Tires**: View our best-selling tire models.
 - **Responsive Design**: Seamlessly browse on both desktop and mobile.
-- **Navigation Links**: Easy access to Home, About, and Contact pages.
+- **Navigation Links**: Easy access to Home, About, and Contact pages, available at the top of the page.
 
 ## Files Structure
 - `index.html`: Main HTML structure of the website.
