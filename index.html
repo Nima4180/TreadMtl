@@ -3,64 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMtl - Tire Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TreadMtl - Your Tire Shop</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="logo.png" alt="TreadMtl Logo"> <!-- Replace with your actual logo -->
+            <img src="toyo-tires-.png" alt="TreadMtl Logo" id="logo">
         </div>
-        <div class="lang-toggle">
-            <button onclick="toggleLanguage()">English / Français</button>
-        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="promo">
-        <h1>Welcome to TreadMtl!</h1>
-        <p>Get a 12% discount on any purchase over $500 before tax on 4 tires!</p>
-    </section>
-
-    <section class="tire-search">
-        <h2>Find Your Tires</h2>
+    <!-- Search Section -->
+    <section id="search">
+        <h2>Find Your Perfect Tire</h2>
+        <p>Enter your car model or tire size to find the best tires for your vehicle.</p>
         <form id="search-form">
-            <label for="car-model">Enter your car model or tire dimensions:</label>
-            <input type="text" id="car-model" placeholder="e.g., 205/55R16 or Honda Civic">
+            <label for="car-model">Car Model:</label>
+            <input type="text" id="car-model" name="car-model" placeholder="e.g., Honda Civic">
+            <label for="tire-size">Tire Size (e.g., 205/55R16):</label>
+            <input type="text" id="tire-size" name="tire-size" placeholder="e.g., 205/55R16">
             <button type="submit">Search</button>
         </form>
     </section>
 
-    <section class="tire-products">
-    <h2>Our Tires</h2>
-    <div class="tire-container">
-        <!-- Example Tire Item -->
-        <div class="tire-item">
-            <img src="tire1.jpg" alt="Winter Tire A">
-            <h3>Winter Tire A</h3>
-            <p>Perfect for snowy conditions with excellent grip.</p>
-            <p><strong>$150 each</strong></p>
+    <!-- Featured Tire Section -->
+    <section>
+        <h2>Our Featured Tire: Toyo Gsi-6 LS</h2>
+        <div class="tire">
+            <img src="tire1.jpg.png" alt="Toyo Tires Gsi-6 LS" class="tire-image">
+            <div class="tire-details">
+                <p><strong>Brand:</strong> Toyo Tires</p>
+                <p><strong>Model:</strong> Gsi-6 LS</p>
+                <p><strong>Size:</strong> 205/55R16</p>
+                <p><strong>Price:</strong> $120 each</p>
+                <a href="tire-size-page.html?size=205/55R16" class="button">View Tires in This Size</a>
+            </div>
         </div>
+    </section>
 
-        <div class="tire-item">
-            <img src="tire2.jpg" alt="All-Season Tire B">
-            <h3>All-Season Tire B</h3>
-            <p>Versatile performance for all weather conditions.</p>
-            <p><strong>$120 each</strong></p>
-        </div>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>TreadMtl is your trusted tire supplier in Laval, Quebec. We offer the best tire brands, including Toyo Tires, with competitive prices and a wide selection of sizes to fit your vehicle's needs.</p>
+    </section>
 
-        <div class="tire-item">
-            <img src="tire3.jpg" alt="Performance Tire C">
-            <h3>Performance Tire C</h3>
-            <p>Designed for high-speed stability and cornering.</p>
-            <p><strong>$200 each</strong></p>
-        </div>
-    </div>
-</section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need help, feel free to reach out!</p>
+        <p>Email: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a></p>
+        <p>Phone: (438)-838-8480</p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 TreadMtl - Located in Laval</p>
+        <p>&copy; 2025 TreadMtl - Your Tire Shop. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to the JS file -->
 </body>
 </html>
