@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f3f3f3;
             color: #333;
+            display: flex;
         }
 
         a {
@@ -19,19 +19,14 @@
             color: inherit;
         }
 
-        /* Header Styles */
         header {
-            background-color: #002855; /* Navy Blue */
+            background-color: #002855;
             color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-        }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
+            width: 100%;
         }
 
         nav {
@@ -42,22 +37,6 @@
         nav a {
             color: white;
             font-weight: bold;
-        }
-
-        .language-switcher {
-            display: flex;
-            gap: 10px;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #e9ecef;
-        }
-
-        .hero h1 {
-            color: #002855;
         }
 
         .search-section {
@@ -83,98 +62,159 @@
             cursor: pointer;
         }
 
-        /* Footer Styles */
-        footer {
-            background-color: #002855;
-            color: white;
-            padding: 20px;
-            text-align: center;
+        .language-switcher {
+            position: fixed;
+            right: 10px;
+            top: 10%;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        footer .contact-info {
-            margin-bottom: 10px;
-        }
-
-        footer .quote {
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
+        .language-switcher select {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
+
+    <!-- Language Switcher on the Right -->
+    <div class="language-switcher">
+        <label for="language">Language</label>
+        <select id="language" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
     <header>
         <div class="logo">TreadMTL</div>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#tires">Tire List</a>
+            <a href="#home" id="home-link">Home</a>
+            <a href="#about" id="about-link">About</a>
+            <a href="#contact" id="contact-link">Contact</a>
+            <a href="#tires" id="tires-link">Tire List</a>
         </nav>
-        <div class="language-switcher">
-            <button onclick="switchLanguage('en')">English</button>
-            <button onclick="switchLanguage('fr')">Français</button>
-        </div>
     </header>
 
-    <section class="hero" id="home">
-        <h1>Welcome to TreadMTL</h1>
-        <p>Find the perfect tires for your vehicle.</p>
+    <section id="home">
+        <h1 id="welcome-title">Welcome to TreadMTL</h1>
+        <p id="welcome-text">Find the perfect tires for your vehicle.</p>
+
         <div class="search-section">
-            <h3>Search by Car Information:</h3>
-            <select id="year">
-                <option value="">Year</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-            </select>
-            <select id="make">
-                <option value="">Make</option>
-                <option value="Toyota">Toyota</option>
-                <option value="Honda">Honda</option>
-                <option value="Ford">Ford</option>
-            </select>
-            <select id="model">
-                <option value="">Model</option>
-                <option value="Corolla">Corolla</option>
-                <option value="Civic">Civic</option>
-                <option value="F-150">F-150</option>
-            </select>
-            <h3>Search by Tire Dimension:</h3>
-            <input type="text" placeholder="Width (e.g., 205)">
-            <input type="text" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" placeholder="Diameter (e.g., 16)">
-            <button>Search Tires</button>
+            <h3 id="search-header">Search by Car Information:</h3>
+            <select id="year"></select>
+            <select id="make"></select>
+            <select id="model"></select>
+
+            <h3 id="dimension-header">Search by Tire Dimension:</h3>
+            <input type="text" id="width" placeholder="Width (e.g., 205)">
+            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
+            <button onclick="searchTires()">Search Tires</button>
         </div>
     </section>
 
     <footer>
-        <div class="contact-info">
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-        </div>
-        <p class="quote">Our shipping delay is 24-72 business hours.</p>
-        <p>© 2025 TreadMTL - Your Tire Shop. All rights reserved.</p>
+        <p>Email: info@treadmtl.com</p>
+        <p>Phone: (438)-838-8480</p>
     </footer>
 
     <script>
-        function switchLanguage(lang) {
-            if (lang === 'en') {
-                alert('Switched to English');
-                // Add code to dynamically change content to English
-            } else if (lang === 'fr') {
-                alert('Passé au français');
-                // Add code to dynamically change content to French
+        // Language change functionality
+        function changeLanguage() {
+            const language = document.getElementById("language").value;
+
+            if (language === "fr") {
+                // French language
+                document.getElementById("welcome-title").textContent = "Bienvenue chez TreadMTL";
+                document.getElementById("welcome-text").textContent = "Trouvez les pneus parfaits pour votre véhicule.";
+                document.getElementById("search-header").textContent = "Rechercher par informations sur la voiture:";
+                document.getElementById("dimension-header").textContent = "Rechercher par dimension de pneu:";
+                document.getElementById("home-link").textContent = "Accueil";
+                document.getElementById("about-link").textContent = "À propos";
+                document.getElementById("contact-link").textContent = "Contact";
+                document.getElementById("tires-link").textContent = "Liste des pneus";
+            } else {
+                // English language
+                document.getElementById("welcome-title").textContent = "Welcome to TreadMTL";
+                document.getElementById("welcome-text").textContent = "Find the perfect tires for your vehicle.";
+                document.getElementById("search-header").textContent = "Search by Car Information:";
+                document.getElementById("dimension-header").textContent = "Search by Tire Dimension:";
+                document.getElementById("home-link").textContent = "Home";
+                document.getElementById("about-link").textContent = "About";
+                document.getElementById("contact-link").textContent = "Contact";
+                document.getElementById("tires-link").textContent = "Tire List";
             }
         }
+
+        // Fetch and populate car makes
+        fetch("https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes")
+            .then(response => response.json())
+            .then(data => {
+                const makes = data.makes;
+                const makeSelect = document.getElementById("make");
+                makes.forEach(make => {
+                    const option = document.createElement("option");
+                    option.value = make.make_id;
+                    option.textContent = make.make_display;
+                    makeSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error("Error fetching car makes:", error));
+
+        // Fetch and populate car models based on the selected make
+        document.getElementById("make").addEventListener("change", function () {
+            const makeId = this.value;
+            if (!makeId) return;
+
+            fetch(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=${makeId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const models = data.models;
+                    const modelSelect = document.getElementById("model");
+                    modelSelect.innerHTML = ''; // Clear previous options
+                    models.forEach(model => {
+                        const option = document.createElement("option");
+                        option.value = model.model_id;
+                        option.textContent = model.model_name;
+                        modelSelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error("Error fetching car models:", error));
+        });
+
+        // Populate the year dropdown with example years
+        const yearSelect = document.getElementById("year");
+        for (let year = 2023; year >= 2000; year--) {
+            const option = document.createElement("option");
+            option.value = year;
+            option.textContent = year;
+            yearSelect.appendChild(option);
+        }
+
+        // Function to search for tires (this is just a placeholder, you should link to your actual tire list)
+        function searchTires() {
+            const width = document.getElementById("width").value;
+            const aspect = document.getElementById("aspect").value;
+            const diameter = document.getElementById("diameter").value;
+
+            if (!width || !aspect || !diameter) {
+                alert("Please enter tire dimensions.");
+                return;
+            }
+
+            alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
+            // You can use this data to filter your tire list and display relevant tires
+        }
     </script>
+
 </body>
 </html>
