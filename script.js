@@ -20,7 +20,7 @@ const translations = {
   fr: {
     home: 'Accueil',
     about: 'À propos',
-    contact: 'Contact',
+    contact: 'Contactez-nous',
     tires: 'Liste de pneus',
     searchTitle: 'Rechercher des pneus',
     searchVehicle: 'Rechercher par véhicule',
@@ -38,11 +38,12 @@ let currentLanguage = 'en';
 function updateLanguage(lang) {
   currentLanguage = lang;
 
-  // Update all elements with data-lang attributes
   textElements.forEach((element) => {
     const key = element.getAttribute('data-lang');
     element.textContent = translations[lang][key];
   });
+
+  languageSwitch.textContent = lang === 'en' ? 'Français' : 'English';
 }
 
 // Language switch event listener
@@ -51,5 +52,5 @@ languageSwitch.addEventListener('click', () => {
   updateLanguage(newLanguage);
 });
 
-// Initialize the default language
+// Initialize default language
 updateLanguage(currentLanguage);
