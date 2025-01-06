@@ -1,34 +1,22 @@
-// script.js
+function switchLanguage(language) {
+    const englishSections = document.querySelectorAll('.en');
+    const frenchSections = document.querySelectorAll('.fr');
 
-// Handle the search form submission (example behavior)
-document.getElementById('search').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    
-    // Get the values of car info and tire dimensions
-    const carInfo = document.getElementById('car-info').value;
-    const tireDimensions = document.getElementById('tire-dimensions').value;
-    
-    // For now, we'll just log the values to the console.
-    // In a real application, this would send the data to a backend or filter the tires.
-    console.log('Car Info:', carInfo);
-    console.log('Tire Dimensions:', tireDimensions);
+    if (language === 'en') {
+        englishSections.forEach(section => section.style.display = 'block');
+        frenchSections.forEach(section => section.style.display = 'none');
+    } else if (language === 'fr') {
+        englishSections.forEach(section => section.style.display = 'none');
+        frenchSections.forEach(section => section.style.display = 'block');
+    }
+}
 
-    // You can perform any actions you want with the data here.
-    alert('Searching for tires...');
-});
-
-// Language Switch (for demonstration purposes)
-const languageSwitch = document.querySelectorAll('.language-switch a');
-languageSwitch.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default behavior
-        
-        // Toggle language (this is just an example, you'd implement actual language switching here)
-        const currentLang = event.target.textContent;
-        if (currentLang === 'EN') {
-            alert('Switching to English');
-        } else {
-            alert('Switching to French');
-        }
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+        section.style.display = section.id === sectionId ? 'block' : 'none';
     });
-});
+}
+
+switchLanguage('en');
+showSection('home');
