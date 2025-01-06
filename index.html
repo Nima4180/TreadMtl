@@ -5,55 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TreadMtl - Your Tire Shop</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Header Section -->
+  <!-- Header -->
   <header>
     <div class="header-container">
-      <!-- Logo on the Left -->
       <div class="logo">
         <img src="logo.png" alt="TreadMtl Logo">
       </div>
-      <!-- Navigation in the Middle -->
       <nav class="navigation">
         <ul>
-          <li><a href="#home" data-lang="home">Home</a></li>
-          <li><a href="#about" data-lang="about">About</a></li>
-          <li><a href="#contact" data-lang="contact">Contact</a></li>
-          <li><a href="#tires" data-lang="tires">Tire List</a></li>
+          <li><a href="#home" class="nav-link" data-lang="home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-lang="about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-lang="contact">Contact</a></li>
+          <li><a href="#tires" class="nav-link" data-lang="tires">Tire List</a></li>
         </ul>
       </nav>
-      <!-- Language Switch on the Right -->
       <div class="language-switch">
         <button id="language-switch">Français</button>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Section -->
   <main>
-    <!-- Search Section -->
-    <section id="search">
-      <h1 data-lang="searchTitle">Search for Tires</h1>
-      <form>
-        <h2 data-lang="searchVehicle">Search by Vehicle</h2>
-        <!-- Vehicle search fields -->
-        <input type="text" placeholder="Year, Make, Model">
-        <h2 data-lang="searchDimension">Search by Dimension</h2>
-        <!-- Dimension search fields -->
-        <input type="text" placeholder="Width, Ratio, Diameter">
-        <button type="submit">Search</button>
-      </form>
+    <!-- Hero/Search Section -->
+    <section id="home" class="hero-section">
+      <h1 data-lang="searchTitle">Find the Perfect Tire for Your Vehicle</h1>
+      <div class="search-container">
+        <form class="search-form">
+          <div class="search-by-vehicle">
+            <h2 data-lang="searchVehicle">Search by Vehicle</h2>
+            <input type="text" placeholder="Year, Make, Model" class="search-input">
+          </div>
+          <div class="search-by-dimension">
+            <h2 data-lang="searchDimension">Search by Dimension</h2>
+            <input type="text" placeholder="Width, Ratio, Diameter" class="search-input">
+          </div>
+          <button type="submit" class="search-button" data-lang="searchButton">Search</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Placeholder Sections -->
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>Welcome to TreadMtl, your trusted tire shop offering high-quality products and fast shipping.</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact Us</h2>
+      <p>Email: contact@treadmtl.com</p>
+      <p>Phone: (438) 838-8480</p>
+    </section>
+
+    <section id="tires" class="content-section">
+      <h2>Tire List</h2>
+      <p>Browse our wide range of tires and use filters to find the perfect match for your vehicle.</p>
     </section>
   </main>
 
-  <!-- Footer Section -->
+  <!-- Footer -->
   <footer>
-    <p data-lang="footerContact">Contact Us: (438) 838-8480 | contact@treadmtl.com</p>
-    <p data-lang="footerShipping">Shipping within 24-72 business hours.</p>
-    <p data-lang="footerQuote">© 2025 TreadMtl - Your Tire Shop. All rights reserved.</p>
+    <div class="footer-container">
+      <div class="footer-info">
+        <p data-lang="footerContact">Contact Us: (438) 838-8480 | contact@treadmtl.com</p>
+        <p data-lang="footerShipping">Shipping within 24-72 business hours.</p>
+      </div>
+      <div class="footer-quote">
+        <p data-lang="footerQuote">© 2025 TreadMtl - Your Tire Shop. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
