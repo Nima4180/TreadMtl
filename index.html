@@ -43,11 +43,6 @@
             font-weight: bold;
         }
 
-        .language-switcher {
-            display: flex;
-            gap: 10px;
-        }
-
         /* Hero Section */
         .hero {
             text-align: center;
@@ -115,15 +110,11 @@
             <img src="toyo-tires.png" alt="TreadMTL Logo"> <!-- Replace with your actual logo -->
         </div>
         <nav>
-            <a href="#home">Home</a>
+            <a href="index.html">Home</a> <!-- Home page link -->
+            <a href="tires.html">Tire List</a> <!-- Tire List page link -->
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <a href="tires.html">Tire List</a> <!-- Link to the tire list page -->
         </nav>
-        <div class="language-switcher">
-            <button onclick="switchLanguage('en')">English</button>
-            <button onclick="switchLanguage('fr')">Français</button>
-        </div>
     </header>
 
     <section class="hero" id="home">
@@ -165,17 +156,5 @@
         <p class="quote">Our shipping delay is 24-72 business hours.</p>
         <p>© 2025 TreadMTL - Your Tire Shop. All rights reserved.</p>
     </footer>
-
-    <script>
-        function switchLanguage(lang) {
-            if (lang === 'en') {
-                alert('Switched to English');
-                // Add code to dynamically change content to English
-            } else if (lang === 'fr') {
-                alert('Passé au français');
-                // Add code to dynamically change content to French
-            }
-        }
-    </script>
 </body>
 </html>
