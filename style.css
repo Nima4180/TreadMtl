@@ -11,9 +11,6 @@ body {
   color: #333;
   background-color: #f4f4f4;
 }
-<div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
-        </div>
 /* Header */
 header {
   display: flex;
