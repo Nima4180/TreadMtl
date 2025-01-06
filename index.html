@@ -7,33 +7,47 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header Section -->
   <header>
-    <div class="logo">
-      <img src="logo.png" alt="TreadMtl Logo">
+    <div class="header-container">
+      <!-- Logo on the Left -->
+      <div class="logo">
+        <img src="logo.png" alt="TreadMtl Logo">
+      </div>
+      <!-- Navigation in the Middle -->
+      <nav class="navigation">
+        <ul>
+          <li><a href="#home" data-lang="home">Home</a></li>
+          <li><a href="#about" data-lang="about">About</a></li>
+          <li><a href="#contact" data-lang="contact">Contact</a></li>
+          <li><a href="#tires" data-lang="tires">Tire List</a></li>
+        </ul>
+      </nav>
+      <!-- Language Switch on the Right -->
+      <div class="language-switch">
+        <button id="language-switch">Français</button>
+      </div>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#home" data-lang="home">Home</a></li>
-        <li><a href="#about" data-lang="about">About</a></li>
-        <li><a href="#contact" data-lang="contact">Contact</a></li>
-        <li><a href="#tires" data-lang="tires">Tire List</a></li>
-      </ul>
-    </nav>
-    <button id="language-switch">Français</button>
   </header>
 
+  <!-- Main Content -->
   <main>
+    <!-- Search Section -->
     <section id="search">
       <h1 data-lang="searchTitle">Search for Tires</h1>
       <form>
         <h2 data-lang="searchVehicle">Search by Vehicle</h2>
         <!-- Vehicle search fields -->
+        <input type="text" placeholder="Year, Make, Model">
         <h2 data-lang="searchDimension">Search by Dimension</h2>
         <!-- Dimension search fields -->
+        <input type="text" placeholder="Width, Ratio, Diameter">
+        <button type="submit">Search</button>
       </form>
     </section>
   </main>
 
+  <!-- Footer Section -->
   <footer>
     <p data-lang="footerContact">Contact Us: (438) 838-8480 | contact@treadmtl.com</p>
     <p data-lang="footerShipping">Shipping within 24-72 business hours.</p>
