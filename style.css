@@ -1,13 +1,13 @@
-/* General Styling */
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
 header {
-    background-color: navy;
+    background-color: #1A1A2E; /* Navy Blue */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -16,20 +16,45 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 50px;
 }
 
-.nav-links a {
+.lang-toggle button {
+    background-color: #4CAF50;
     color: white;
-    text-decoration: none;
-    margin: 0 15px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
-.language-switch a {
+.lang-toggle button:hover {
+    background-color: #45a049;
+}
+
+.promo {
+    background-color: #999; /* Gray */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.tire-search {
+    margin: 20px;
+    text-align: center;
+}
+
+.tire-search input {
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #1A1A2E;
     color: white;
-    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
-
-/* Search Section */
-#search {
-    paddi
