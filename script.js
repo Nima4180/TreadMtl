@@ -132,21 +132,15 @@
             <h3>Search by Car Information:</h3>
             <select id="year">
                 <option value="">Year</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
+                <!-- Populate with API data -->
             </select>
             <select id="make">
                 <option value="">Make</option>
-                <option value="Toyota">Toyota</option>
-                <option value="Honda">Honda</option>
-                <option value="Ford">Ford</option>
+                <!-- Populate with API data -->
             </select>
             <select id="model">
                 <option value="">Model</option>
-                <option value="Corolla">Corolla</option>
-                <option value="Civic">Civic</option>
-                <option value="F-150">F-150</option>
+                <!-- Populate with API data -->
             </select>
             <h3>Search by Tire Dimension:</h3>
             <input type="text" id="width" placeholder="Width (e.g., 205)">
@@ -177,7 +171,78 @@
             }
         }
 
-        // API call to get tire size based on vehicle make, model, and year
+        // Fetch all car makes, models, and years from the API
+        function getCarData() {
+            const apiUrl = "https://api.example.com/cars"; // Replace with actual API endpoint
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const yearSelect = document.getElementById("year");
+                    const makeSelect = document.getElementById("make");
+                    const modelSelect = document.getElementById("model");
+
+                    // Populate the year, make, and model selects
+                    data.years.forEach(year => {
+                        const option = document.createElement("option");
+                        option.value = year;
+                        option.textContent = year;
+                        yearSelect.appendChild(option);
+                    });
+
+                    data.makes.forEach(make => {
+                        const option = document.createElement("option");
+                        option.value = make;
+                        option.textContent = make;
+                        makeSelect.appendChild(option);
+                    });
+
+                    // Listen for the change of make to fetch models dynamically
+                    makeSelect.addEventListener("change", function() {
+                        const selectedMake = makeSelect.value;
+                        modelSelect.innerHTML = ''; // Clear existing options
+
+                        if (selectedMake) {
+                            const models = data.models[selectedMake];
+                            models.forEach(model => {
+                                const option = document.createElement("option");
+                                option.value = model;
+                                option.textContent = model;
+                                modelSelect.appendChild(option);
+                            });
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching car data:', error));
+        }
+
+        // Call this function when the page loads
+        window.onload = getCarData;
+
+        // Search for tires based on selected car info and tire dimensions
+        function searchTires() {
+            const year = document.getElementById("year").value;
+            const make = document.getElementById("make").value;
+            const model = document.getElementById("model").value;
+            const width = document.getElementById("width").value;
+            const aspect = document.getElementById("aspect").value;
+            const diameter = document.getElementById("diameter").value;
+
+            if (!make || !model || !year) {
+                alert("Please fill in the car's make, model, and year.");
+                return;
+            }
+
+            // Fetch tire sizes from your API based on the car info
+            getCarTireSize(make, model, year);
+
+            // Handle tire search by dimensions
+            if (width && aspect && diameter) {
+                alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
+                // Implement logic for tire search based on these dimensions
+            }
+        }
+
+        // Function to fetch tire sizes for the selected vehicle
         function getCarTireSize(make, model, year) {
             const apiUrl = `https://api.tiredata.com/tire-size?make=${make}&model=${model}&year=${year}`;
             fetch(apiUrl)
@@ -193,30 +258,6 @@
                     console.error("Error fetching tire size:", error);
                     alert("There was an error fetching tire data. Please try again.");
                 });
-        }
-
-        // Search tires by vehicle info
-        function searchTires() {
-            const year = document.getElementById("year").value;
-            const make = document.getElementById("make").value;
-            const model = document.getElementById("model").value;
-            const width = document.getElementById("width").value;
-            const aspect = document.getElementById("aspect").value;
-            const diameter = document.getElementById("diameter").value;
-
-            if (!make || !model || !year) {
-                alert("Please fill in the car's make, model, and year.");
-                return;
-            }
-
-            // Fetch tire size from the API based on the car info
-            getCarTireSize(make, model, year);
-
-            // Handle tire search by dimensions (if available)
-            if (width && aspect && diameter) {
-                alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
-                // Implement logic for tire search based on these dimensions
-            }
         }
     </script>
 </body>
