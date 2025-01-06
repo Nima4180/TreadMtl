@@ -56,27 +56,15 @@
             padding: 15px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .tire-item img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
         }
 
         .tire-item h3 {
             color: #002855;
-            margin-bottom: 10px;
         }
 
         .price {
             color: green;
             font-weight: bold;
-            margin-top: 10px;
         }
 
         /* Footer Styles */
@@ -103,16 +91,6 @@
                 align-items: center;
                 gap: 10px;
             }
-
-            .tire-item {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tire-item img {
-                width: 100px;
-                height: 100px;
-            }
         }
     </style>
 </head>
@@ -131,16 +109,18 @@
         <h2>Our Tire List</h2>
 
         <!-- Tire Item 1 -->
-        <div class="tire-image">
-            <img src="images/michelin-x-ice.jpg" alt="Michelin X-Ice Snow 205/55R16">
-            <div>
-                <h3>Michelin X-Ice Snow 205/55R16</h3>
-                <p>Winter tire, designed for snow and icy conditions. Provides superior grip and stability on ice and snow-covered roads, ensuring a safe and comfortable drive during the winter months.</p>
-                <p class="price">$100 each</p>
-            </div>
+        <div class="tire-item">
+            <h3>Michelin X-Ice Snow 205/55R16</h3>
+            <p>Winter tire, designed for snow and icy conditions.</p>
+            <p class="price">$100 each</p>
         </div>
 
-        <!-- Add more tire items here -->
+        <!-- Tire Item 2 -->
+        <div class="tire-item">
+            <h3>Toyo Tires GSI-6LS 205/55R16</h3>
+            <p>All-season tire, known for its durability and performance.</p>
+            <p class="price">$120 each</p>
+        </div>
     </section>
 
     <footer>
