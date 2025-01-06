@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1A1A2E;
+            background-color: #f3f3f3;
             color: #333;
         }
 
@@ -21,7 +21,7 @@
 
         /* Header Styles */
         header {
-            background-color: #1A1A2E; /* Navy Blue */
+            background-color: #002855; /* Navy Blue */
             color: white;
             display: flex;
             justify-content: space-between;
@@ -78,7 +78,7 @@
         }
 
         .search-section button {
-            background-color: #1A1A2E;
+            background-color: #002855;
             color: white;
             cursor: pointer;
         }
@@ -112,12 +112,12 @@
 </head>
 <body>
     <header>
-        <div class="logo" id="logo">TreadMTL</div>
+        <div class="logo">TreadMTL</div>
         <nav>
-            <a href="#home" id="home-link">Home</a>
-            <a href="#about" id="about-link">About</a>
-            <a href="#contact" id="contact-link">Contact</a>
-            <a href="#tires" id="tires-link">Tire List</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#tires">Tire List</a>
         </nav>
         <div class="language-switcher">
             <button onclick="switchLanguage('en')">English</button>
@@ -126,10 +126,10 @@
     </header>
 
     <section class="hero" id="home">
-        <h1 id="hero-title">Welcome to TreadMTL</h1>
-        <p id="hero-text">Find the perfect tires for your vehicle.</p>
+        <h1>Welcome to TreadMTL</h1>
+        <p>Find the perfect tires for your vehicle.</p>
         <div class="search-section">
-            <h3 id="search-title">Search by Car Information:</h3>
+            <h3>Search by Car Information:</h3>
             <select id="year">
                 <option value="">Year</option>
                 <option value="2023">2023</option>
@@ -148,90 +148,32 @@
                 <option value="Civic">Civic</option>
                 <option value="F-150">F-150</option>
             </select>
-            <h3 id="tire-dim-title">Search by Tire Dimension:</h3>
-            <input type="text" id="width" placeholder="Width (e.g., 205)">
-            <input type="text" id="aspect-ratio" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-            <button onclick="searchTires()">Search Tires</button>
+            <h3>Search by Tire Dimension:</h3>
+            <input type="text" placeholder="Width (e.g., 205)">
+            <input type="text" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" placeholder="Diameter (e.g., 16)">
+            <button>Search Tires</button>
         </div>
     </section>
 
     <footer>
         <div class="contact-info">
-            <p id="email">Email: info@treadmtl.com</p>
-            <p id="phone">Phone: (438)-838-8480</p>
+            <p>Email: info@treadmtl.com</p>
+            <p>Phone: (438)-838-8480</p>
         </div>
-        <p class="quote" id="shipping-delay">Our shipping delay is 24-72 business hours.</p>
+        <p class="quote">Our shipping delay is 24-72 business hours.</p>
         <p>© 2025 TreadMTL - Your Tire Shop. All rights reserved.</p>
     </footer>
 
     <script>
-        const texts = {
-            en: {
-                heroTitle: "Welcome to TreadMTL",
-                heroText: "Find the perfect tires for your vehicle.",
-                searchTitle: "Search by Car Information:",
-                tireDimTitle: "Search by Tire Dimension:",
-                searchBtn: "Search Tires",
-                email: "Email: info@treadmtl.com",
-                phone: "Phone: (438)-838-8480",
-                shippingDelay: "Our shipping delay is 24-72 business hours.",
-                homeLink: "Home",
-                aboutLink: "About",
-                contactLink: "Contact",
-                tiresLink: "Tire List"
-            },
-            fr: {
-                heroTitle: "Bienvenue chez TreadMTL",
-                heroText: "Trouvez les pneus parfaits pour votre véhicule.",
-                searchTitle: "Recherche par informations sur la voiture :",
-                tireDimTitle: "Recherche par dimension de pneu :",
-                searchBtn: "Rechercher des pneus",
-                email: "E-mail : info@treadmtl.com",
-                phone: "Téléphone : (438)-838-8480",
-                shippingDelay: "Notre délai d'expédition est de 24 à 72 heures ouvrables.",
-                homeLink: "Accueil",
-                aboutLink: "À propos",
-                contactLink: "Contact",
-                tiresLink: "Liste des pneus"
-            }
-        };
-
         function switchLanguage(lang) {
-            const languageTexts = texts[lang];
-
-            // Update text content based on selected language
-            document.getElementById("hero-title").textContent = languageTexts.heroTitle;
-            document.getElementById("hero-text").textContent = languageTexts.heroText;
-            document.getElementById("search-title").textContent = languageTexts.searchTitle;
-            document.getElementById("tire-dim-title").textContent = languageTexts.tireDimTitle;
-            document.getElementById("shipping-delay").textContent = languageTexts.shippingDelay;
-            document.getElementById("email").textContent = languageTexts.email;
-            document.getElementById("phone").textContent = languageTexts.phone;
-
-            document.getElementById("home-link").textContent = languageTexts.homeLink;
-            document.getElementById("about-link").textContent = languageTexts.aboutLink;
-            document.getElementById("contact-link").textContent = languageTexts.contactLink;
-            document.getElementById("tires-link").textContent = languageTexts.tiresLink;
-
-            // Change the placeholder text for the button
-            document.querySelector('button').textContent = languageTexts.searchBtn;
-        }
-
-        function searchTires() {
-            const year = document.getElementById('year').value;
-            const make = document.getElementById('make').value;
-            const model = document.getElementById('model').value;
-            const width = document.getElementById('width').value;
-            const aspectRatio = document.getElementById('aspect-ratio').value;
-            const diameter = document.getElementById('diameter').value;
-
-            if (!year && !make && !model && !width && !aspectRatio && !diameter) {
-                alert('Please provide at least one search criterion.');
-                return;
+            if (lang === 'en') {
+                alert('Switched to English');
+                // Add code to dynamically change content to English
+            } else if (lang === 'fr') {
+                alert('Passé au français');
+                // Add code to dynamically change content to French
             }
-
-            alert(`Search results for:\nYear: ${year}\nMake: ${make}\nModel: ${model}\nWidth: ${width}\nAspect Ratio: ${aspectRatio}\nDiameter: ${diameter}`);
         }
     </script>
 </body>
