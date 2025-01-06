@@ -18,7 +18,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #1A1A2E; /* Navy Blue */
+  background-color: #001f3f; /* Navy Blue */
   color: white;
 }
 
@@ -90,7 +90,7 @@ header .language-switcher {
 
 .hero button {
   padding: 10px 20px;
-  background-color: #1A1A2E;
+  background-color: #0074D9;
   color: white;
   border: none;
   border-radius: 5px;
@@ -98,14 +98,14 @@ header .language-switcher {
 }
 
 .hero button:hover {
-  background-color: #1A1A2E;
+  background-color: #005BB5;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #1A1A2E;
+  background-color: #001f3f;
   color: white;
   margin-top: 50px;
 }
