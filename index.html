@@ -154,12 +154,38 @@
             <h3>Enter Your Car's Information:</h3>
             <select id="year">
                 <option value="">Select Year</option>
+                <!-- Year range from 1980 to 2025 -->
+                <script>
+                    for (let year = 1980; year <= 2025; year++) {
+                        let option = document.createElement('option');
+                        option.value = year;
+                        option.textContent = year;
+                        document.getElementById('year').appendChild(option);
+                    }
+                </script>
             </select>
             <select id="make">
                 <option value="">Select Make</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+                <option value="Ford">Ford</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Chevrolet">Chevrolet</option>
+                <option value="Audi">Audi</option>
+                <!-- Add more makes here -->
             </select>
             <select id="model">
                 <option value="">Select Model</option>
+                <!-- Example models for demonstration -->
+                <option value="Corolla">Corolla</option>
+                <option value="Civic">Civic</option>
+                <option value="F-150">F-150</option>
+                <option value="3 Series">3 Series</option>
+                <option value="C-Class">C-Class</option>
+                <option value="Equinox">Equinox</option>
+                <option value="Q5">Q5</option>
+                <!-- Add more models based on car makes -->
             </select>
             <button onclick="suggestTireSize()">Get Tire Size</button>
         </div>
@@ -189,48 +215,11 @@
     </footer>
 
     <script>
-        // Example car make and model data (you would replace this with API calls)
-        const carMakes = ["Toyota", "Honda", "Ford", "Chevrolet"];
-        const carModels = {
-            "Toyota": ["Corolla", "Camry", "RAV4"],
-            "Honda": ["Civic", "Accord", "CR-V"],
-            "Ford": ["F-150", "Escape", "Mustang"],
-            "Chevrolet": ["Equinox", "Malibu", "Silverado"]
-        };
-
-        // Populate year dropdown dynamically (2000 to 2023)
-        const yearSelect = document.getElementById("year");
-        for (let year = 2023; year >= 2000; year--) {
-            const option = document.createElement("option");
-            option.value = year;
-            option.textContent = year;
-            yearSelect.appendChild(option);
-        }
-
-        // Populate car makes dynamically
-        const makeSelect = document.getElementById("make");
-        carMakes.forEach(make => {
-            const option = document.createElement("option");
-            option.value = make;
-            option.textContent = make;
-            makeSelect.appendChild(option);
-        });
-
-        // Populate models based on selected make
-        makeSelect.addEventListener("change", function () {
-            const selectedMake = this.value;
-            const modelSelect = document.getElementById("model");
-            modelSelect.innerHTML = ''; // Clear previous options
-            if (selectedMake) {
-                const models = carModels[selectedMake];
-                models.forEach(model => {
-                    const option = document.createElement("option");
-                    option.value = model;
-                    option.textContent = model;
-                    modelSelect.appendChild(option);
-                });
-            }
-        });
+        // Tire Database (Placeholder)
+        const tires = [
+            { name: "Michelin X-Ice Snow 205/55R16", price: "$100", width: "205", aspectRatio: "55", diameter: "16" },
+            { name: "Toyo GSi-6LS 205/55R16", price: "$120", width: "205", aspectRatio: "55", diameter: "16" }
+        ];
 
         // Function to suggest tire size based on car information
         function suggestTireSize() {
@@ -243,7 +232,7 @@
                 return;
             }
 
-            // Placeholder tire size suggestion logic based on car
+            // Placeholder tire size suggestion logic based on car (you can integrate a real database here)
             let suggestedTire = '';
             if (make === "Toyota" && model === "Corolla") {
                 suggestedTire = "205/55R16";
@@ -251,16 +240,14 @@
                 suggestedTire = "205/55R16";
             } else if (make === "Ford" && model === "F-150") {
                 suggestedTire = "265/70R17";
+            } else if (make === "BMW" && model === "3 Series") {
+                suggestedTire = "225/45R17";
+            } else if (make === "Mercedes" && model === "C-Class") {
+                suggestedTire = "225/50R17";
             }
 
             alert(`Suggested tire size for your ${make} ${model} (${year}): ${suggestedTire}`);
         }
-
-        // Tire Database (Placeholder)
-        const tires = [
-            { name: "Michelin X-Ice Snow 205/55R16", price: "$100", width: "205", aspectRatio: "55", diameter: "16" },
-            { name: "Toyo GSi-6LS 205/55R16", price: "$120", width: "205", aspectRatio: "55", diameter: "16" }
-        ];
 
         // Function to search for tires based on input
         function searchTires() {
