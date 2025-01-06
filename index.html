@@ -12,11 +12,7 @@
             background-color: #f3f3f3;
             color: #333;
             display: flex;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
+            flex-direction: column;
         }
 
         header {
@@ -37,6 +33,57 @@
         nav a {
             color: white;
             font-weight: bold;
+        }
+
+        .language-switcher {
+            position: fixed;
+            right: 10px;
+            top: 10%;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .language-switcher select {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .tire-list-section {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tire-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .tire-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .tire-item h4 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .tire-item p {
+            font-size: 1em;
+            color: #555;
         }
 
         .search-section {
@@ -60,26 +107,6 @@
             background-color: #002855;
             color: white;
             cursor: pointer;
-        }
-
-        .language-switcher {
-            position: fixed;
-            right: 10px;
-            top: 10%;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .language-switcher select {
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -122,6 +149,26 @@
         </div>
     </section>
 
+    <!-- Tire List Section -->
+    <section id="tires" class="tire-list-section">
+        <div class="tire-item">
+            <img src="tire1.jpg" alt="Tire 1">
+            <h4>All-Season Tire</h4>
+            <p>Great for year-round driving, offering a balance of performance and longevity.</p>
+        </div>
+        <div class="tire-item">
+            <img src="tire2.jpg" alt="Tire 2">
+            <h4>Winter Tire</h4>
+            <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
+        </div>
+        <div class="tire-item">
+            <img src="tire3.jpg" alt="Tire 3">
+            <h4>Performance Tire</h4>
+            <p>High-performance tire for sporty vehicles, offering enhanced handling and speed.</p>
+        </div>
+        <!-- Add more tire items here as needed -->
+    </section>
+
     <footer>
         <p>Email: info@treadmtl.com</p>
         <p>Phone: (438)-838-8480</p>
@@ -133,7 +180,6 @@
             const language = document.getElementById("language").value;
 
             if (language === "fr") {
-                // French language
                 document.getElementById("welcome-title").textContent = "Bienvenue chez TreadMTL";
                 document.getElementById("welcome-text").textContent = "Trouvez les pneus parfaits pour votre véhicule.";
                 document.getElementById("search-header").textContent = "Rechercher par informations sur la voiture:";
@@ -143,7 +189,6 @@
                 document.getElementById("contact-link").textContent = "Contact";
                 document.getElementById("tires-link").textContent = "Liste des pneus";
             } else {
-                // English language
                 document.getElementById("welcome-title").textContent = "Welcome to TreadMTL";
                 document.getElementById("welcome-text").textContent = "Find the perfect tires for your vehicle.";
                 document.getElementById("search-header").textContent = "Search by Car Information:";
@@ -155,52 +200,7 @@
             }
         }
 
-        // Fetch and populate car makes
-        fetch("https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes")
-            .then(response => response.json())
-            .then(data => {
-                const makes = data.makes;
-                const makeSelect = document.getElementById("make");
-                makes.forEach(make => {
-                    const option = document.createElement("option");
-                    option.value = make.make_id;
-                    option.textContent = make.make_display;
-                    makeSelect.appendChild(option);
-                });
-            })
-            .catch(error => console.error("Error fetching car makes:", error));
-
-        // Fetch and populate car models based on the selected make
-        document.getElementById("make").addEventListener("change", function () {
-            const makeId = this.value;
-            if (!makeId) return;
-
-            fetch(`https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make=${makeId}`)
-                .then(response => response.json())
-                .then(data => {
-                    const models = data.models;
-                    const modelSelect = document.getElementById("model");
-                    modelSelect.innerHTML = ''; // Clear previous options
-                    models.forEach(model => {
-                        const option = document.createElement("option");
-                        option.value = model.model_id;
-                        option.textContent = model.model_name;
-                        modelSelect.appendChild(option);
-                    });
-                })
-                .catch(error => console.error("Error fetching car models:", error));
-        });
-
-        // Populate the year dropdown with example years
-        const yearSelect = document.getElementById("year");
-        for (let year = 2023; year >= 2000; year--) {
-            const option = document.createElement("option");
-            option.value = year;
-            option.textContent = year;
-            yearSelect.appendChild(option);
-        }
-
-        // Function to search for tires (this is just a placeholder, you should link to your actual tire list)
+        // Function to search for tires (placeholder)
         function searchTires() {
             const width = document.getElementById("width").value;
             const aspect = document.getElementById("aspect").value;
@@ -212,7 +212,6 @@
             }
 
             alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
-            // You can use this data to filter your tire list and display relevant tires
         }
     </script>
 
