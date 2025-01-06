@@ -1,13 +1,13 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
 }
 
+/* Header */
 header {
-    background-color: #1A1A2E; /* Navy Blue */
+    background-color: navy;
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -16,45 +16,40 @@ header {
 }
 
 .logo img {
-    height: 50px;
+    height: 40px;
 }
 
-.lang-toggle button {
-    background-color: #4CAF50;
+.nav-links a {
     color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
+    text-decoration: none;
+    margin: 0 15px;
 }
 
-.lang-toggle button:hover {
-    background-color: #45a049;
+.language-switch a {
+    color: white;
+    text-decoration: none;
 }
 
-.promo {
-    background-color: #999; /* Gray */
-    color: #fff;
-    text-align: center;
+/* Search Section */
+#search {
     padding: 20px;
+    background-color: #f4f4f4;
 }
 
-.tire-search {
-    margin: 20px;
-    text-align: center;
+.search-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-.tire-search input {
-    padding: 10px;
-    width: 300px;
-    margin-top: 10px;
-}
-
+/* Footer */
 footer {
-    background-color: #1A1A2E;
+    background-color: navy;
     color: white;
+    padding: 10px 20px;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+footer .contact-info {
+    margin-bottom: 5px;
 }
