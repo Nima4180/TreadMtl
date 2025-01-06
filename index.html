@@ -29,8 +29,9 @@
             padding: 10px 20px;
         }
 
-        .logo img {
-            width: 150px; /* Adjust as per your logo size */
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
         nav {
@@ -41,6 +42,11 @@
         nav a {
             color: white;
             font-weight: bold;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 10px;
         }
 
         /* Hero Section */
@@ -54,24 +60,6 @@
             color: #002855;
         }
 
-        /* Car Information Section */
-        .car-info {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .car-info select,
-        .car-info button {
-            padding: 10px;
-            font-size: 1em;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        /* Tire Search Section */
         .search-section {
             margin-top: 20px;
             display: flex;
@@ -93,16 +81,6 @@
             background-color: #002855;
             color: white;
             cursor: pointer;
-        }
-
-        .tire-results {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .tire-results p {
-            font-size: 1.2em;
-            font-weight: bold;
         }
 
         /* Footer Styles */
@@ -134,57 +112,47 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
-        </div>
+        <div class="logo">TreadMTL</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="tires.html">Tire List</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#tires">Tire List</a>
         </nav>
+        <div class="language-switcher">
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('fr')">Français</button>
+        </div>
     </header>
 
     <section class="hero" id="home">
         <h1>Welcome to TreadMTL</h1>
         <p>Find the perfect tires for your vehicle.</p>
-        
-        <!-- Car Information Section -->
-        <div class="car-info">
-            <h3>Enter Your Car's Information:</h3>
+        <div class="search-section">
+            <h3>Search by Car Information:</h3>
             <select id="year">
-                <option value="">Select Year</option>
+                <option value="">Year</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
             </select>
             <select id="make">
-                <option value="">Select Make</option>
+                <option value="">Make</option>
                 <option value="Toyota">Toyota</option>
                 <option value="Honda">Honda</option>
                 <option value="Ford">Ford</option>
             </select>
             <select id="model">
-                <option value="">Select Model</option>
+                <option value="">Model</option>
                 <option value="Corolla">Corolla</option>
                 <option value="Civic">Civic</option>
                 <option value="F-150">F-150</option>
             </select>
-            <button onclick="suggestTireSize()">Get Tire Size</button>
-        </div>
-
-        <!-- Tire Search Section -->
-        <div class="search-section">
-            <h3>Search by Tire Dimensions:</h3>
-            <input type="text" id="tireWidth" placeholder="Width (e.g., 205)">
-            <input type="text" id="tireAspectRatio" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" id="tireDiameter" placeholder="Diameter (e.g., 16)">
-            <button onclick="searchTires()">Search Tires</button>
-        </div>
-
-        <!-- Tire Results Section -->
-        <div class="tire-results" id="tireResults">
-            <!-- Results will be displayed here -->
+            <h3>Search by Tire Dimension:</h3>
+            <input type="text" placeholder="Width (e.g., 205)">
+            <input type="text" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" placeholder="Diameter (e.g., 16)">
+            <button>Search Tires</button>
         </div>
     </section>
 
@@ -198,59 +166,13 @@
     </footer>
 
     <script>
-        // Tire Database (Placeholder)
-        const tires = [
-            { name: "Michelin X-Ice Snow 205/55R16", price: "$100", width: "205", aspectRatio: "55", diameter: "16" },
-            { name: "Toyo GSi-6LS 205/55R16", price: "$120", width: "205", aspectRatio: "55", diameter: "16" }
-        ];
-
-        // Function to suggest tire size based on car information
-        function suggestTireSize() {
-            const year = document.getElementById("year").value;
-            const make = document.getElementById("make").value;
-            const model = document.getElementById("model").value;
-
-            if (!year || !make || !model) {
-                alert("Please fill in all car information.");
-                return;
-            }
-
-            // Placeholder tire size suggestion logic based on car (you can integrate a real database here)
-            let suggestedTire = '';
-            if (make === "Toyota" && model === "Corolla") {
-                suggestedTire = "205/55R16";
-            } else if (make === "Honda" && model === "Civic") {
-                suggestedTire = "205/55R16";
-            } else if (make === "Ford" && model === "F-150") {
-                suggestedTire = "265/70R17";
-            }
-
-            alert(`Suggested tire size for your ${make} ${model} (${year}): ${suggestedTire}`);
-        }
-
-        // Function to search for tires based on input
-        function searchTires() {
-            const width = document.getElementById("tireWidth").value.trim();
-            const aspectRatio = document.getElementById("tireAspectRatio").value.trim();
-            const diameter = document.getElementById("tireDiameter").value.trim();
-
-            const resultsContainer = document.getElementById("tireResults");
-            resultsContainer.innerHTML = '';
-
-            const matchedTires = tires.filter(tire => 
-                (tire.width === width || width === '') &&
-                (tire.aspectRatio === aspectRatio || aspectRatio === '') &&
-                (tire.diameter === diameter || diameter === '')
-            );
-
-            if (matchedTires.length > 0) {
-                matchedTires.forEach(tire => {
-                    const tireInfo = document.createElement("p");
-                    tireInfo.textContent = `${tire.name} - ${tire.price}`;
-                    resultsContainer.appendChild(tireInfo);
-                });
-            } else {
-                resultsContainer.innerHTML = '<p>No matching tires found.</p>';
+        function switchLanguage(lang) {
+            if (lang === 'en') {
+                alert('Switched to English');
+                // Add code to dynamically change content to English
+            } else if (lang === 'fr') {
+                alert('Passé au français');
+                // Add code to dynamically change content to French
             }
         }
     </script>
