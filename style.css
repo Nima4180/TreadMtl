@@ -1,110 +1,55 @@
-/* Global Styles */
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Light gray background for the body */
 }
 
-/* Header Styles */
+/* Header */
 header {
-    background-color: #001f3d; /* Navy background */
-    color: white; /* White text */
-    padding: 15px 20px;
+    background-color: navy;
+    color: white;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
+.logo img {
+    height: 40px;
 }
 
-header nav {
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    color: white; /* White text for links */
+.nav-links a {
+    color: white;
     text-decoration: none;
-    font-size: 16px;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Language Switch */
-.language-switch {
-    display: flex;
-    gap: 10px;
+    margin: 0 15px;
 }
 
 .language-switch a {
     color: white;
-    font-size: 16px;
-}
-
-/* Main Search Section */
-.search-section {
-    background-color: #e6e6e6; /* Light gray for contrast */
-    padding: 30px 20px;
-    text-align: center;
-}
-
-.search-section input,
-.search-section select {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #001f3d; /* Navy background */
-    color: white; /* White text */
-    padding: 20px;
-    text-align: center;
-    margin-top: 50px;
-}
-
-footer .contact-info {
-    margin-bottom: 10px;
-}
-
-/* Links in Footer */
-footer a {
-    color: white;
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+/* Search Section */
+#search {
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
-/* General section styles */
-section {
-    padding: 50px 20px;
+.search-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+/* Footer */
+footer {
+    background-color: navy;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
 
-    header nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .search-section {
-        text-align: center;
-    }
+footer .contact-info {
+    margin-bottom: 5px;
 }
