@@ -3,37 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMtl - Tire Shop</title>
+    <title>TreadMtl - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="TreadMtl Logo"> <!-- Replace with your actual logo -->
-        </div>
-        <div class="lang-toggle">
-            <button onclick="toggleLanguage()">English / Français</button>
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="TreadMtl Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#" onclick="showSection('home')">Home</a>
+                <a href="#" onclick="showSection('about')">About</a>
+                <a href="#" onclick="showSection('contact')">Contact</a>
+                <a href="#" onclick="showSection('tires')">Tire List</a>
+            </nav>
+            <div class="language-switch">
+                <a href="#" onclick="switchLanguage('en')">English</a> | 
+                <a href="#" onclick="switchLanguage('fr')">Français</a>
+            </div>
         </div>
     </header>
 
-    <section class="promo">
-        <h1>Welcome to TreadMtl!</h1>
-        <p>Get a 12% discount on any purchase over $500 before tax on 4 tires!</p>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Search Section -->
+        <section id="search">
+            <h1>Find the Right Tires for Your Vehicle</h1>
+            <div class="search-container">
+                <div class="search-car">
+                    <h2>Search by Vehicle</h2>
+                    <form>
+                        <label for="year">Year:</label>
+                        <select id="year">
+                            <option value="">Select Year</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                        </select>
+                        <label for="make">Make:</label>
+                        <select id="make">
+                            <option value="">Select Make</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Ford">Ford</option>
+                        </select>
+                        <label for="model">Model:</label>
+                        <select id="model">
+                            <option value="">Select Model</option>
+                            <option value="Corolla">Corolla</option>
+                            <option value="F150">F150</option>
+                        </select>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="search-dimension">
+                    <h2>Search by Dimension</h2>
+                    <form>
+                        <label for="width">Width:</label>
+                        <input type="text" id="width" placeholder="e.g., 205">
+                        <label for="aspect">Aspect Ratio:</label>
+                        <input type="text" id="aspect" placeholder="e.g., 55">
+                        <label for="rim">Rim Size:</label>
+                        <input type="text" id="rim" placeholder="e.g., 16">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-    <section class="tire-search">
-        <h2>Find Your Tires</h2>
-        <form id="search-form">
-            <label for="car-model">Enter your car model or tire dimensions:</label>
-            <input type="text" id="car-model" placeholder="e.g., 205/55R16 or Honda Civic">
-            <button type="submit">Search</button>
-        </form>
-    </section>
+        <!-- Home Section -->
+        <section id="home" class="content-section">
+            <div class="en">Welcome to TreadMtl, your trusted tire shop!</div>
+            <div class="fr" style="display: none;">Bienvenue chez TreadMtl, votre magasin de pneus de confiance !</div>
+        </section>
 
+        <!-- About Section -->
+        <section id="about" class="content-section" style="display: none;">
+            <div class="en">About Us: We provide the best quality tires and wheels.</div>
+            <div class="fr" style="display: none;">À propos de nous : Nous fournissons les meilleurs pneus et roues de qualité.</div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="content-section" style="display: none;">
+            <div class="en">Contact us: Email us at contact@treadmtl.com or call (438) 838-8480.</div>
+            <div class="fr" style="display: none;">Contactez-nous : Envoyez-nous un e-mail à contact@treadmtl.com ou appelez le (438) 838-8480.</div>
+        </section>
+
+        <!-- Tires Section -->
+        <section id="tires" class="content-section" style="display: none;">
+            <h2>Tire List</h2>
+            <label for="brand-filter">Filter by Brand:</label>
+            <select id="brand-filter" onchange="filterTires()">
+                <option value="all">All</option>
+                <option value="Michelin">Michelin</option>
+                <option value="Goodyear">Goodyear</option>
+            </select>
+            <div id="tire-list">
+                <div class="tire Michelin">Michelin - Tire A</div>
+                <div class="tire Goodyear">Goodyear - Tire B</div>
+                <div class="tire Michelin">Michelin - Tire C</div>
+                <div class="tire Goodyear">Goodyear - Tire D</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 TreadMtl - Located in Laval</p>
+        <div class="footer-container">
+            <div class="contact-info">
+                Contact us at contact@treadmtl.com or call (438) 838-8480
+            </div>
+            <div class="quote">
+                © 2025 TreadMtl - Your Tire Shop. All rights reserved. Shipping within 24-72 business hours.
+            </div>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
