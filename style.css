@@ -32,24 +32,4 @@ header {
 
 /* Search Section */
 #search {
-    padding: 20px;
-    background-color: #f4f4f4;
-}
-
-.search-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
-    background-color: navy;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-footer .contact-info {
-    margin-bottom: 5px;
-}
+    paddi
