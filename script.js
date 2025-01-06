@@ -149,10 +149,10 @@
                 <option value="F-150">F-150</option>
             </select>
             <h3>Search by Tire Dimension:</h3>
-            <input type="text" placeholder="Width (e.g., 205)">
-            <input type="text" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" placeholder="Diameter (e.g., 16)">
-            <button>Search Tires</button>
+            <input type="text" id="width" placeholder="Width (e.g., 205)">
+            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
+            <button onclick="searchTires()">Search Tires</button>
         </div>
     </section>
 
@@ -166,6 +166,7 @@
     </footer>
 
     <script>
+        // Switch language function
         function switchLanguage(lang) {
             if (lang === 'en') {
                 alert('Switched to English');
@@ -173,6 +174,48 @@
             } else if (lang === 'fr') {
                 alert('Passé au français');
                 // Add code to dynamically change content to French
+            }
+        }
+
+        // API call to get tire size based on vehicle make, model, and year
+        function getCarTireSize(make, model, year) {
+            const apiUrl = `https://api.tiredata.com/tire-size?make=${make}&model=${model}&year=${year}`;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.tireSize) {
+                        alert(`Suggested tire size for ${make} ${model} (${year}): ${data.tireSize}`);
+                    } else {
+                        alert("No tire size data available for this vehicle.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching tire size:", error);
+                    alert("There was an error fetching tire data. Please try again.");
+                });
+        }
+
+        // Search tires by vehicle info
+        function searchTires() {
+            const year = document.getElementById("year").value;
+            const make = document.getElementById("make").value;
+            const model = document.getElementById("model").value;
+            const width = document.getElementById("width").value;
+            const aspect = document.getElementById("aspect").value;
+            const diameter = document.getElementById("diameter").value;
+
+            if (!make || !model || !year) {
+                alert("Please fill in the car's make, model, and year.");
+                return;
+            }
+
+            // Fetch tire size from the API based on the car info
+            getCarTireSize(make, model, year);
+
+            // Handle tire search by dimensions (if available)
+            if (width && aspect && diameter) {
+                alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
+                // Implement logic for tire search based on these dimensions
             }
         }
     </script>
