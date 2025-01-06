@@ -1,22 +1,30 @@
-# TreadMtl - Tire Shop Website
+TreadMtl - Your Tire Shop
+Welcome to TreadMtl, your one-stop solution for finding the perfect tires for your vehicle!
 
-Welcome to TreadMtl, your go-to tire shop in Laval, Quebec. We specialize in offering top-quality tires, including models like Toyo Tires Gsi-6 LS, with a competitive range of sizes for every vehicle.
-
-## Features
-- **Tire Search**: Find the perfect tire by car model or tire size.
-- **Featured Tires**: View our best-selling tire models.
-- **Responsive Design**: Seamlessly browse on both desktop and mobile.
-- **Navigation Links**: Easy access to Home, About, and Contact pages, available at the top of the page.
-
-## Files Structure
-- `index.html`: Main HTML structure of the website.
-- `style.css`: Styling for the website layout and design.
-- `script.js`: JavaScript for handling form submissions and future features.
-
-## How to Run the Website
-1. Upload the files to a repository on GitHub.
-2. Enable GitHub Pages in the repository settings to host the website.
-3. The website will be live at `https://yourusername.github.io/TreadMtl`.
-
-## Contact
-For more information or inquiries, contact us at: info@treadmtl.com | Phone: (438)-838-8480
+Website Features
+Header
+Logo: Displayed on the left side of the header.
+Navigation Menu:
+Home
+About
+Contact
+Tire List
+Language Switch: Easily toggle between English and French.
+Home Page
+Search Section:
+Search for tires by vehicle (year, make, model).
+Search for tires by dimension (width, aspect ratio, rim size).
+Footer:
+Contact information (email and phone number).
+Quote: "© 2025 TreadMtl - Your Tire Shop. All rights reserved."
+Shipping timeline: "Shipping within 24-72 business hours."
+Tire List Page
+Filter by Brand:
+View tires by selected brand (e.g., Michelin, Goodyear).
+Display all tires or filter by brand dynamically.
+Multi-language Support
+Switch between English and French for all website content.
+Project Structure
+index.html: Main structure of the website.
+style.css: Styles and layout for the website.
+script.js: JavaScript functionality for search, filtering, and language switching.
