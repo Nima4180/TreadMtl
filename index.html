@@ -156,9 +156,9 @@
         // Function to search for tires based on input
         function searchTires() {
             // Get the input values
-            const width = document.getElementById("tireWidth").value;
-            const aspectRatio = document.getElementById("tireAspectRatio").value;
-            const diameter = document.getElementById("tireDiameter").value;
+            const width = document.getElementById("tireWidth").value.trim();
+            const aspectRatio = document.getElementById("tireAspectRatio").value.trim();
+            const diameter = document.getElementById("tireDiameter").value.trim();
 
             // Clear any previous results
             const resultsContainer = document.getElementById("tireResults");
