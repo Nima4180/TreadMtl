@@ -5,29 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tire List - TreadMTL</title>
     <style>
-        /* You can reuse your styles here or create new ones for this page */
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #002855; /* Navy Blue */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            width: 150px; /* Adjust as per your logo size */
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Tire List Styles */
+        .tire-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .tire-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tire-item h3 {
+            color: #002855;
+        }
+
+        .price {
+            color: green;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #002855;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .contact-info {
+            margin-bottom: 10px;
+        }
+
+        footer .quote {
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
+            <img src="toyo-tires.png" alt="TreadMTL Logo"> <!-- Replace with your actual logo -->
         </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-            <a href="tires.html">Tire List</a> <!-- Same link in the header for navigation -->
+            <a href="tires.html">Tire List</a> <!-- Same link for the tire list page -->
         </nav>
     </header>
 
-    <section>
+    <section class="tire-list">
         <h2>Our Tire List</h2>
+
+        <!-- Tire Item 1 -->
         <div class="tire-item">
             <h3>Michelin X-Ice Snow 205/55R16</h3>
             <p>Winter tire, designed for snow and icy conditions.</p>
             <p class="price">$100 each</p>
         </div>
+
+        <!-- Tire Item 2 -->
         <div class="tire-item">
             <h3>Toyo Tires GSI-6LS 205/55R16</h3>
             <p>All-season tire, known for its durability and performance.</p>
@@ -36,6 +126,11 @@
     </section>
 
     <footer>
+        <div class="contact-info">
+            <p>Email: info@treadmtl.com</p>
+            <p>Phone: (438)-838-8480</p>
+        </div>
+        <p class="quote">Our shipping delay is 24-72 business hours.</p>
         <p>© 2025 TreadMTL - Your Tire Shop. All rights reserved.</p>
     </footer>
 </body>
