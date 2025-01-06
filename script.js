@@ -18,5 +18,5 @@ function showSection(sectionId) {
     });
 }
 
-switchLanguage('en');
-showSection('home');
+function filterTires() {
+    const filter = document.getElementById('brand-fil
