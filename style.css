@@ -18,7 +18,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #001f3f; /* Navy Blue */
+  background-color: #1A1A2E; /* Navy Blue */
   color: white;
 }
 
@@ -90,7 +90,7 @@ header .language-switcher {
 
 .hero button {
   padding: 10px 20px;
-  background-color: #0074D9;
+  background-color: #1A1A2E;
   color: white;
   border: none;
   border-radius: 5px;
@@ -98,7 +98,7 @@ header .language-switcher {
 }
 
 .hero button:hover {
-  background-color: #005BB5;
+  background-color: #1A1A2E;
 }
 
 /* Footer */
