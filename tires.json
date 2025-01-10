@@ -1,29 +1,18 @@
 [
     {
-        "id": 1,
-        "name": "All-Season Tire A1",
-        "size": ["205/55R16", "215/60R17"],
-        "price": 120,
-        "performance": "Good performance for all seasons.",
-        "photo": "all-season-a1.jpg",
-        "compatibleCars": ["Toyota Camry", "Honda Accord"]
-    },
-    {
-        "id": 2,
-        "name": "Winter Tire W1",
-        "size": ["195/65R15", "205/60R16"],
+        "model": "Michelin X-Ice",
+        "size": "205/55R16",
         "price": 150,
-        "performance": "Excellent traction on snow and ice.",
-        "photo": "winter-w1.jpg",
-        "compatibleCars": ["Subaru Outback", "Mazda CX-5"]
+        "performance": "Winter",
+        "photo": "michelin-x-ice.jpg",
+        "compatibleCars": ["Toyota Corolla", "Honda Civic"]
     },
     {
-        "id": 3,
-        "name": "Summer Tire S1",
-        "size": ["225/45R18", "235/40R19"],
-        "price": 140,
-        "performance": "Optimal grip and performance in warm weather.",
-        "photo": "summer-s1.jpg",
-        "compatibleCars": ["BMW 3 Series", "Audi A4"]
+        "model": "Goodyear Assurance",
+        "size": "225/60R17",
+        "price": 120,
+        "performance": "All-Season",
+        "photo": "goodyear-assurance.jpg",
+        "compatibleCars": ["Nissan Rogue", "Ford Escape"]
     }
 ]
