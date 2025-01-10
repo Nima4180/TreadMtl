@@ -1,20 +1,57 @@
-// Toggle between languages (en/fr)
-function toggleLanguage() {
-    var lang = document.getElementById("toggle-lang").textContent;
-    if (lang === "EN") {
-        document.getElementById("toggle-lang").textContent = "FR";
-        // Change text to French (example, you should do this for all pages)
-    } else {
-        document.getElementById("toggle-lang").textContent = "EN";
-        // Change text back to English
+// Language content for EN and FR
+const translations = {
+    en: {
+        "home-title": "TreadMTL",
+        "home-nav-home": "Home",
+        "home-nav-about": "About",
+        "home-nav-contact": "Contact",
+        "home-nav-cart": "Cart",
+        "home-welcome": "Welcome to TreadMTL",
+        "home-description": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
+        "search-tires-title": "Search by Tire Dimension",
+        "search-tires-width": "Width (e.g., 205)",
+        "search-tires-aspect": "Aspect Ratio (e.g., 55)",
+        "search-tires-diameter": "Diameter (e.g., 16)",
+        "search-tires-button": "Search Tires",
+        "footer-contact": "Contact Us",
+        "footer-email": "Email: info@treadmtl.com",
+        "footer-phone": "Phone: (438)-838-8480",
+        "footer-address": "Address: Laval, QC, Canada",
+        "footer-quote": "\"Quality tires, quality service - for every journey.\""
+    },
+    fr: {
+        "home-title": "TreadMTL",
+        "home-nav-home": "Accueil",
+        "home-nav-about": "À propos",
+        "home-nav-contact": "Contact",
+        "home-nav-cart": "Panier",
+        "home-welcome": "Bienvenue chez TreadMTL",
+        "home-description": "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide!",
+        "search-tires-title": "Rechercher par dimension de pneu",
+        "search-tires-width": "Largeur (ex. : 205)",
+        "search-tires-aspect": "Rapport d'aspect (ex. : 55)",
+        "search-tires-diameter": "Diamètre (ex. : 16)",
+        "search-tires-button": "Rechercher des pneus",
+        "footer-contact": "Contactez-nous",
+        "footer-email": "Email : info@treadmtl.com",
+        "footer-phone": "Téléphone : (438)-838-8480",
+        "footer-address": "Adresse : Laval, QC, Canada",
+        "footer-quote": "\"Pneus de qualité, service de qualité - pour chaque voyage.\""
     }
+};
+
+let currentLanguage = 'en';  // Default language is English
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
+    document.getElementById("toggle-lang").textContent = currentLanguage === 'en' ? 'FR' : 'EN';
+    updateContentLanguage();
 }
 
-// Example search function (redirect to a result page)
-function searchTires() {
-    var width = document.getElementById("width").value;
-    var aspect = document.getElementById("aspect").value;
-    var diameter = document.getElementById("diameter").value;
-    // Redirect to a page with the tire search results
-    window.location.href = "search-results.html?width=" + width + "&aspect=" + aspect + "&diameter=" + diameter;
+function updateContentLanguage() {
+    const elements = document.querySelectorAll("[data-lang]");
+    elements.forEach(element => {
+        const langKey = element.getAttribute("data-lang");
+        element.textContent = translations[currentLanguage][langKey] || element.textContent;
+    });
 }
