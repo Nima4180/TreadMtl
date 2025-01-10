@@ -6,18 +6,19 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
     background-color: #333;
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 header .logo {
@@ -25,6 +26,7 @@ header .logo {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 header .logo img {
@@ -48,39 +50,41 @@ header nav a:hover {
 }
 
 button#lang-toggle {
-    background-color: #333;
+    background-color: #ff6347;
     color: white;
-    padding: 5px 15px;
+    padding: 8px 20px;
     border: none;
     cursor: pointer;
     margin-left: 20px;
 }
 
 button#lang-toggle:hover {
-    background-color: #ff6347;
+    background-color: #ff4500;
 }
 
 /* Main Section */
 main {
     max-width: 1200px;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 20px;
+    text-align: center;
 }
 
 /* Home Section */
 #home {
-    text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
 }
 
 #home h1 {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 #home p {
     font-size: 18px;
     margin-bottom: 30px;
+    color: #666;
 }
 
 .search-section {
@@ -91,21 +95,22 @@ main {
 }
 
 .search-section input {
-    padding: 10px;
-    width: 200px;
+    padding: 12px;
+    width: 250px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .search-section button {
     background-color: #ff6347;
     color: white;
-    padding: 10px 30px;
+    padding: 12px 40px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .search-section button:hover {
@@ -114,24 +119,25 @@ main {
 
 /* Tire List Section (for results.html) */
 #search-results {
-    text-align: center;
     padding: 40px 0;
 }
 
 #search-results h1 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 #search-results p {
     font-size: 18px;
     margin-bottom: 30px;
+    color: #666;
 }
 
 #results {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px;
     padding: 20px;
 }
 
@@ -139,19 +145,26 @@ main {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tire-item:hover {
+    transform: translateY(-10px);
 }
 
 .tire-item img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .tire-item h4 {
-    font-size: 20px;
-    margin: 10px 0;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 .tire-item p {
@@ -189,15 +202,17 @@ footer p#footer-quote {
     header nav {
         display: flex;
         flex-direction: column;
-    }
-
-    .search-section {
-        gap: 10px;
+        margin-top: 15px;
     }
 
     .search-section input {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
+    }
+
+    .search-section button {
+        width: 100%;
+        max-width: 320px;
     }
 
     #results {
