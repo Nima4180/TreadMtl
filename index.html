@@ -5,29 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
-    <link rel="stylesheet" href="style.css"> <!-- Base Styles -->
-    <script>
-        function toggleLanguage(language) {
-            const englishContent = {
-                "homeTitle": "Welcome to TreadMTL",
-                "homeDesc": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
-                "aboutLink": "About Us",
-                "cart": "Cart"
-            };
-
-            const frenchContent = {
-                "homeTitle": "Bienvenue chez TreadMTL",
-                "homeDesc": "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide!",
-                "aboutLink": "À propos de nous",
-                "cart": "Panier"
-            };
-
-            document.getElementById("homeTitle").innerText = language === 'fr' ? frenchContent.homeTitle : englishContent.homeTitle;
-            document.getElementById("homeDesc").innerText = language === 'fr' ? frenchContent.homeDesc : englishContent.homeDesc;
-            document.getElementById("aboutLink").innerText = language === 'fr' ? frenchContent.aboutLink : englishContent.aboutLink;
-            document.getElementById("cartLink").innerText = language === 'fr' ? frenchContent.cart : englishContent.cart;
-        }
-    </script>
+    <link rel="stylesheet" href="style.css"> <!-- Linking to the style.css file -->
 </head>
 
 <body>
@@ -38,23 +16,15 @@
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html" id="aboutLink">About</a>
-            <a href="#contact">Contact</a>
-            <a href="#quote">Request a Quote</a>
-            <button onclick="toggleLanguage('en')">English</button>
-            <button onclick="toggleLanguage('fr')">Français</button>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
             <a href="cart.html" id="cartLink">Cart (0)</a>
         </nav>
     </header>
 
-    <!-- Cart Section on Right Side -->
-    <div id="cartSection">
-        <button id="cartLink" onclick="window.location.href='cart.html'">Cart (0)</button>
-    </div>
-
     <section id="home">
-        <h1 id="homeTitle">Welcome to TreadMTL</h1>
-        <p id="homeDesc">Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
+        <h1>Welcome to TreadMTL</h1>
+        <p>Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
 
         <div class="search-section">
             <h3>Search by Tire Dimension:</h3>
@@ -63,16 +33,21 @@
             <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
             <button onclick="searchTires()">Search Tires</button>
         </div>
-    </section>
 
-    <section id="quote" class="quote-section">
-        <h3>Request a Quote</h3>
-        <p>If you are looking for a specific tire size, fill out the form below, and we will get back to you with the best price!</p>
-        <form action="/submit-quote" method="POST">
-            <label for="tireSize">Tire Size:</label>
-            <input type="text" id="tireSize" name="tireSize" placeholder="Enter tire dimensions (e.g., 205/55R16)">
-            <button type="submit">Request Quote</button>
-        </form>
+        <div class="tire-models">
+            <div class="tire-model">
+                <h4>All-Season Tire</h4>
+                <p>Great for year-round driving, offering a balance of performance and longevity.</p>
+            </div>
+            <div class="tire-model">
+                <h4>Winter Tire</h4>
+                <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
+            </div>
+            <div class="tire-model">
+                <h4>Summer Tire</h4>
+                <p>Optimized for dry conditions, providing excellent handling and performance in warmer weather.</p>
+            </div>
+        </div>
     </section>
 
     <footer>
