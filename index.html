@@ -5,46 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Base Styles -->
     <script>
-        // JavaScript function to toggle the language
         function toggleLanguage(language) {
-            // English content
             const englishContent = {
                 "homeTitle": "Welcome to TreadMTL",
                 "homeDesc": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
-                "searchTitle": "Search by Tire Dimension:",
-                "searchBtn": "Search Tires",
-                "contactTitle": "Contact Us",
-                "email": "Email: info@treadmtl.com",
-                "phone": "Phone: (438)-838-8480",
-                "address": "Address: Laval, QC, Canada",
-                "footerQuote": "\"Quality tires, quality service - for every journey.\""
+                "aboutLink": "About Us"
             };
 
-            // French content
             const frenchContent = {
-                "homeTitle": "Bienvenue à TreadMTL",
-                "homeDesc": "Trouvez les pneus parfaits pour votre véhicule avec la livraison gratuite et rapide !",
-                "searchTitle": "Recherche par dimension de pneu :",
-                "searchBtn": "Chercher des pneus",
-                "contactTitle": "Contactez-nous",
-                "email": "Email : info@treadmtl.com",
-                "phone": "Téléphone : (438)-838-8480",
-                "address": "Adresse : Laval, QC, Canada",
-                "footerQuote": "\"Pneus de qualité, service de qualité - pour chaque voyage.\""
+                "homeTitle": "Bienvenue chez TreadMTL",
+                "homeDesc": "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide!",
+                "aboutLink": "À propos de nous"
             };
 
-            // Select the elements to change
             document.getElementById("homeTitle").innerText = language === 'fr' ? frenchContent.homeTitle : englishContent.homeTitle;
             document.getElementById("homeDesc").innerText = language === 'fr' ? frenchContent.homeDesc : englishContent.homeDesc;
-            document.getElementById("searchTitle").innerText = language === 'fr' ? frenchContent.searchTitle : englishContent.searchTitle;
-            document.getElementById("searchBtn").innerText = language === 'fr' ? frenchContent.searchBtn : englishContent.searchBtn;
-            document.getElementById("contactTitle").innerText = language === 'fr' ? frenchContent.contactTitle : englishContent.contactTitle;
-            document.getElementById("email").innerText = language === 'fr' ? frenchContent.email : englishContent.email;
-            document.getElementById("phone").innerText = language === 'fr' ? frenchContent.phone : englishContent.phone;
-            document.getElementById("address").innerText = language === 'fr' ? frenchContent.address : englishContent.address;
-            document.getElementById("footerQuote").innerText = language === 'fr' ? frenchContent.footerQuote : englishContent.footerQuote;
+            document.getElementById("aboutLink").innerText = language === 'fr' ? frenchContent.aboutLink : englishContent.aboutLink;
         }
     </script>
 </head>
@@ -57,58 +35,45 @@
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="#tires">Tire List</a>
-            <!-- Language Toggle Button -->
+            <a href="about.html" id="aboutLink">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#quote">Request a Quote</a>
             <button onclick="toggleLanguage('en')">English</button>
             <button onclick="toggleLanguage('fr')">Français</button>
         </nav>
     </header>
 
-    <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1 id="homeTitle">Welcome to TreadMTL</h1>
-            <p id="homeDesc">Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
+    <section id="home">
+        <h1 id="homeTitle">Welcome to TreadMTL</h1>
+        <p id="homeDesc">Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
 
-            <div class="search-section">
-                <h3 id="searchTitle">Search by Tire Dimension:</h3>
-                <input type="text" id="width" placeholder="Width (e.g., 205)">
-                <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
-                <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-                <button id="searchBtn" onclick="searchTires()">Search Tires</button>
-            </div>
-        </section>
+        <div class="search-section">
+            <h3>Search by Tire Dimension:</h3>
+            <input type="text" id="width" placeholder="Width (e.g., 205)">
+            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
+            <button onclick="searchTires()">Search Tires</button>
+        </div>
+    </section>
 
-        <!-- Tires Section (Not visible on home page, can be added in the search results page) -->
-        <section id="tires" class="tire-list-section" style="display:none;">
-            <div class="tire-item">
-                <img src="tire1.jpg" alt="Tire 1">
-                <h4>All-Season Tire</h4>
-                <p>Great for year-round driving, offering a balance of performance and longevity.</p>
-            </div>
-            <div class="tire-item">
-                <img src="tire2.jpg" alt="Tire 2">
-                <h4>Winter Tire</h4>
-                <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
-            </div>
-            <div class="tire-item">
-                <img src="tire3.jpg" alt="Tire 3">
-                <h4>Performance Tire</h4>
-                <p>High-performance tire for sporty vehicles, offering enhanced handling and speed.</p>
-            </div>
-        </section>
-    </main>
+    <section id="quote" class="quote-section">
+        <h3>Request a Quote</h3>
+        <p>If you are looking for a specific tire size, fill out the form below, and we will get back to you with the best price!</p>
+        <form action="/submit-quote" method="POST">
+            <label for="tireSize">Tire Size:</label>
+            <input type="text" id="tireSize" name="tireSize" placeholder="Enter tire dimensions (e.g., 205/55R16)">
+            <button type="submit">Request Quote</button>
+        </form>
+    </section>
 
     <footer>
         <section id="contact">
-            <h3 id="contactTitle">Contact Us</h3>
-            <p id="email">Email: info@treadmtl.com</p>
-            <p id="phone">Phone: (438)-838-8480</p>
-            <p id="address">Address: Laval, QC, Canada</p>
+            <h3>Contact Us</h3>
+            <p>Email: info@treadmtl.com</p>
+            <p>Phone: (438)-838-8480</p>
+            <p>Address: Laval, QC, Canada</p>
         </section>
-        <p id="footerQuote">"Quality tires, quality service - for every journey."</p>
+        <p>"Quality tires, quality service - for every journey."</p>
     </footer>
 
     <script src="script.js"></script>
