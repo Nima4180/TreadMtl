@@ -3,26 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMTL - Your Tire Shop</title>
+    <title>TreadMTL - Tires</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Function to change content language dynamically
-        function changeLanguage(language) {
-            const enContent = document.getElementById("en-content");
-            const frContent = document.getElementById("fr-content");
-
-            if (language === 'fr') {
-                enContent.style.display = "none";
-                frContent.style.display = "block";
-            } else {
-                enContent.style.display = "block";
-                frContent.style.display = "none";
-            }
-        }
-    </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header with logo and language switcher -->
     <header>
         <div class="logo">
             <img src="toyo-ties.png" alt="TreadMTL Logo">
@@ -33,70 +18,39 @@
             <a href="contact.html">Contact</a>
             <a href="blog.html">Blog</a>
             <a href="policy.html">Policy</a>
-            <a href="cart.html">Cart (0)</a> <!-- Placeholder for Cart -->
+            <a href="cart.html">Cart (0)</a>
         </nav>
-        <div class="language-toggle">
-            <button onclick="changeLanguage('en')">English</button>
-            <button onclick="changeLanguage('fr')">Français</button>
+        <div class="language-switcher">
+            <a href="#" id="switch-language" onclick="switchLanguage()">EN / FR</a>
         </div>
     </header>
 
-    <!-- Main section with welcome message -->
-    <section id="home">
-        <div class="hero" id="en-content">
-            <h1>Welcome to TreadMTL</h1>
-            <p>Your one-stop shop for quality tires in Montreal. Find your perfect tire with free shipping and fast delivery.</p>
-            <form action="searchResults.html" method="GET">
-                <label for="tireSize">Enter your tire size:</label>
-                <input type="text" id="tireSize" name="tireSize" placeholder="e.g., 215/65R16">
-                <button type="submit">Search</button>
-            </form>
+    <section class="search-section">
+        <h1>Find Your Perfect Tires</h1>
+        <input type="text" id="tire-size-search" placeholder="Enter tire size (e.g., 215/65R16)">
+        <button onclick="searchTires()">Search</button>
+    </section>
+
+    <section class="tire-types">
+        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=all-season'">
+            <img src="all-season.jpg" alt="All-Season Tire">
+            <h2>All-Season Tires</h2>
+            <button>Learn More</button>
         </div>
-        
-        <div class="hero" id="fr-content" style="display: none;">
-            <h1>Bienvenue chez TreadMTL</h1>
-            <p>Votre magasin unique pour des pneus de qualité à Montréal. Trouvez le pneu parfait avec une livraison gratuite et rapide.</p>
-            <form action="searchResults.html" method="GET">
-                <label for="tireSize">Entrez la taille de votre pneu :</label>
-                <input type="text" id="tireSize" name="tireSize" placeholder="ex: 215/65R16">
-                <button type="submit">Chercher</button>
-            </form>
+        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=winter'">
+            <img src="winter.jpg" alt="Winter Tire">
+            <h2>Winter Tires</h2>
+            <button>Learn More</button>
+        </div>
+        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=summer'">
+            <img src="summer.jpg" alt="Summer Tire">
+            <h2>Summer Tires</h2>
+            <button>Learn More</button>
         </div>
     </section>
 
-    <!-- Featured tires section with images and descriptions -->
-    <section id="featured-tires">
-        <h2>Featured Tires</h2>
-        <div class="tire-options">
-            <div class="tire-card">
-                <img src="tire1.jpg" alt="All-Season Tire">
-                <h3>All-Season Tires</h3>
-                <p>Perfect for year-round driving. Reliable and affordable.</p>
-                <a href="tireDetails.html?type=all-season">Learn More</a>
-            </div>
-            <div class="tire-card">
-                <img src="tire2.jpg" alt="Winter Tire">
-                <h3>Winter Tires</h3>
-                <p>Keep safe during the cold months with our winter-approved tires.</p>
-                <a href="tireDetails.html?type=winter">Learn More</a>
-            </div>
-            <div class="tire-card">
-                <img src="tire3.jpg" alt="Summer Tire">
-                <h3>Summer Tires</h3>
-                <p>Maximize performance and handling during the warm months.</p>
-                <a href="tireDetails.html?type=summer">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
-        <div class="social-media">
-            <a href="https://facebook.com/TreadMTL">Facebook</a> |
-            <a href="https://twitter.com/TreadMTL">Twitter</a> |
-            <a href="https://instagram.com/TreadMTL">Instagram</a>
-        </div>
     </footer>
 </body>
 </html>
