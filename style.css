@@ -1,162 +1,206 @@
-/* General Layout */
-body {
-    font-family: 'Arial', sans-serif;
+/* Reset some basic elements */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-/* Header Styling */
+/* Header */
 header {
-    background-color: #00897b;
+    background-color: #333;
     color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo img {
-    width: 50px;
-    height: auto;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-}
-
-header nav a, header nav button {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 10px 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-header nav a:hover, header nav button:hover {
-    background-color: #004d40;
-    border-radius: 5px;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(to right, #004d40, #00897b);
-    color: white;
-    padding: 60px 20px;
+    padding: 10px 0;
     text-align: center;
 }
 
-.hero-content h1 {
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: #ff6347;
+}
+
+button#lang-toggle {
+    background-color: #333;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+button#lang-toggle:hover {
+    background-color: #ff6347;
+}
+
+/* Main Section */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    padding: 40px 0;
+}
+
+#home h1 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.hero-content p {
+#home p {
     font-size: 18px;
-}
-
-/* Search Section */
-.search-section {
-    padding: 50px 20px;
-    background-color: white;
-    text-align: center;
-    margin-top: -30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-container h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.search-inputs input {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-inputs button {
-    background-color: #00897b;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.search-inputs button:hover {
-    background-color: #004d40;
-}
-
-/* Featured Tires Section */
-.featured-tires {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.featured-tires h2 {
-    font-size: 32px;
     margin-bottom: 30px;
 }
 
-.tire-card {
-    display: inline-block;
-    width: 30%;
-    padding: 20px;
-    background-color: white;
-    margin: 0 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-section input {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-section button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-section button:hover {
+    background-color: #ff4500;
+}
+
+/* Tire List Section (for results.html) */
+#search-results {
     text-align: center;
-    border-radius: 8px;
+    padding: 40px 0;
 }
 
-.tire-card img {
+#search-results h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#search-results p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.tire-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.tire-item img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
 }
 
-.tire-card h3 {
-    font-size: 24px;
-    margin-top: 10px;
+.tire-item h4 {
+    font-size: 20px;
+    margin: 10px 0;
 }
 
-.tire-card p {
+.tire-item p {
     font-size: 16px;
     color: #666;
 }
 
-/* Cart Section */
-#cartPreview {
-    background-color: #00897b;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Footer Styling */
+/* Contact Section */
 footer {
-    background-color: #00897b;
+    background-color: #333;
     color: white;
-    padding: 30px 20px;
+    padding: 30px 0;
     text-align: center;
 }
 
 footer h3 {
-    font-size: 24px;
     margin-bottom: 10px;
 }
 
 footer p {
     font-size: 16px;
+}
+
+footer p#footer-quote {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .logo {
+        flex-direction: column;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .search-section {
+        gap: 10px;
+    }
+
+    .search-section input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    #results {
+        grid-template-columns: 1fr;
+    }
 }
