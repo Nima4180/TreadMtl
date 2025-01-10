@@ -3,24 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results</title>
+    <title>Search Results - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <h1>TreadMTL</h1>
+            <img src="toyo-ties.png" alt="TreadMTL Logo">
         </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="policy.html">Policy</a>
+            <a href="cart.html">Cart (0)</a>
+        </nav>
     </header>
-    <main>
-        <h2>Search Results</h2>
-        <div id="results-container">
-            <!-- Results dynamically loaded -->
-        </div>
-    </main>
+
+    <section id="search-results">
+        <h1>Search Results for Tire Size: <span id="tire-size"></span></h1>
+        <div id="tire-list"></div>
+    </section>
+
     <footer>
-        <p>© 2025 TreadMTL. All rights reserved.</p>
+        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const tireSize = urlParams.get('tireSize');
+        document.getElementById('tire-size').textContent = tireSize;
+
+        const tires = [
+            { size: "215/65R16", type: "All-Season", price: "$99.99", image: "tire1.jpg" },
+            { size: "205/55R16", type: "Winter", price: "$129.99", image: "tire2.jpg" },
+            { size: "225/45R17", type: "Summer", price: "$139.99", image: "tire3.jpg" },
+        ];
+
+        const tireList = document.getElementById('tire-list');
+        tires.forEach(tire => {
+            if (tire.size === tireSize) {
+                const tireItem = document.createElement('div');
+                tireItem.classList.add('tire-item');
+                tireItem.innerHTML = `
+                    <img src="${tire.image}" alt="${tire.type} Tire">
+                    <h3>${tire.type} Tire</h3>
+                    <p>Size: ${tire.size}</p>
+                    <p>Price: ${tire.price}</p>
+                    <button>Add to Cart</button>
+                `;
+                tireList.appendChild(tireItem);
+            }
+        });
+    </script>
 </body>
 </html>
