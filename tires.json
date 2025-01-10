@@ -1,29 +1,29 @@
 [
     {
         "id": 1,
-        "name": "All-Season Tire",
-        "size": "205/55R16",
-        "image": "tire1.jpg",
+        "name": "All-Season Tire A1",
+        "size": ["205/55R16", "215/60R17"],
         "price": 120,
-        "compatibleCars": ["Toyota Corolla", "Honda Civic", "Ford Focus"],
-        "performance": "Great for year-round driving, offering a balance of performance and longevity."
+        "performance": "Good performance for all seasons.",
+        "photo": "all-season-a1.jpg",
+        "compatibleCars": ["Toyota Camry", "Honda Accord"]
     },
     {
         "id": 2,
-        "name": "Winter Tire",
-        "size": "215/60R16",
-        "image": "tire2.jpg",
+        "name": "Winter Tire W1",
+        "size": ["195/65R15", "205/60R16"],
         "price": 150,
-        "compatibleCars": ["BMW 3 Series", "Audi A4", "Mercedes-Benz C-Class"],
-        "performance": "Designed for cold, icy conditions, providing maximum grip during the winter months."
+        "performance": "Excellent traction on snow and ice.",
+        "photo": "winter-w1.jpg",
+        "compatibleCars": ["Subaru Outback", "Mazda CX-5"]
     },
     {
         "id": 3,
-        "name": "Summer Tire",
-        "size": "225/50R17",
-        "image": "tire3.jpg",
-        "price": 180,
-        "compatibleCars": ["Nissan Altima", "Honda Accord", "Hyundai Sonata"],
-        "performance": "High-performance tire for sporty vehicles, offering enhanced handling and speed."
+        "name": "Summer Tire S1",
+        "size": ["225/45R18", "235/40R19"],
+        "price": 140,
+        "performance": "Optimal grip and performance in warm weather.",
+        "photo": "summer-s1.jpg",
+        "compatibleCars": ["BMW 3 Series", "Audi A4"]
     }
 ]
