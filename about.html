@@ -1,116 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - TreadMTL</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f3f3f3;
-            color: #333;
-        }
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleLanguage(language) {
+            const englishContent = {
+                "aboutTitle": "About Us",
+                "aboutDesc": "TreadMTL is your go-to online tire shop, offering high-quality tires with fast delivery and excellent customer service. We are committed to providing the best products at competitive prices, ensuring your vehicle is ready for any journey."
+            };
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+            const frenchContent = {
+                "aboutTitle": "À propos de nous",
+                "aboutDesc": "TreadMTL est votre boutique de pneus en ligne de confiance, offrant des pneus de haute qualité avec une livraison rapide et un excellent service client. Nous nous engageons à fournir les meilleurs produits à des prix compétitifs, en veillant à ce que votre véhicule soit prêt pour tous vos trajets."
+            };
 
-        /* Header Styles */
-        header {
-            background-color: #002855; /* Navy Blue */
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
+            document.getElementById("aboutTitle").innerText = language === 'fr' ? frenchContent.aboutTitle : englishContent.aboutTitle;
+            document.getElementById("aboutDesc").innerText = language === 'fr' ? frenchContent.aboutDesc : englishContent.aboutDesc;
         }
-
-        .logo img {
-            width: 150px; /* Adjust as per your logo size */
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: white;
-            font-weight: bold;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .about-section h2 {
-            color: #002855;
-        }
-
-        .about-section p {
-            margin: 20px 0;
-            font-size: 1.2em;
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #002855;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer .contact-info {
-            margin-bottom: 10px;
-        }
-
-        footer .quote {
-            margin-top: 10px;
-            font-style: italic;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-        }
-    </style>
+    </script>
 </head>
+
 <body>
     <header>
         <div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
+            <img src="toyo-tires.png" alt="Toyo Tires Logo">
+            <h1>TreadMTL</h1>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="tires.html">Tire List</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
+            <a href="#tires">Tire List</a>
+            <!-- Language Toggle Button -->
+            <button onclick="toggleLanguage('en')">English</button>
+            <button onclick="toggleLanguage('fr')">Français</button>
         </nav>
     </header>
 
-    <section class="about-section">
-        <h2>About TreadMTL</h2>
-        <p>We are a leading tire supplier committed to providing the best tires for your vehicle, no matter the season or driving condition. Our goal is to offer quality, affordable tires with exceptional customer service.</p>
-        <p>Whether you need tires for your car, truck, or SUV, we offer a variety of options to suit your needs. We partner with top tire brands to ensure high-quality products for every customer.</p>
-    </section>
+    <main>
+        <section id="about">
+            <h1 id="aboutTitle">About Us</h1>
+            <p id="aboutDesc">TreadMTL is your go-to online tire shop, offering high-quality tires with fast delivery and excellent customer service. We are committed to providing the best products at competitive prices, ensuring your vehicle is ready for any journey.</p>
+        </section>
+    </main>
 
     <footer>
-        <div class="contact-info">
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-        </div>
-        <p class="quote">Our shipping delay is 24-72 business hours.</p>
-        <p>© 2025 TreadMTL - Your Tire Shop. All rights reserved.</p>
+        <section id="contact">
+            <h3 id="contactTitle">Contact Us</h3>
+            <p id="email">Email: info@treadmtl.com</p>
+            <p id="phone">Phone: (438)-838-8480</p>
+            <p id="address">Address: Laval, QC, Canada</p>
+        </section>
+        <p id="footerQuote">"Quality tires, quality service - for every journey."</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
