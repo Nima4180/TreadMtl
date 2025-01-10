@@ -6,6 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript function to toggle the language
+        function toggleLanguage(language) {
+            // English content
+            const englishContent = {
+                "homeTitle": "Welcome to TreadMTL",
+                "homeDesc": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
+                "searchTitle": "Search by Tire Dimension:",
+                "searchBtn": "Search Tires",
+                "contactTitle": "Contact Us",
+                "email": "Email: info@treadmtl.com",
+                "phone": "Phone: (438)-838-8480",
+                "address": "Address: Laval, QC, Canada",
+                "footerQuote": "\"Quality tires, quality service - for every journey.\""
+            };
+
+            // French content
+            const frenchContent = {
+                "homeTitle": "Bienvenue à TreadMTL",
+                "homeDesc": "Trouvez les pneus parfaits pour votre véhicule avec la livraison gratuite et rapide !",
+                "searchTitle": "Recherche par dimension de pneu :",
+                "searchBtn": "Chercher des pneus",
+                "contactTitle": "Contactez-nous",
+                "email": "Email : info@treadmtl.com",
+                "phone": "Téléphone : (438)-838-8480",
+                "address": "Adresse : Laval, QC, Canada",
+                "footerQuote": "\"Pneus de qualité, service de qualité - pour chaque voyage.\""
+            };
+
+            // Select the elements to change
+            document.getElementById("homeTitle").innerText = language === 'fr' ? frenchContent.homeTitle : englishContent.homeTitle;
+            document.getElementById("homeDesc").innerText = language === 'fr' ? frenchContent.homeDesc : englishContent.homeDesc;
+            document.getElementById("searchTitle").innerText = language === 'fr' ? frenchContent.searchTitle : englishContent.searchTitle;
+            document.getElementById("searchBtn").innerText = language === 'fr' ? frenchContent.searchBtn : englishContent.searchBtn;
+            document.getElementById("contactTitle").innerText = language === 'fr' ? frenchContent.contactTitle : englishContent.contactTitle;
+            document.getElementById("email").innerText = language === 'fr' ? frenchContent.email : englishContent.email;
+            document.getElementById("phone").innerText = language === 'fr' ? frenchContent.phone : englishContent.phone;
+            document.getElementById("address").innerText = language === 'fr' ? frenchContent.address : englishContent.address;
+            document.getElementById("footerQuote").innerText = language === 'fr' ? frenchContent.footerQuote : englishContent.footerQuote;
+        }
+    </script>
 </head>
 
 <body>
@@ -17,23 +58,26 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a> <!-- Link to the contact page -->
+            <a href="contact.html">Contact</a>
             <a href="#tires">Tire List</a>
+            <!-- Language Toggle Button -->
+            <button onclick="toggleLanguage('en')">English</button>
+            <button onclick="toggleLanguage('fr')">Français</button>
         </nav>
     </header>
 
     <main>
         <!-- Home Section -->
         <section id="home">
-            <h1>Welcome to TreadMTL</h1>
-            <p>Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
+            <h1 id="homeTitle">Welcome to TreadMTL</h1>
+            <p id="homeDesc">Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
 
             <div class="search-section">
-                <h3>Search by Tire Dimension:</h3>
+                <h3 id="searchTitle">Search by Tire Dimension:</h3>
                 <input type="text" id="width" placeholder="Width (e.g., 205)">
                 <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
                 <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-                <button onclick="searchTires()">Search Tires</button>
+                <button id="searchBtn" onclick="searchTires()">Search Tires</button>
             </div>
         </section>
 
@@ -59,12 +103,12 @@
 
     <footer>
         <section id="contact">
-            <h3>Contact Us</h3>
-            <p>Email: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a></p>
-            <p>Phone: (438)-838-8480</p>
-            <p>Address: Laval, QC, Canada</p>
+            <h3 id="contactTitle">Contact Us</h3>
+            <p id="email">Email: info@treadmtl.com</p>
+            <p id="phone">Phone: (438)-838-8480</p>
+            <p id="address">Address: Laval, QC, Canada</p>
         </section>
-        <p>"Quality tires, quality service - for every journey."</p>
+        <p id="footerQuote">"Quality tires, quality service - for every journey."</p>
     </footer>
 
     <script src="script.js"></script>
