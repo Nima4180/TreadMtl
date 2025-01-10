@@ -1,78 +1,185 @@
-body {
-    font-family: Arial, sans-serif;
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header Section */
 header {
-    background: #333;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.header-top {
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+.logo-container {
     display: flex;
     align-items: center;
 }
 
-.logo img {
+.logo {
     height: 50px;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
+.language-cart {
+    display: flex;
+    align-items: center;
+}
+
+.language-cart button,
+.language-cart .cart-link {
+    margin-left: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.language-cart button:hover,
+.language-cart .cart-link:hover {
+    background-color: #0056b3;
+}
+
+/* Navigation Bar */
 nav {
+    background-color: #444;
+    padding: 15px;
     display: flex;
     justify-content: center;
-    background: #444;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
     padding: 10px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    padding: 5px 10px;
-}
-
-nav a.active {
-    background: #007bff;
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #007bff;
     border-radius: 5px;
 }
 
+/* Main Content */
 main {
-    padding: 20px;
+    padding: 80px 20px 20px;
 }
 
 #search {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
-.blogs-container {
+#search h2 {
+    margin-bottom: 20px;
+}
+
+#search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    width: 250px;
+    font-size: 16px;
+}
+
+#search button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#search button:hover {
+    background-color: #0056b3;
+}
+
+/* Tire Blog Section */
+#tire-blogs {
+    text-align: center;
+    margin: 50px 0;
+}
+
+#tire-blogs .blogs-container {
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    gap: 20px;
 }
 
 .blog-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 30%;
-    text-align: center;
+    background-color: white;
+    padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
 }
 
-footer {
-    background: #333;
+.blog-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.blog-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.blog-card a {
+    text-decoration: none;
+    background-color: #007bff;
     color: white;
-    text-align: center;
     padding: 10px;
-    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.blog-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
