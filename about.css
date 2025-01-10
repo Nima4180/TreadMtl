@@ -1,0 +1,43 @@
+/* about.css */
+body {
+    background-color: #f0f0f0; /* Light gray background for About page */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333; /* Dark background for header */
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+#about {
+    background-color: #fff; /* White background for the main content */
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#aboutTitle {
+    color: #1f1f1f;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#aboutDesc {
+    color: #555;
+    font-size: 1.2em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
