@@ -1,221 +1,108 @@
-/* Reset some basic elements */
-* {
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
 }
 
-/* Header */
 header {
     background-color: #333;
     color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-header .logo {
+    padding: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
 header .logo img {
-    height: 50px;
+    height: 40px;
+    margin-right: 10px;
 }
 
-header nav {
-    margin-top: 10px;
-}
-
-header nav a {
+nav a {
     color: white;
-    margin: 0 15px;
+    margin-right: 15px;
     text-decoration: none;
-    font-size: 18px;
-    text-transform: uppercase;
+    font-size: 16px;
 }
 
-header nav a:hover {
-    color: #ff6347;
+nav a:hover, .active {
+    color: #ffcc00;
 }
 
-button#lang-toggle {
-    background-color: #ff6347;
+.language-toggle button {
+    background-color: transparent;
     color: white;
-    padding: 8px 20px;
-    border: none;
+    border: 1px solid #fff;
+    padding: 5px 10px;
     cursor: pointer;
-    margin-left: 20px;
 }
 
-button#lang-toggle:hover {
-    background-color: #ff4500;
-}
-
-/* Main Section */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+/* Hero Section */
+.hero {
+    background-color: #333;
+    color: white;
     text-align: center;
+    padding: 50px 20px;
 }
 
-/* Home Section */
-#home {
-    padding: 50px 0;
+.hero input {
+    padding: 10px;
+    margin: 10px;
+    width: 20%;
 }
 
-#home h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+.hero button {
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
     color: #333;
+    cursor: pointer;
 }
 
-#home p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
+/* Tire Models */
+.tire-models {
+    text-align: center;
+    padding: 30px;
 }
 
-.search-section {
+.tire-models-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    justify-content: center;
 }
 
-.search-section input {
-    padding: 12px;
-    width: 250px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.search-section button {
-    background-color: #ff6347;
-    color: white;
-    padding: 12px 40px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.search-section button:hover {
-    background-color: #ff4500;
-}
-
-/* Tire List Section (for results.html) */
-#search-results {
-    padding: 40px 0;
-}
-
-#search-results h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-#search-results p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
-}
-
-#results {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
-    padding: 20px;
-}
-
-.tire-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.tire-model {
+    margin: 0 20px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
 }
 
-.tire-item:hover {
-    transform: translateY(-10px);
+.tire-model img {
+    width: 200px;
+    height: 200px;
 }
 
-.tire-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.tire-item h4 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.tire-item p {
-    font-size: 16px;
-    color: #666;
-}
-
-/* Contact Section */
+/* Footer */
 footer {
     background-color: #333;
     color: white;
-    padding: 30px 0;
+    padding: 20px;
     text-align: center;
 }
 
-footer h3 {
-    margin-bottom: 10px;
-}
-
-footer p {
-    font-size: 16px;
-}
-
-footer p#footer-quote {
-    margin-top: 20px;
-    font-style: italic;
+/* About, Contact, Cart Pages */
+.about, .contact {
+    padding: 40px;
+    text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header .logo {
+    .tire-models-container {
         flex-direction: column;
     }
 
-    header nav {
-        display: flex;
-        flex-direction: column;
-        margin-top: 15px;
-    }
-
-    .search-section input {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .search-section button {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    #results {
-        grid-template-columns: 1fr;
+    .hero input, .hero button {
+        width: 90%;
     }
 }
