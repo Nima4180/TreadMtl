@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "name": "All-Season Tire",
+        "description": "Perfect for year-round driving, offering a balance of performance and longevity.",
+        "size": "205/55R16",
+        "price": 100,
+        "performance": "Provides great grip and handling in both wet and dry conditions.",
+        "compatibleCars": ["Toyota Corolla", "Honda Civic", "Ford Focus"],
+        "image": "all-season-tire.jpg",
+        "availableQuantity": 50,
+        "brand": "Toyo",
+        "category": "All-Season"
+    },
+    {
+        "id": 2,
+        "name": "Winter Tire",
+        "description": "Designed for cold, icy conditions, providing maximum grip during the winter months.",
+        "size": "205/55R16",
+        "price": 120,
+        "performance": "Outstanding traction on snow and ice, designed for optimal winter performance.",
+        "compatibleCars": ["Subaru Outback", "Honda CR-V", "Nissan Rogue"],
+        "image": "winter-tire.jpg",
+        "availableQuantity": 30,
+        "brand": "Michelin",
+        "category": "Winter"
+    },
+    {
+        "id": 3,
+        "name": "Summer Tire",
+        "description": "High-performance tire for sporty vehicles, offering enhanced handling and speed.",
+        "size": "205/55R16",
+        "price": 110,
+        "performance": "Excellent handling on dry and wet roads with a focus on high-speed stability.",
+        "compatibleCars": ["BMW 3 Series", "Audi A4", "Mercedes-Benz C-Class"],
+        "image": "summer-tire.jpg",
+        "availableQuantity": 40,
+        "brand": "Bridgestone",
+        "category": "Summer"
+    }
+]
