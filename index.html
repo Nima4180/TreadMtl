@@ -6,65 +6,46 @@
     <title>TreadMTL - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Header Section -->
+<body onload="updateContentLanguage()">
     <header>
         <div class="logo">
             <img src="toyo-tires.png" alt="TreadMTL Logo">
-            <h1>TreadMTL</h1>
+            <h1 data-lang="home-title">TreadMTL</h1>
         </div>
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            <a href="index.html" class="active" data-lang="home-nav-home">Home</a>
+            <a href="about.html" data-lang="home-nav-about">About</a>
+            <a href="contact.html" data-lang="home-nav-contact">Contact</a>
+            <a href="cart.html" data-lang="home-nav-cart">Cart</a>
         </nav>
-        <!-- Language Switcher -->
         <div class="language-toggle">
             <button id="toggle-lang" onclick="toggleLanguage()">EN</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <h2>Welcome to TreadMTL</h2>
-        <p>Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
-        <div class="search-section">
-            <input type="text" id="width" placeholder="Width (e.g., 205)">
-            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-            <button onclick="searchTires()">Search Tires</button>
-        </div>
+        <h2 data-lang="home-welcome">Welcome to TreadMTL</h2>
+        <p data-lang="home-description">Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
     </section>
 
-    <!-- Tire Models Section -->
-    <section class="tire-models">
-        <h3>Popular Tire Models</h3>
-        <div class="tire-models-container">
-            <div class="tire-model">
-                <img src="all-season.jpg" alt="All-Season Tire">
-                <h4>All-Season Tire</h4>
-                <p>Great for year-round driving with excellent durability.</p>
-            </div>
-            <div class="tire-model">
-                <img src="winter.jpg" alt="Winter Tire">
-                <h4>Winter Tire</h4>
-                <p>Designed for cold, icy conditions with superior grip.</p>
-            </div>
-            <div class="tire-model">
-                <img src="performance.jpg" alt="Performance Tire">
-                <h4>Performance Tire</h4>
-                <p>High-performance for sports cars with exceptional handling.</p>
-            </div>
-        </div>
+    <section class="search-tires">
+        <h3 data-lang="search-tires-title">Search by Tire Dimension</h3>
+        <input type="text" id="width" placeholder="Width (e.g., 205)" data-lang="search-tires-width">
+        <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)" data-lang="search-tires-aspect">
+        <input type="text" id="diameter" placeholder="Diameter (e.g., 16)" data-lang="search-tires-diameter">
+        <button onclick="searchTires()" data-lang="search-tires-button">Search Tires</button>
     </section>
 
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 TreadMTL. Quality tires, quality service - for every journey.</p>
+        <section id="contact">
+            <h3 data-lang="footer-contact">Contact Us</h3>
+            <p data-lang="footer-email">Email: info@treadmtl.com</p>
+            <p data-lang="footer-phone">Phone: (438)-838-8480</p>
+            <p data-lang="footer-address">Address: Laval, QC, Canada</p>
+        </section>
+        <p data-lang="footer-quote">"Quality tires, quality service - for every journey."</p>
     </footer>
 
-    <!-- External JS -->
     <script src="script.js"></script>
 </body>
 </html>
