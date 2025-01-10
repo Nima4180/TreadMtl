@@ -1,113 +1,28 @@
-<script>
-    // Fetch car makes, models, and years from an API
-    function getCarData() {
-        const apiUrl = "https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getMakes"; // Example API to fetch car makes
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const yearSelect = document.getElementById("year");
-                const makeSelect = document.getElementById("make");
-                const modelSelect = document.getElementById("model");
+let isFrench = false;
 
-                // Populate the make select dropdown
-                data.Makes.forEach(make => {
-                    const option = document.createElement("option");
-                    option.value = make.make_id;
-                    option.textContent = make.make_display;
-                    makeSelect.appendChild(option);
-                });
+function toggleLanguage() {
+    isFrench = !isFrench;
 
-                // Listen for the change of make to fetch models dynamically
-                makeSelect.addEventListener("change", function () {
-                    const selectedMakeId = makeSelect.value;
-                    modelSelect.innerHTML = ''; // Clear existing options
-
-                    if (selectedMakeId) {
-                        // Fetch models for the selected make
-                        fetchModels(selectedMakeId);
-                    }
-                });
-            })
-            .catch(error => console.error('Error fetching car makes:', error));
+    // Update text content based on language
+    if (isFrench) {
+        document.getElementById("home-title").innerText = "Bienvenue chez TreadMTL";
+        document.getElementById("home-description").innerText = "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide (24-72 heures)!";
+        document.getElementById("search-title").innerText = "Recherchez par dimension de pneu:";
+        document.getElementById("footer-quote").innerText = "\"Des pneus de qualité, un service de qualité - pour chaque voyage.\"";
+        document.getElementById("home-link").innerText = "Accueil";
+        document.getElementById("about-link").innerText = "À propos";
+        document.getElementById("contact-link").innerText = "Contact";
+        document.getElementById("tires-link").innerText = "Liste de pneus";
+        document.getElementById("lang-toggle").innerText = "English";
+    } else {
+        document.getElementById("home-title").innerText = "Welcome to TreadMTL";
+        document.getElementById("home-description").innerText = "Find the perfect tires for your vehicle with free shipping and fast delivery (24-72 hours)!";
+        document.getElementById("search-title").innerText = "Search by Tire Dimension:";
+        document.getElementById("footer-quote").innerText = "\"Quality tires, quality service - for every journey.\"";
+        document.getElementById("home-link").innerText = "Home";
+        document.getElementById("about-link").innerText = "About";
+        document.getElementById("contact-link").innerText = "Contact";
+        document.getElementById("tires-link").innerText = "Tire List";
+        document.getElementById("lang-toggle").innerText = "Français";
     }
-
-    // Fetch models for the selected make
-    function fetchModels(makeId) {
-        const modelApiUrl = `https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getModels&make_id=${makeId}`;
-        fetch(modelApiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const modelSelect = document.getElementById("model");
-
-                // Populate the model select dropdown
-                data.Models.forEach(model => {
-                    const option = document.createElement("option");
-                    option.value = model.model_id;
-                    option.textContent = model.model_name;
-                    modelSelect.appendChild(option);
-                });
-
-                // Populate the year select based on the selected make
-                fetchYears(makeId);
-            })
-            .catch(error => console.error('Error fetching models:', error));
-    }
-
-    // Fetch years for the selected make
-    function fetchYears(makeId) {
-        const yearApiUrl = `https://www.carqueryapi.com/api/0.3/?callback=?&cmd=getYears&make_id=${makeId}`;
-        fetch(yearApiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const yearSelect = document.getElementById("year");
-
-                // Clear existing year options
-                yearSelect.innerHTML = '';
-
-                // Populate the year select dropdown
-                data.Years.forEach(year => {
-                    const option = document.createElement("option");
-                    option.value = year;
-                    option.textContent = year;
-                    yearSelect.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Error fetching years:', error));
-    }
-
-    // Call this function when the page loads
-    window.onload = getCarData;
-
-    // Search for tire size based on car information
-    function searchTires() {
-        const year = document.getElementById("year").value;
-        const make = document.getElementById("make").value;
-        const model = document.getElementById("model").value;
-        const width = document.getElementById("width").value;
-        const aspect = document.getElementById("aspect").value;
-        const diameter = document.getElementById("diameter").value;
-
-        if (!make || !model || !year) {
-            alert("Please fill in the car's make, model, and year.");
-            return;
-        }
-
-        // Get tire size for the selected vehicle
-        getCarTireSize(make, model, year);
-
-        // If the user has entered tire dimensions, show them as well
-        if (width && aspect && diameter) {
-            alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
-            // Implement logic for tire search based on these dimensions
-        }
-    }
-
-    // Fetch tire size for the selected vehicle
-    function getCarTireSize(make, model, year) {
-        // Here, you would call an actual API to get tire sizes, but for now, we simulate with a fixed response
-        const tireSize = "225/45R17"; // Placeholder tire size
-
-        alert(`Suggested tire size for ${make} ${model} (${year}): ${tireSize}`);
-        document.getElementById("tire-size").textContent = `Recommended Tire Size: ${tireSize}`;
-    }
-</script>
+}
