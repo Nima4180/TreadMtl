@@ -6,92 +6,80 @@
     <title>Tire Results - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="updateContentLanguage()">
+<body>
     <header>
         <div class="logo">
             <img src="toyo-tires.png" alt="TreadMTL Logo">
-            <h1 data-lang="home-title">TreadMTL</h1>
+            <h1>TreadMTL</h1>
         </div>
         <nav>
-            <a href="index.html" data-lang="home-nav-home">Home</a>
-            <a href="about.html" data-lang="home-nav-about">About</a>
-            <a href="contact.html" data-lang="home-nav-contact">Contact</a>
-            <a href="cart.html" data-lang="home-nav-cart">Cart</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
         </nav>
-        <div class="language-toggle">
-            <button id="toggle-lang" onclick="toggleLanguage()">EN</button>
-        </div>
     </header>
 
     <section class="results">
-        <h2 data-lang="results-title">Available Tires</h2>
-        <div id="tire-list">
-            <!-- Tire results will appear here -->
-        </div>
+        <h2>Available Tires</h2>
+        <div id="tire-list"></div>
     </section>
 
     <footer>
         <section id="contact">
-            <h3 data-lang="footer-contact">Contact Us</h3>
-            <p data-lang="footer-email">Email: info@treadmtl.com</p>
-            <p data-lang="footer-phone">Phone: (438)-838-8480</p>
-            <p data-lang="footer-address">Address: Laval, QC, Canada</p>
+            <h3>Contact Us</h3>
+            <p>Email: info@treadmtl.com</p>
+            <p>Phone: (438)-838-8480</p>
+            <p>Address: Laval, QC, Canada</p>
         </section>
-        <p data-lang="footer-quote">"Quality tires, quality service - for every journey."</p>
+        <p>"Quality tires, quality service - for every journey."</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // Retrieve URL parameters for tire dimensions (width, aspect, diameter)
-        const urlParams = new URLSearchParams(window.location.search);
-        const width = urlParams.get('width');
-        const aspect = urlParams.get('aspect');
-        const diameter = urlParams.get('diameter');
-
-        // Example tire data (you can replace this with actual data from a database)
-        const tires = [
-            {id: 1, name: "All-Season Tire", width: "205", aspect: "55", diameter: "16", description: "Great for year-round driving.", price: 100},
-            {id: 2, name: "Winter Tire", width: "205", aspect: "55", diameter: "16", description: "Designed for cold, icy conditions.", price: 120},
-            {id: 3, name: "Summer Tire", width: "205", aspect: "55", diameter: "16", description: "High performance for summer conditions.", price: 110}
-        ];
-
-        // Function to display tire results
-        function showTireResults() {
-            const tireList = document.getElementById('tire-list');
-
-            // Filter tires based on search dimensions
-            const filteredTires = tires.filter(tire =>
-                tire.width === width && tire.aspect === aspect && tire.diameter === diameter
-            );
-
-            if (filteredTires.length === 0) {
-                tireList.innerHTML = `<p data-lang="results-no-match">No tires found for the selected dimensions.</p>`;
-            } else {
-                filteredTires.forEach(tire => {
+        // Fetch tire data from JSON file
+        fetch('tires.json')
+            .then(response => response.json())
+            .then(data => {
+                // Render tire list
+                const tireList = document.getElementById('tire-list');
+                data.forEach(tire => {
                     const tireElement = document.createElement('div');
                     tireElement.classList.add('tire-item');
                     tireElement.innerHTML = `
                         <h4>${tire.name}</h4>
-                        <p>${tire.description}</p>
-                        <p>Dimensions: ${tire.width}/${tire.aspect}R${tire.diameter}</p>
-                        <p>$${tire.price}</p>
-                        <button onclick="addToCart(${tire.id})" data-lang="add-to-cart">Add to Cart</button>
+                        <img src="${tire.image}" alt="${tire.name}">
+                        <p><strong>Description:</strong> ${tire.description}</p>
+                        <p><strong>Size:</strong> ${tire.size}</p>
+                        <p><strong>Performance:</strong> ${tire.performance}</p>
+                        <p><strong>Price:</strong> $${tire.price}</p>
+                        <p><strong>Compatible Cars:</strong> ${tire.compatibleCars.join(', ')}</p>
+                        <p><strong>Brand:</strong> ${tire.brand}</p>
+                        <p><strong>Category:</strong> ${tire.category}</p>
+                        <input type="number" id="quantity-${tire.id}" min="1" max="${tire.availableQuantity}" value="1">
+                        <button onclick="addToCart(${tire.id})">Add to Cart</button>
                     `;
                     tireList.appendChild(tireElement);
                 });
-            }
-        }
+            });
 
-        // Add tire to cart function
+        // Function to add tire to cart
         function addToCart(tireId) {
-            const tire = tires.find(tire => tire.id === tireId);
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push(tire);
-            localStorage.setItem('cart', JSON.stringify(cart));
+            fetch('tires.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tire = data.find(t => t.id === tireId);
+                    const quantity = document.getElementById(`quantity-${tireId}`).value;
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existingItem = cart.find(item => item.id === tireId);
+                    if (existingItem) {
+                        existingItem.quantity += parseInt(quantity);
+                    } else {
+                        cart.push({...tire, quantity: parseInt(quantity)});
+                    }
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    alert(`${tire.name} added to your cart.`);
+                });
         }
-
-        // Call the function to display tire results when the page loads
-        showTireResults();
     </script>
 </body>
 </html>
