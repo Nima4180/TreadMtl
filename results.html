@@ -26,7 +26,7 @@
     <section class="results">
         <h2 data-lang="results-title">Available Tires</h2>
         <div id="tire-list">
-            <!-- Tires matching the search dimensions will appear here -->
+            <!-- Tire results will appear here -->
         </div>
     </section>
 
@@ -48,18 +48,18 @@
         const aspect = urlParams.get('aspect');
         const diameter = urlParams.get('diameter');
 
-        // Function to generate tire results based on the search criteria
+        // Example tire data (you can replace this with actual data from a database)
+        const tires = [
+            {id: 1, name: "All-Season Tire", width: "205", aspect: "55", diameter: "16", description: "Great for year-round driving.", price: 100},
+            {id: 2, name: "Winter Tire", width: "205", aspect: "55", diameter: "16", description: "Designed for cold, icy conditions.", price: 120},
+            {id: 3, name: "Summer Tire", width: "205", aspect: "55", diameter: "16", description: "High performance for summer conditions.", price: 110}
+        ];
+
+        // Function to display tire results
         function showTireResults() {
             const tireList = document.getElementById('tire-list');
-            
-            // Example tires based on the search dimensions
-            const tires = [
-                {name: "All-Season Tire", width: "205", aspect: "55", diameter: "16", description: "Great for year-round driving."},
-                {name: "Winter Tire", width: "205", aspect: "55", diameter: "16", description: "Designed for cold, icy conditions."},
-                {name: "Summer Tire", width: "205", aspect: "55", diameter: "16", description: "High performance for summer conditions."}
-            ];
 
-            // Filter tires based on the search query
+            // Filter tires based on search dimensions
             const filteredTires = tires.filter(tire =>
                 tire.width === width && tire.aspect === aspect && tire.diameter === diameter
             );
@@ -74,13 +74,23 @@
                         <h4>${tire.name}</h4>
                         <p>${tire.description}</p>
                         <p>Dimensions: ${tire.width}/${tire.aspect}R${tire.diameter}</p>
+                        <p>$${tire.price}</p>
+                        <button onclick="addToCart(${tire.id})" data-lang="add-to-cart">Add to Cart</button>
                     `;
                     tireList.appendChild(tireElement);
                 });
             }
         }
 
-        // Call the function to display results when the page loads
+        // Add tire to cart function
+        function addToCart(tireId) {
+            const tire = tires.find(tire => tire.id === tireId);
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(tire);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Call the function to display tire results when the page loads
         showTireResults();
     </script>
 </body>
