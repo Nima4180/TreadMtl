@@ -1,18 +1,23 @@
 [
     {
-        "model": "Michelin X-Ice",
-        "size": "205/55R16",
-        "price": 150,
-        "performance": "Winter",
-        "photo": "michelin-x-ice.jpg",
-        "compatibleCars": ["Toyota Corolla", "Honda Civic"]
+        "size": "215/65R16",
+        "type": "All-Season",
+        "price": "$99.99",
+        "image": "tire1.jpg",
+        "description": "All-season tires are designed to perform well in both hot and cold weather."
     },
     {
-        "model": "Goodyear Assurance",
-        "size": "225/60R17",
-        "price": 120,
-        "performance": "All-Season",
-        "photo": "goodyear-assurance.jpg",
-        "compatibleCars": ["Nissan Rogue", "Ford Escape"]
+        "size": "205/55R16",
+        "type": "Winter",
+        "price": "$129.99",
+        "image": "tire2.jpg",
+        "description": "Winter tires are specially designed for snow and icy conditions."
+    },
+    {
+        "size": "225/45R17",
+        "type": "Summer",
+        "price": "$139.99",
+        "image": "tire3.jpg",
+        "description": "Summer tires provide superior performance in warm weather conditions."
     }
 ]
