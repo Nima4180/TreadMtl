@@ -1,85 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tire Results - TreadMTL</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
-            <h1>TreadMTL</h1>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="cart.html">Cart</a>
-        </nav>
-    </header>
-
-    <section class="results">
-        <h2>Available Tires</h2>
-        <div id="tire-list"></div>
-    </section>
-
-    <footer>
-        <section id="contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-            <p>Address: Laval, QC, Canada</p>
-        </section>
-        <p>"Quality tires, quality service - for every journey."</p>
-    </footer>
-
-    <script>
-        // Fetch tire data from JSON file
+<!-- Inside results.html, where tire data is displayed -->
+<script>
+    // Function to add tire to cart
+    function addToCart(tireId) {
         fetch('tires.json')
             .then(response => response.json())
             .then(data => {
-                // Render tire list
-                const tireList = document.getElementById('tire-list');
-                data.forEach(tire => {
-                    const tireElement = document.createElement('div');
-                    tireElement.classList.add('tire-item');
-                    tireElement.innerHTML = `
-                        <h4>${tire.name}</h4>
-                        <img src="${tire.image}" alt="${tire.name}">
-                        <p><strong>Description:</strong> ${tire.description}</p>
-                        <p><strong>Size:</strong> ${tire.size}</p>
-                        <p><strong>Performance:</strong> ${tire.performance}</p>
-                        <p><strong>Price:</strong> $${tire.price}</p>
-                        <p><strong>Compatible Cars:</strong> ${tire.compatibleCars.join(', ')}</p>
-                        <p><strong>Brand:</strong> ${tire.brand}</p>
-                        <p><strong>Category:</strong> ${tire.category}</p>
-                        <input type="number" id="quantity-${tire.id}" min="1" max="${tire.availableQuantity}" value="1">
-                        <button onclick="addToCart(${tire.id})">Add to Cart</button>
-                    `;
-                    tireList.appendChild(tireElement);
-                });
+                const tire = data.find(t => t.id === tireId);
+                const quantity = document.getElementById(`quantity-${tireId}`).value;
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.id === tireId);
+                if (existingItem) {
+                    existingItem.quantity += parseInt(quantity);
+                } else {
+                    cart.push({...tire, quantity: parseInt(quantity)});
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${tire.name} added to your cart.`);
+                updateCartCount();
             });
+    }
 
-        // Function to add tire to cart
-        function addToCart(tireId) {
-            fetch('tires.json')
-                .then(response => response.json())
-                .then(data => {
-                    const tire = data.find(t => t.id === tireId);
-                    const quantity = document.getElementById(`quantity-${tireId}`).value;
-                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                    const existingItem = cart.find(item => item.id === tireId);
-                    if (existingItem) {
-                        existingItem.quantity += parseInt(quantity);
-                    } else {
-                        cart.push({...tire, quantity: parseInt(quantity)});
-                    }
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    alert(`${tire.name} added to your cart.`);
-                });
-        }
-    </script>
-</body>
-</html>
+    // Function to update the cart count in the header
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+        document.getElementById('cart-count').textContent = cartCount;
+    }
+
+    // Initialize cart count on page load
+    window.onload = function() {
+        updateCartCount();
+    };
+</script>
