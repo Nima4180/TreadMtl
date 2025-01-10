@@ -3,95 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Cart - TreadMTL</title>
+    <title>Cart - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="toyo-tires.png" alt="TreadMTL Logo">
-            <h1>TreadMTL</h1>
+            <img src="toyo-ties.png" alt="TreadMTL Logo">
         </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+            <a href="blog.html">Blog</a>
+            <a href="policy.html">Policy</a>
+            <a href="cart.html">Cart (0)</a>
         </nav>
     </header>
 
-    <section id="cart-section">
-        <h2>Your Cart</h2>
-        <div id="cart-items"></div>
-        <div id="cart-total"></div>
-        <button onclick="checkout()">Checkout</button>
+    <section id="cart-info">
+        <h1>Your Cart</h1>
+        
+        <div id="cart-items">
+            <p>Your cart is currently empty.</p>
+            <!-- Example Cart Item -->
+            <!-- <div class="cart-item">
+                <img src="tire1.jpg" alt="Tire 1">
+                <div class="item-details">
+                    <h3>Tire Model Name</h3>
+                    <p>Size: 205/55R16</p>
+                    <p>Price: $100</p>
+                    <input type="number" value="1" min="1">
+                    <button class="remove-item">Remove</button>
+                </div>
+            </div> -->
+        </div>
+        
+        <div id="cart-summary">
+            <p><strong>Total: $0</strong></p>
+            <button id="checkout-btn">Proceed to Checkout</button>
+        </div>
     </section>
 
     <footer>
-        <section id="contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-            <p>Address: Laval, QC, Canada</p>
-        </section>
-        <p>"Quality tires, quality service - for every journey."</p>
+        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
     </footer>
 
-    <script>
-        // Function to render the cart
-        function renderCart() {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsDiv = document.getElementById('cart-items');
-            const cartTotalDiv = document.getElementById('cart-total');
-            cartItemsDiv.innerHTML = '';
-            let total = 0;
-
-            cart.forEach(item => {
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('cart-item');
-                itemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <h4>${item.name}</h4>
-                    <p>Size: ${item.size}</p>
-                    <p>Price: $${item.price}</p>
-                    <p>Quantity: <input type="number" value="${item.quantity}" min="1" max="${item.availableQuantity}" onchange="updateQuantity(${item.id}, this.value)"></p>
-                    <button onclick="removeFromCart(${item.id})">Remove</button>
-                `;
-                cartItemsDiv.appendChild(itemDiv);
-                total += item.price * item.quantity;
-            });
-
-            cartTotalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
-        }
-
-        // Function to update cart quantity
-        function updateQuantity(tireId, quantity) {
-            const cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const item = cart.find(item => item.id === tireId);
-            if (item) {
-                item.quantity = parseInt(quantity);
-                localStorage.setItem('cart', JSON.stringify(cart));
-                renderCart();
-            }
-        }
-
-        // Function to remove item from cart
-        function removeFromCart(tireId) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.filter(item => item.id !== tireId);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            renderCart();
-        }
-
-        // Function for checkout (placeholder)
-        function checkout() {
-            alert('Proceeding to checkout...');
-        }
-
-        // Initialize the cart on page load
-        window.onload = function() {
-            renderCart();
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
