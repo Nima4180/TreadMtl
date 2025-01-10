@@ -30,10 +30,12 @@
 
     <section class="search-tires">
         <h3 data-lang="search-tires-title">Search by Tire Dimension</h3>
-        <input type="text" id="width" placeholder="Width (e.g., 205)" data-lang="search-tires-width">
-        <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)" data-lang="search-tires-aspect">
-        <input type="text" id="diameter" placeholder="Diameter (e.g., 16)" data-lang="search-tires-diameter">
-        <button onclick="searchTires()" data-lang="search-tires-button">Search Tires</button>
+        <form action="results.html" method="GET" id="search-form">
+            <input type="text" name="width" placeholder="Width (e.g., 205)" id="width" required>
+            <input type="text" name="aspect" placeholder="Aspect Ratio (e.g., 55)" id="aspect" required>
+            <input type="text" name="diameter" placeholder="Diameter (e.g., 16)" id="diameter" required>
+            <button type="submit" data-lang="search-tires-button">Search Tires</button>
+        </form>
     </section>
 
     <footer>
