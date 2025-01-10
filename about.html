@@ -3,51 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - TreadMTL</title>
+    <title>About Us - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="toyo-tires.png" alt="Toyo Tires Logo">
+            <img src="toyo-tires.png" alt="TreadMTL Logo">
             <h1>TreadMTL</h1>
         </div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="contact.html">Contact</a>
-            <a href="cart.html" id="cartLink">Cart (0)</a>
-            <button id="languageToggle">FR</button>
+            <a href="cart.html">Cart</a>
         </nav>
+        <div class="language-toggle">
+            <button id="toggle-lang" onclick="toggleLanguage()">EN</button>
+        </div>
     </header>
 
     <!-- About Section -->
-    <section class="about-section">
-        <h2>About Us</h2>
-        <p>Welcome to TreadMTL! We are a leading tire retailer in Montreal, offering a wide selection of tires for all types of vehicles. Our goal is to provide top-quality tires, excellent customer service, and fast delivery to ensure your vehicle is always road-ready.</p>
-
-        <h3>Our Mission</h3>
-        <p>Our mission is to provide high-quality tires for every driver, whether you're looking for all-season, winter, or performance tires. We prioritize customer satisfaction and offer a seamless online shopping experience with competitive prices and free shipping.</p>
-
-        <h3>Why Choose Us?</h3>
-        <ul>
-            <li>Free shipping across Canada.</li>
-            <li>Wide range of tire brands and types.</li>
-            <li>Easy tire search by dimensions.</li>
-            <li>Responsive customer support.</li>
-        </ul>
+    <section class="about">
+        <h2>About TreadMTL</h2>
+        <p>We are dedicated to offering the best tires for all types of vehicles, with a focus on quality, performance, and customer satisfaction.</p>
+        <p>Our team has years of experience in the tire industry and we offer both retail and wholesale options.</p>
     </section>
 
-    <!-- Footer Section -->
     <footer>
-        <section id="contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-            <p>Address: Laval, QC, Canada</p>
-        </section>
-        <p>"Quality tires, quality service - for every journey."</p>
+        <p>&copy; 2025 TreadMTL. Quality tires, quality service - for every journey.</p>
     </footer>
 
     <script src="script.js"></script>
