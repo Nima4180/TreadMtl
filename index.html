@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
-    <link rel="stylesheet" href="style.css"> <!-- Linking to the style.css file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -22,31 +22,35 @@
         </nav>
     </header>
 
-    <section id="home">
-        <h1>Welcome to TreadMTL</h1>
-        <p>Find the perfect tires for your vehicle with free shipping and fast delivery!</p>
+    <section id="home" class="hero-section">
+        <div class="hero-text">
+            <h1>Find the Perfect Tires for Your Vehicle</h1>
+            <p>Fast delivery, free shipping, and a tire for every season!</p>
+        </div>
 
         <div class="search-section">
             <h3>Search by Tire Dimension:</h3>
-            <input type="text" id="width" placeholder="Width (e.g., 205)">
-            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
-            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-            <button onclick="searchTires()">Search Tires</button>
+            <div class="search-inputs">
+                <input type="text" id="width" placeholder="Width (e.g., 205)">
+                <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
+                <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
+                <button onclick="searchTires()">Search Tires</button>
+            </div>
         </div>
+    </section>
 
-        <div class="tire-models">
-            <div class="tire-model">
-                <h4>All-Season Tire</h4>
-                <p>Great for year-round driving, offering a balance of performance and longevity.</p>
-            </div>
-            <div class="tire-model">
-                <h4>Winter Tire</h4>
-                <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
-            </div>
-            <div class="tire-model">
-                <h4>Summer Tire</h4>
-                <p>Optimized for dry conditions, providing excellent handling and performance in warmer weather.</p>
-            </div>
+    <section class="tire-models">
+        <div class="tire-model">
+            <h4>All-Season Tire</h4>
+            <p>Perfect for year-round driving, offering a balance of performance and longevity.</p>
+        </div>
+        <div class="tire-model">
+            <h4>Winter Tire</h4>
+            <p>Engineered for cold, icy conditions with maximum grip during winter months.</p>
+        </div>
+        <div class="tire-model">
+            <h4>Summer Tire</h4>
+            <p>Optimal performance and handling in dry conditions, designed for warmer weather.</p>
         </div>
     </section>
 
