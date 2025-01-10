@@ -1,61 +1,95 @@
-// Toggle between languages (English / French)
-function toggleLanguage() {
-    const currentLang = document.getElementById('toggle-lang').innerText;
-    if (currentLang === 'EN') {
-        document.getElementById('toggle-lang').innerText = 'FR';
-        updateContentLanguage('fr');
+// Function to add tire to cart
+function addToCart(tireId) {
+    // Simulate fetching tire data (this would be fetched from a database or JSON file in a real application)
+    const tireData = {
+        1: { id: 1, name: "All-Season Tire", size: "205/55R16", price: 120, image: "tire1.jpg", availableQuantity: 100 },
+        2: { id: 2, name: "Winter Tire", size: "215/60R16", price: 150, image: "tire2.jpg", availableQuantity: 80 },
+        3: { id: 3, name: "Summer Tire", size: "225/50R17", price: 180, image: "tire3.jpg", availableQuantity: 60 }
+    };
+
+    const tire = tireData[tireId];
+    const quantity = document.getElementById(`quantity-${tireId}`).value;
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItem = cart.find(item => item.id === tireId);
+    if (existingItem) {
+        existingItem.quantity += parseInt(quantity);
     } else {
-        document.getElementById('toggle-lang').innerText = 'EN';
-        updateContentLanguage('en');
+        cart.push({ ...tire, quantity: parseInt(quantity) });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${tire.name} added to your cart.`);
+    updateCartCount();
+}
+
+// Function to update the cart count in the header
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Function to render cart items on the cart page
+function renderCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartItemsDiv = document.getElementById('cart-items');
+    const cartTotalDiv = document.getElementById('cart-total');
+    cartItemsDiv.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('cart-item');
+        itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <h4>${item.name}</h4>
+            <p>Size: ${item.size}</p>
+            <p>Price: $${item.price}</p>
+            <p>Quantity: <input type="number" value="${item.quantity}" min="1" max="${item.availableQuantity}" onchange="updateQuantity(${item.id}, this.value)"></p>
+            <button onclick="removeFromCart(${item.id})">Remove</button>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+        total += item.price * item.quantity;
+    });
+
+    cartTotalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
+}
+
+// Function to update the quantity of an item in the cart
+function updateQuantity(tireId, quantity) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.id === tireId);
+    if (item) {
+        item.quantity = parseInt(quantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
     }
 }
 
-function updateContentLanguage(lang = 'en') {
-    const elements = document.querySelectorAll('[data-lang]');
-    elements.forEach(element => {
-        const langKey = element.getAttribute('data-lang');
-        element.innerText = translations[lang][langKey] || element.innerText;
-    });
+// Function to remove an item from the cart
+function removeFromCart(tireId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== tireId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
 }
 
-// Example translations for English and French
-const translations = {
-    en: {
-        "home-title": "TreadMTL",
-        "home-nav-home": "Home",
-        "home-nav-about": "About",
-        "home-nav-contact": "Contact",
-        "home-nav-cart": "Cart",
-        "search-tires-title": "Search by Tire Dimension",
-        "search-tires-button": "Search Tires",
-        "footer-contact": "Contact Us",
-        "footer-email": "Email: info@treadmtl.com",
-        "footer-phone": "Phone: (438)-838-8480",
-        "footer-address": "Address: Laval, QC, Canada",
-        "footer-quote": "\"Quality tires, quality service - for every journey.\"",
-        "results-title": "Available Tires",
-        "results-no-match": "No tires found for the selected dimensions.",
-        "add-to-cart": "Add to Cart",
-        "cart-title": "Your Cart",
-        "cart-empty": "Your cart is empty."
-    },
-    fr: {
-        "home-title": "TreadMTL",
-        "home-nav-home": "Accueil",
-        "home-nav-about": "À propos",
-        "home-nav-contact": "Contact",
-        "home-nav-cart": "Panier",
-        "search-tires-title": "Rechercher par dimensions des pneus",
-        "search-tires-button": "Rechercher des pneus",
-        "footer-contact": "Contactez-nous",
-        "footer-email": "E-mail: info@treadmtl.com",
-        "footer-phone": "Téléphone: (438)-838-8480",
-        "footer-address": "Adresse: Laval, QC, Canada",
-        "footer-quote": "\"Des pneus de qualité, un service de qualité - pour chaque trajet.\"",
-        "results-title": "Pneus disponibles",
-        "results-no-match": "Aucun pneu trouvé pour les dimensions sélectionnées.",
-        "add-to-cart": "Ajouter au panier",
-        "cart-title": "Votre panier",
-        "cart-empty": "Votre panier est vide."
+// Function for checkout (simplified placeholder)
+function checkout() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        alert('Your cart is empty. Please add items before proceeding.');
+    } else {
+        // Placeholder for actual checkout logic
+        alert('Proceeding to checkout...');
+    }
+}
+
+// Initialize the cart count and render cart on page load
+window.onload = function() {
+    updateCartCount();
+    if (document.getElementById('cart-items')) {
+        renderCart();
     }
 };
