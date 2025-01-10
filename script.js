@@ -1,6 +1,5 @@
 // Function to add tire to cart
 function addToCart(tireId) {
-    // Simulate fetching tire data (this would be fetched from a database or JSON file in a real application)
     const tireData = {
         1: { id: 1, name: "All-Season Tire", size: "205/55R16", price: 120, image: "tire1.jpg", availableQuantity: 100 },
         2: { id: 2, name: "Winter Tire", size: "215/60R16", price: 150, image: "tire2.jpg", availableQuantity: 80 },
@@ -86,8 +85,40 @@ function checkout() {
     }
 }
 
+// Function to switch language
+function switchLanguage(language) {
+    const elements = document.querySelectorAll('[data-lang]');
+
+    elements.forEach(element => {
+        const key = element.getAttribute('data-lang');
+        element.textContent = languages[language][key];
+    });
+}
+
+// Language dictionary
+const languages = {
+    en: {
+        home: 'Home',
+        about: 'About',
+        contact: 'Contact',
+        tireList: 'Tire List',
+        searchTires: 'Search Tires',
+        addToCart: 'Add to Cart',
+        checkout: 'Checkout',
+    },
+    fr: {
+        home: 'Accueil',
+        about: 'À propos',
+        contact: 'Contact',
+        tireList: 'Liste des pneus',
+        searchTires: 'Rechercher des pneus',
+        addToCart: 'Ajouter au panier',
+        checkout: 'Passer à la caisse',
+    }
+};
+
 // Initialize the cart count and render cart on page load
-window.onload = function() {
+window.onload = function () {
     updateCartCount();
     if (document.getElementById('cart-items')) {
         renderCart();
