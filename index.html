@@ -3,69 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMTL - Home</title>
+    <title>TreadMTL - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header with logo and navigation -->
     <header>
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="toyo-tires.png" alt="TreadMTL Logo" class="logo">
-                <h1>TreadMTL</h1>
-            </div>
-            <div class="language-cart">
-                <button id="en-btn">EN</button>
-                <button id="fr-btn">FR</button>
-                <a href="cart.html" class="cart-link">Cart</a>
-            </div>
+        <div class="logo">
+            <img src="toyo-ties.png" alt="TreadMTL Logo">
         </div>
         <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="policy.html">Policy</a></li>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="policy.html">Policy</a>
+            <a href="cart.html">Cart (0)</a> <!-- Placeholder for Cart -->
         </nav>
     </header>
 
-    <main>
-        <section id="search">
-            <h2>Search for Your Tires</h2>
-            <form id="tire-search-form">
-                <label for="car-model">Car Model:</label>
-                <input type="text" id="car-model" placeholder="Enter your car model" required>
-                <button type="submit">Find Tires</button>
+    <!-- Main section with welcome message -->
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to TreadMTL</h1>
+            <p>Your one-stop shop for quality tires in Montreal. Find your perfect tire with free shipping and fast delivery.</p>
+            <form action="searchResults.html" method="GET">
+                <label for="tireSize">Enter your tire size:</label>
+                <input type="text" id="tireSize" name="tireSize" placeholder="e.g., 215/65R16">
+                <button type="submit">Search</button>
             </form>
-        </section>
+        </div>
+    </section>
 
-        <section id="tire-blogs">
-            <h2>Tire Information</h2>
-            <div class="blogs-container">
-                <div class="blog-card">
-                    <h3>4-Season Winter Approved</h3>
-                    <p>Find out why these tires are perfect for winter and summer use.</p>
-                    <a href="blog/winter-approved.html">Learn More</a>
-                </div>
-                <div class="blog-card">
-                    <h3>Winter Tires</h3>
-                    <p>Get the ultimate performance and safety during harsh winters.</p>
-                    <a href="blog/winter-tires.html">Learn More</a>
-                </div>
-                <div class="blog-card">
-                    <h3>Summer Tires</h3>
-                    <p>Perfect for hot and dry conditions, delivering excellent grip.</p>
-                    <a href="blog/summer-tires.html">Learn More</a>
-                </div>
+    <!-- Featured tires section with images and descriptions -->
+    <section id="featured-tires">
+        <h2>Featured Tires</h2>
+        <div class="tire-options">
+            <div class="tire-card">
+                <img src="tire1.jpg" alt="Tire 1">
+                <h3>All-Season Tires</h3>
+                <p>Perfect for year-round driving. Reliable and affordable.</p>
+                <a href="searchResults.html?type=all-season">View More</a>
             </div>
-        </section>
-    </main>
+            <div class="tire-card">
+                <img src="tire2.jpg" alt="Tire 2">
+                <h3>Winter Tires</h3>
+                <p>Keep safe during the cold months with our winter-approved tires.</p>
+                <a href="searchResults.html?type=winter">View More</a>
+            </div>
+            <div class="tire-card">
+                <img src="tire3.jpg" alt="Tire 3">
+                <h3>Summer Tires</h3>
+                <p>Maximize performance and handling during the warm months.</p>
+                <a href="searchResults.html?type=summer">View More</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer section -->
     <footer>
-        <p>© 2025 TreadMTL. All rights reserved.</p>
+        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
+        <div class="social-media">
+            <a href="https://facebook.com/TreadMTL">Facebook</a> |
+            <a href="https://twitter.com/TreadMTL">Twitter</a> |
+            <a href="https://instagram.com/TreadMTL">Instagram</a>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
