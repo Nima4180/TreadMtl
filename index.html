@@ -11,6 +11,8 @@
             padding: 0;
             background-color: #f3f3f3;
             color: #333;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -19,7 +21,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         nav {
@@ -30,39 +44,32 @@
         nav a {
             color: white;
             font-weight: bold;
-            text-decoration: none;
         }
 
         .language-switcher {
             position: fixed;
-            right: 20px;
-            top: 20px;
+            right: 10px;
+            top: 10%;
             background-color: #fff;
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .language-switcher select {
-            padding: 5px;
+            padding: 10px;
             font-size: 1em;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
 
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
         .tire-list-section {
+            padding: 20px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
 
@@ -91,8 +98,11 @@
         }
 
         .search-section {
-            text-align: center;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
         }
 
         .search-section input,
@@ -101,7 +111,6 @@
             font-size: 1em;
             border: 1px solid #ccc;
             border-radius: 5px;
-            margin: 5px;
         }
 
         .search-section button {
@@ -114,19 +123,16 @@
             background-color: #002855;
             color: white;
             text-align: center;
-            padding: 15px 20px;
-        }
-
-        footer p {
-            margin: 5px 0;
+            padding: 10px 0;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
 
-    <!-- Language Switcher -->
+    <!-- Language Switcher on the Right -->
     <div class="language-switcher">
-        <label for="language">Language:</label>
+        <label for="language">Language</label>
         <select id="language" onchange="changeLanguage()">
             <option value="en">English</option>
             <option value="fr">Français</option>
@@ -134,61 +140,54 @@
     </div>
 
     <header>
-        <div class="logo">TreadMTL</div>
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="Your Logo" id="logo-image">
+            <span>TreadMTL</span>
+        </div>
         <nav>
             <a href="#home" id="home-link">Home</a>
             <a href="#about" id="about-link">About</a>
             <a href="#contact" id="contact-link">Contact</a>
-            <a href="#tires" id="tires-link">Tires</a>
+            <a href="#tires" id="tires-link">Tire List</a>
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h1 id="welcome-title">Welcome to TreadMTL</h1>
-            <p id="welcome-text">Find the perfect tires for your vehicle. We offer free shipping and delivery within 24-72 hours!</p>
+    <section id="home">
+        <h1 id="welcome-title">Welcome to TreadMTL</h1>
+        <p id="welcome-text">Find the perfect tires for your vehicle.</p>
 
-            <div class="search-section">
-                <h3 id="dimension-header">Search by Tire Dimension:</h3>
-                <input type="text" id="width" placeholder="Width (e.g., 205)">
-                <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
-                <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
-                <button onclick="searchTires()">Search Tires</button>
-            </div>
-        </section>
+        <div class="search-section">
+            <h3 id="dimension-header">Search by Tire Dimension:</h3>
+            <input type="text" id="width" placeholder="Width (e.g., 205)">
+            <input type="text" id="aspect" placeholder="Aspect Ratio (e.g., 55)">
+            <input type="text" id="diameter" placeholder="Diameter (e.g., 16)">
+            <button onclick="searchTires()">Search Tires</button>
+        </div>
+    </section>
 
-        <section id="tires" class="tire-list-section">
-            <div class="tire-item">
-                <img src="tire1.jpg" alt="Tire 1">
-                <h4>All-Season Tire</h4>
-                <p>Great for year-round driving, offering a balance of performance and longevity.</p>
-            </div>
-            <div class="tire-item">
-                <img src="tire2.jpg" alt="Tire 2">
-                <h4>Winter Tire</h4>
-                <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
-            </div>
-            <div class="tire-item">
-                <img src="tire3.jpg" alt="Tire 3">
-                <h4>Performance Tire</h4>
-                <p>High-performance tire for sporty vehicles, offering enhanced handling and speed.</p>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>TreadMTL is your trusted tire shop located in Laval. We pride ourselves on providing quality tires, exceptional service, and fast delivery. Whether you're looking for winter tires or high-performance options, we have something for every vehicle.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Email: info@treadmtl.com</p>
-            <p>Phone: (438)-838-8480</p>
-        </section>
-    </main>
+    <!-- Tire List Section -->
+    <section id="tires" class="tire-list-section">
+        <div class="tire-item">
+            <img src="tire1.jpg" alt="Tire 1">
+            <h4>All-Season Tire</h4>
+            <p>Great for year-round driving, offering a balance of performance and longevity.</p>
+        </div>
+        <div class="tire-item">
+            <img src="tire2.jpg" alt="Tire 2">
+            <h4>Winter Tire</h4>
+            <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
+        </div>
+        <div class="tire-item">
+            <img src="tire3.jpg" alt="Tire 3">
+            <h4>Performance Tire</h4>
+            <p>High-performance tire for sporty vehicles, offering enhanced handling and speed.</p>
+        </div>
+        <!-- Add more tire items here as needed -->
+    </section>
 
     <footer>
-        <p>&copy; 2025 TreadMTL. All rights reserved.</p>
+        <p>Email: info@treadmtl.com</p>
+        <p>Phone: (438)-838-8480</p>
     </footer>
 
     <script>
@@ -198,24 +197,24 @@
 
             if (language === "fr") {
                 document.getElementById("welcome-title").textContent = "Bienvenue chez TreadMTL";
-                document.getElementById("welcome-text").textContent = "Trouvez les pneus parfaits pour votre véhicule. Livraison gratuite en 24-72 heures!";
-                document.getElementById("dimension-header").textContent = "Rechercher par dimension de pneu :";
+                document.getElementById("welcome-text").textContent = "Trouvez les pneus parfaits pour votre véhicule.";
+                document.getElementById("dimension-header").textContent = "Rechercher par dimension de pneu:";
                 document.getElementById("home-link").textContent = "Accueil";
                 document.getElementById("about-link").textContent = "À propos";
                 document.getElementById("contact-link").textContent = "Contact";
-                document.getElementById("tires-link").textContent = "Pneus";
+                document.getElementById("tires-link").textContent = "Liste des pneus";
             } else {
                 document.getElementById("welcome-title").textContent = "Welcome to TreadMTL";
-                document.getElementById("welcome-text").textContent = "Find the perfect tires for your vehicle. We offer free shipping and delivery within 24-72 hours!";
+                document.getElementById("welcome-text").textContent = "Find the perfect tires for your vehicle.";
                 document.getElementById("dimension-header").textContent = "Search by Tire Dimension:";
                 document.getElementById("home-link").textContent = "Home";
                 document.getElementById("about-link").textContent = "About";
                 document.getElementById("contact-link").textContent = "Contact";
-                document.getElementById("tires-link").textContent = "Tires";
+                document.getElementById("tires-link").textContent = "Tire List";
             }
         }
 
-        // Function to search for tires
+        // Function to search for tires (placeholder)
         function searchTires() {
             const width = document.getElementById("width").value;
             const aspect = document.getElementById("aspect").value;
@@ -228,6 +227,11 @@
 
             alert(`Searching for tires with dimensions: ${width}/${aspect}R${diameter}`);
         }
+
+        // Upload logo functionality
+        document.getElementById("logo-image").addEventListener("click", function() {
+            alert("You can upload your logo by replacing 'logo-placeholder.png' in the project files.");
+        });
     </script>
 
 </body>
