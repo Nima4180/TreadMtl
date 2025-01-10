@@ -4,25 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - TreadMTL</title>
-    <link rel="stylesheet" href="style.css"> <!-- Base Styles -->
-    <link rel="stylesheet" href="about.css"> <!-- Additional Styles for About Page -->
-    <script>
-        function toggleLanguage(language) {
-            const englishContent = {
-                "aboutTitle": "About Us",
-                "aboutDesc": "TreadMTL is your go-to online tire shop, offering high-quality tires with fast delivery and excellent customer service. We are committed to providing the best products at competitive prices, ensuring your vehicle is ready for any journey."
-            };
-
-            const frenchContent = {
-                "aboutTitle": "À propos de nous",
-                "aboutDesc": "TreadMTL est votre boutique de pneus en ligne de confiance, offrant des pneus de haute qualité avec une livraison rapide et un excellent service client. Nous nous engageons à fournir les meilleurs produits à des prix compétitifs, en veillant à ce que votre véhicule soit prêt pour tous vos trajets."
-            };
-
-            document.getElementById("aboutTitle").innerText = language === 'fr' ? frenchContent.aboutTitle : englishContent.aboutTitle;
-            document.getElementById("aboutDesc").innerText = language === 'fr' ? frenchContent.aboutDesc : englishContent.aboutDesc;
-        }
-    </script>
+    <title>About Us | TreadMTL</title>
+    <link rel="stylesheet" href="style.css"> <!-- Same CSS file as Home page -->
 </head>
 
 <body>
@@ -35,18 +18,15 @@
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="#quote">Request a Quote</a>
-            <button onclick="toggleLanguage('en')">English</button>
-            <button onclick="toggleLanguage('fr')">Français</button>
+            <a href="cart.html" id="cartLink">Cart (0)</a>
         </nav>
     </header>
 
-    <main>
-        <section id="about">
-            <h1 id="aboutTitle">About Us</h1>
-            <p id="aboutDesc">TreadMTL is your go-to online tire shop, offering high-quality tires with fast delivery and excellent customer service. We are committed to providing the best products at competitive prices, ensuring your vehicle is ready for any journey.</p>
-        </section>
-    </main>
+    <section id="about">
+        <h1>About TreadMTL</h1>
+        <p>At TreadMTL, we are dedicated to providing high-quality tires for all types of vehicles. Whether you're looking for winter tires, summer tires, or all-season tires, we've got you covered.</p>
+        <p>We pride ourselves on offering excellent customer service and fast delivery options. Our goal is to ensure that your tire purchasing experience is seamless and stress-free.</p>
+    </section>
 
     <footer>
         <section id="contact">
