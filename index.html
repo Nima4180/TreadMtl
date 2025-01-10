@@ -5,75 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TreadMTL - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="top-bar">
             <div class="logo">
-                <img src="toyo-tires.png" alt="Toyo Tires">
-                <h1>TreadMTL</h1>
+                <img src="logo.png" alt="TreadMTL Logo">
             </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="cart.html" id="cart-link">Cart (<span id="cart-count">0</span>)</a>
-            </nav>
+            <div class="top-right">
+                <div class="language-toggle">
+                    <button id="english-btn">English</button>
+                    <button id="french-btn">Français</button>
+                </div>
+                <a href="cart.html" class="cart">Cart</a>
+            </div>
         </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="policy.html">Policy</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <div class="container">
-            <!-- Car Selection Section -->
-            <section id="car-selection">
-                <h2>Select Your Car Model</h2>
-                <label for="carModel">Choose a Car:</label>
-                <select id="carModel">
-                    <option value="Toyota Corolla">Toyota Corolla</option>
-                    <option value="Honda Civic">Honda Civic</option>
-                    <option value="Ford Focus">Ford Focus</option>
-                </select>
-                <button onclick="getTireSizes()">Get Tire Sizes</button>
-                <div id="tireSizes"></div>
-            </section>
+        <section id="tire-search">
+            <h2>Find the Perfect Tire for Your Vehicle</h2>
+            <input type="text" id="search-size" placeholder="Enter size (e.g., 205/55R16)">
+            <button onclick="searchTiresBySize()">Search</button>
+            <div id="search-results" class="results"></div>
+        </section>
 
-            <!-- Tire Information Section -->
-            <section id="tire-info">
-                <h2>Recommended Tires</h2>
-                <div class="tire-item">
-                    <img src="tire1.jpg" alt="All-Season Tire">
-                    <h4>All-Season Tire</h4>
-                    <p>Great for year-round driving, offering a balance of performance and longevity.</p>
-                    <button onclick="addToCart('All-Season Tire', 1)">Add to Cart</button>
-                </div>
-                <div class="tire-item">
-                    <img src="tire2.jpg" alt="Winter Tire">
-                    <h4>Winter Tire</h4>
-                    <p>Designed for cold, icy conditions, providing maximum grip during the winter months.</p>
-                    <button onclick="addToCart('Winter Tire', 1)">Add to Cart</button>
-                </div>
-                <div class="tire-item">
-                    <img src="tire3.jpg" alt="Performance Tire">
-                    <h4>Performance Tire</h4>
-                    <p>High-performance tire for sporty vehicles, offering enhanced handling and speed.</p>
-                    <button onclick="addToCart('Performance Tire', 1)">Add to Cart</button>
-                </div>
-            </section>
-        </div>
+        <section id="tire-blogs">
+            <div class="blog-card">
+                <h3>All-Season Tires</h3>
+                <p>Learn about the benefits of all-season tires for year-round performance.</p>
+                <a href="all-season-blog.html">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Winter Tires</h3>
+                <p>Discover how winter tires enhance safety in snowy and icy conditions.</p>
+                <a href="winter-tire-blog.html">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Summer Tires</h3>
+                <p>Find out why summer tires are ideal for high-performance driving in warm weather.</p>
+                <a href="summer-tire-blog.html">Read More</a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <section id="contact">
-                <h3>Contact Us</h3>
-                <p>Email: info@treadmtl.com</p>
-                <p>Phone: (438)-838-8480</p>
-                <p>Address: Laval, QC, Canada</p>
-            </section>
-            <p>"Quality tires, quality service - for every journey."</p>
-        </div>
+        <p>&copy; 2025 TreadMTL. All rights reserved.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
