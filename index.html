@@ -11,18 +11,21 @@
             const englishContent = {
                 "homeTitle": "Welcome to TreadMTL",
                 "homeDesc": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
-                "aboutLink": "About Us"
+                "aboutLink": "About Us",
+                "cart": "Cart"
             };
 
             const frenchContent = {
                 "homeTitle": "Bienvenue chez TreadMTL",
                 "homeDesc": "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide!",
-                "aboutLink": "À propos de nous"
+                "aboutLink": "À propos de nous",
+                "cart": "Panier"
             };
 
             document.getElementById("homeTitle").innerText = language === 'fr' ? frenchContent.homeTitle : englishContent.homeTitle;
             document.getElementById("homeDesc").innerText = language === 'fr' ? frenchContent.homeDesc : englishContent.homeDesc;
             document.getElementById("aboutLink").innerText = language === 'fr' ? frenchContent.aboutLink : englishContent.aboutLink;
+            document.getElementById("cartLink").innerText = language === 'fr' ? frenchContent.cart : englishContent.cart;
         }
     </script>
 </head>
@@ -42,6 +45,11 @@
             <button onclick="toggleLanguage('fr')">Français</button>
         </nav>
     </header>
+
+    <!-- Cart Section on Right Side -->
+    <div id="cartSection">
+        <button id="cartLink" onclick="window.location.href='cart.html'">Cart (0)</button>
+    </div>
 
     <section id="home">
         <h1 id="homeTitle">Welcome to TreadMTL</h1>
