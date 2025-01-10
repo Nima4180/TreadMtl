@@ -1,4 +1,24 @@
-// Language content for EN and FR
+// Toggle between languages (English / French)
+function toggleLanguage() {
+    const currentLang = document.getElementById('toggle-lang').innerText;
+    if (currentLang === 'EN') {
+        document.getElementById('toggle-lang').innerText = 'FR';
+        updateContentLanguage('fr');
+    } else {
+        document.getElementById('toggle-lang').innerText = 'EN';
+        updateContentLanguage('en');
+    }
+}
+
+function updateContentLanguage(lang = 'en') {
+    const elements = document.querySelectorAll('[data-lang]');
+    elements.forEach(element => {
+        const langKey = element.getAttribute('data-lang');
+        element.innerText = translations[lang][langKey] || element.innerText;
+    });
+}
+
+// Example translations for English and French
 const translations = {
     en: {
         "home-title": "TreadMTL",
@@ -6,18 +26,18 @@ const translations = {
         "home-nav-about": "About",
         "home-nav-contact": "Contact",
         "home-nav-cart": "Cart",
-        "home-welcome": "Welcome to TreadMTL",
-        "home-description": "Find the perfect tires for your vehicle with free shipping and fast delivery!",
         "search-tires-title": "Search by Tire Dimension",
-        "search-tires-width": "Width (e.g., 205)",
-        "search-tires-aspect": "Aspect Ratio (e.g., 55)",
-        "search-tires-diameter": "Diameter (e.g., 16)",
         "search-tires-button": "Search Tires",
         "footer-contact": "Contact Us",
         "footer-email": "Email: info@treadmtl.com",
         "footer-phone": "Phone: (438)-838-8480",
         "footer-address": "Address: Laval, QC, Canada",
-        "footer-quote": "\"Quality tires, quality service - for every journey.\""
+        "footer-quote": "\"Quality tires, quality service - for every journey.\"",
+        "results-title": "Available Tires",
+        "results-no-match": "No tires found for the selected dimensions.",
+        "add-to-cart": "Add to Cart",
+        "cart-title": "Your Cart",
+        "cart-empty": "Your cart is empty."
     },
     fr: {
         "home-title": "TreadMTL",
@@ -25,33 +45,17 @@ const translations = {
         "home-nav-about": "À propos",
         "home-nav-contact": "Contact",
         "home-nav-cart": "Panier",
-        "home-welcome": "Bienvenue chez TreadMTL",
-        "home-description": "Trouvez les pneus parfaits pour votre véhicule avec livraison gratuite et rapide!",
-        "search-tires-title": "Rechercher par dimension de pneu",
-        "search-tires-width": "Largeur (ex. : 205)",
-        "search-tires-aspect": "Rapport d'aspect (ex. : 55)",
-        "search-tires-diameter": "Diamètre (ex. : 16)",
+        "search-tires-title": "Rechercher par dimensions des pneus",
         "search-tires-button": "Rechercher des pneus",
         "footer-contact": "Contactez-nous",
-        "footer-email": "Email : info@treadmtl.com",
-        "footer-phone": "Téléphone : (438)-838-8480",
-        "footer-address": "Adresse : Laval, QC, Canada",
-        "footer-quote": "\"Pneus de qualité, service de qualité - pour chaque voyage.\""
+        "footer-email": "E-mail: info@treadmtl.com",
+        "footer-phone": "Téléphone: (438)-838-8480",
+        "footer-address": "Adresse: Laval, QC, Canada",
+        "footer-quote": "\"Des pneus de qualité, un service de qualité - pour chaque trajet.\"",
+        "results-title": "Pneus disponibles",
+        "results-no-match": "Aucun pneu trouvé pour les dimensions sélectionnées.",
+        "add-to-cart": "Ajouter au panier",
+        "cart-title": "Votre panier",
+        "cart-empty": "Votre panier est vide."
     }
 };
-
-let currentLanguage = 'en';  // Default language is English
-
-function toggleLanguage() {
-    currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-    document.getElementById("toggle-lang").textContent = currentLanguage === 'en' ? 'FR' : 'EN';
-    updateContentLanguage();
-}
-
-function updateContentLanguage() {
-    const elements = document.querySelectorAll("[data-lang]");
-    elements.forEach(element => {
-        const langKey = element.getAttribute("data-lang");
-        element.textContent = translations[currentLanguage][langKey] || element.textContent;
-    });
-}
