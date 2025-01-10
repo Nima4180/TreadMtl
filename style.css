@@ -1,19 +1,20 @@
-/* General Body Styling */
+/* General Layout */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
 /* Header Styling */
 header {
-    background-color: #004d40;
+    background-color: #00897b;
     color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .logo img {
@@ -22,118 +23,133 @@ header .logo img {
 }
 
 header nav {
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
-header nav a {
+header nav a, header nav button {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    margin: 0 20px;
+    margin: 0 15px;
     padding: 10px 15px;
-    text-transform: uppercase;
+    font-size: 16px;
     font-weight: bold;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-header nav a:hover {
-    background-color: #00695c;
+header nav a:hover, header nav button:hover {
+    background-color: #004d40;
     border-radius: 5px;
 }
 
 /* Hero Section */
-.hero-section {
-    background: linear-gradient(to right, #004d40, #00796b);
+.hero {
+    background: linear-gradient(to right, #004d40, #00897b);
     color: white;
-    padding: 50px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.hero-text h1 {
+.hero-content h1 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-.hero-text p {
-    font-size: 20px;
-    margin-bottom: 30px;
+.hero-content p {
+    font-size: 18px;
 }
 
 /* Search Section */
 .search-section {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    padding: 20px;
+    padding: 50px 20px;
     background-color: white;
-    border-radius: 8px;
+    text-align: center;
+    margin-top: -30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.search-section h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+.search-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
-.search-inputs input, .search-inputs button {
+.search-inputs input {
     padding: 10px;
-    margin: 5px;
-    border: 1px solid #ddd;
+    margin: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
 .search-inputs button {
-    background-color: #00796b;
+    background-color: #00897b;
     color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .search-inputs button:hover {
     background-color: #004d40;
 }
 
-/* Tire Models Section */
-.tire-models {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    padding: 20px;
+/* Featured Tires Section */
+.featured-tires {
+    padding: 50px 20px;
+    text-align: center;
 }
 
-.tire-model {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
+.featured-tires h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.tire-card {
+    display: inline-block;
     width: 30%;
+    padding: 20px;
+    background-color: white;
+    margin: 0 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
 }
 
-.tire-model:hover {
-    transform: translateY(-10px);
+.tire-card img {
+    width: 100%;
+    border-radius: 8px;
 }
 
-.tire-model h4 {
+.tire-card h3 {
     font-size: 24px;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
-.tire-model p {
+.tire-card p {
     font-size: 16px;
     color: #666;
 }
 
+/* Cart Section */
+#cartPreview {
+    background-color: #00897b;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* Footer Styling */
 footer {
-    background-color: #004d40;
+    background-color: #00897b;
     color: white;
     padding: 30px 20px;
     text-align: center;
-    margin-top: 50px;
 }
 
 footer h3 {
@@ -143,25 +159,4 @@ footer h3 {
 
 footer p {
     font-size: 16px;
-}
-
-/* Cart Link Styling */
-#cartLink {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #00796b;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#cartLink:hover {
-    background-color: #004d40;
-    transform: scale(1.05);
 }
