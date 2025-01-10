@@ -1,38 +1,43 @@
-// Simulated tire size data
-const tireSizes = {
-    "Toyota Corolla": ["205/55R16", "215/60R16"],
-    "Honda Civic": ["195/65R15", "205/55R16"],
-    "Ford Focus": ["205/50R17", "215/55R17"]
-};
+// Handle language toggle
+document.getElementById("english-btn").addEventListener("click", () => {
+    alert("Switching to English (Feature not fully implemented)");
+});
 
-let cart = [];
+document.getElementById("french-btn").addEventListener("click", () => {
+    alert("Basculer en français (fonctionnalité non entièrement implémentée)");
+});
 
-// Display recommended tire sizes
-function getTireSizes() {
-    const carModel = document.getElementById("carModel").value;
-    const sizes = tireSizes[carModel] || [];
-    const tireSizesDiv = document.getElementById("tireSizes");
-
-    tireSizesDiv.innerHTML = sizes.length
-        ? sizes.map(size => `<p>Recommended Size: ${size}</p>`).join("")
-        : "<p>No tire sizes available for this car model.</p>";
+// Handle tire search
+async function fetchTires() {
+    const response = await fetch("tires.json");
+    return response.json();
 }
 
-// Add to cart
-function addToCart(tireName, quantity) {
-    const existingItem = cart.find(item => item.name === tireName);
+async function searchTiresBySize() {
+    const searchSize = document.getElementById("search-size").value.trim();
+    const resultsDiv = document.getElementById("search-results");
+    resultsDiv.innerHTML = "Searching...";
 
-    if (existingItem) {
-        existingItem.quantity += quantity;
-    } else {
-        cart.push({ name: tireName, quantity });
+    try {
+        const tires = await fetchTires();
+        const filteredTires = tires.filter(tire => tire.size.includes(searchSize));
+
+        if (filteredTires.length > 0) {
+            resultsDiv.innerHTML = filteredTires
+                .map(tire => `
+                    <div class="tire-item">
+                        <h4>${tire.name}</h4>
+                        <p>Size: ${tire.size.join(", ")}</p>
+                        <p>Price: $${tire.price}</p>
+                        <button onclick="addToCart('${tire.name}', 1)">Add to Cart</button>
+                    </div>
+                `)
+                .join("");
+        } else {
+            resultsDiv.innerHTML = "<p>No tires found for the selected size.</p>";
+        }
+    } catch (error) {
+        console.error("Error fetching tires:", error);
+        resultsDiv.innerHTML = "<p>Error loading tires. Please try again later.</p>";
     }
-
-    updateCartCount();
-}
-
-// Update cart count
-function updateCartCount() {
-    const count = cart.reduce((acc, item) => acc + item.quantity, 0);
-    document.getElementById("cart-count").innerText = count;
 }
