@@ -6,86 +6,92 @@
     <title>Your Cart - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="updateContentLanguage()">
+<body>
     <header>
         <div class="logo">
             <img src="toyo-tires.png" alt="TreadMTL Logo">
-            <h1 data-lang="home-title">TreadMTL</h1>
+            <h1>TreadMTL</h1>
         </div>
         <nav>
-            <a href="index.html" data-lang="home-nav-home">Home</a>
-            <a href="about.html" data-lang="home-nav-about">About</a>
-            <a href="contact.html" data-lang="home-nav-contact">Contact</a>
-            <a href="cart.html" class="active" data-lang="home-nav-cart">Cart</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
         </nav>
-        <div class="language-toggle">
-            <button id="toggle-lang" onclick="toggleLanguage()">EN</button>
-        </div>
     </header>
 
-    <section class="cart">
-        <h2 data-lang="cart-title">Your Cart</h2>
-        <div id="cart-items">
-            <!-- Cart items will appear here -->
-        </div>
-        <button id="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+    <section id="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total"></div>
+        <button onclick="checkout()">Checkout</button>
     </section>
 
     <footer>
         <section id="contact">
-            <h3 data-lang="footer-contact">Contact Us</h3>
-            <p data-lang="footer-email">Email: info@treadmtl.com</p>
-            <p data-lang="footer-phone">Phone: (438)-838-8480</p>
-            <p data-lang="footer-address">Address: Laval, QC, Canada</p>
+            <h3>Contact Us</h3>
+            <p>Email: info@treadmtl.com</p>
+            <p>Phone: (438)-838-8480</p>
+            <p>Address: Laval, QC, Canada</p>
         </section>
-        <p data-lang="footer-quote">"Quality tires, quality service - for every journey."</p>
+        <p>"Quality tires, quality service - for every journey."</p>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // Function to load the cart from localStorage
-        function loadCart() {
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            const cartItemsContainer = document.getElementById('cart-items');
+        // Function to render the cart
+        function renderCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartTotalDiv = document.getElementById('cart-total');
+            cartItemsDiv.innerHTML = '';
+            let total = 0;
 
-            if (cartItems.length === 0) {
-                cartItemsContainer.innerHTML = "<p data-lang='cart-empty'>Your cart is empty.</p>";
-            } else {
-                cartItems.forEach(item => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.classList.add('cart-item');
-                    itemDiv.innerHTML = `
-                        <p>${item.name}</p>
-                        <p>Dimensions: ${item.width}/${item.aspect}R${item.diameter}</p>
-                        <p>$${item.price}</p>
-                        <button onclick="removeFromCart('${item.id}')">Remove</button>
-                    `;
-                    cartItemsContainer.appendChild(itemDiv);
-                });
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <h4>${item.name}</h4>
+                    <p>Size: ${item.size}</p>
+                    <p>Price: $${item.price}</p>
+                    <p>Quantity: <input type="number" value="${item.quantity}" min="1" max="${item.availableQuantity}" onchange="updateQuantity(${item.id}, this.value)"></p>
+                    <button onclick="removeFromCart(${item.id})">Remove</button>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+                total += item.price * item.quantity;
+            });
+
+            cartTotalDiv.innerHTML = `<h3>Total: $${total}</h3>`;
+        }
+
+        // Function to update cart quantity
+        function updateQuantity(tireId, quantity) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const item = cart.find(item => item.id === tireId);
+            if (item) {
+                item.quantity = parseInt(quantity);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
             }
         }
 
-        // Remove an item from the cart
-        function removeFromCart(itemId) {
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            const updatedCart = cartItems.filter(item => item.id !== itemId);
-            localStorage.setItem('cart', JSON.stringify(updatedCart));
-            loadCart();
+        // Function to remove item from cart
+        function removeFromCart(tireId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== tireId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
         }
 
-        // Function to handle the checkout
+        // Function for checkout (placeholder)
         function checkout() {
-            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-            if (cartItems.length === 0) {
-                alert('Your cart is empty.');
-            } else {
-                alert('Proceeding to checkout...');
-                // Redirect to the checkout page (add your actual checkout functionality here)
-            }
+            alert('Proceeding to checkout...');
         }
 
-        // Call loadCart when the page loads
-        loadCart();
+        // Initialize the cart on page load
+        window.onload = function() {
+            renderCart();
+        };
     </script>
 </body>
 </html>
