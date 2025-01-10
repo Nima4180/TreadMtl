@@ -3,64 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMTL - Your Tire Shop</title>
+    <title>TreadMTL - Home</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="top-bar">
+        <div class="header-top">
             <div class="logo">
-                <img src="logo.png" alt="TreadMTL Logo">
+                <img src="toyo-tires.png" alt="TreadMTL Logo">
+                <h1>TreadMTL</h1>
             </div>
-            <div class="top-right">
-                <div class="language-toggle">
-                    <button id="english-btn">English</button>
-                    <button id="french-btn">Français</button>
-                </div>
-                <a href="cart.html" class="cart">Cart</a>
+            <div class="language-switch">
+                <button id="en-btn">EN</button>
+                <button id="fr-btn">FR</button>
+            </div>
+            <div class="cart">
+                <a href="cart.html">Cart</a>
             </div>
         </div>
         <nav>
-            <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="policy.html">Policy</a></li>
-            </ul>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+            <a href="policy.html">Policy</a>
         </nav>
     </header>
-
     <main>
-        <section id="tire-search">
-            <h2>Find the Perfect Tire for Your Vehicle</h2>
-            <input type="text" id="search-size" placeholder="Enter size (e.g., 205/55R16)">
-            <button onclick="searchTiresBySize()">Search</button>
-            <div id="search-results" class="results"></div>
+        <section id="search">
+            <h2>Search for Your Tires</h2>
+            <form id="tire-search-form">
+                <label for="car-model">Car Model:</label>
+                <input type="text" id="car-model" placeholder="Enter your car model">
+                <button type="submit">Find Tires</button>
+            </form>
         </section>
-
         <section id="tire-blogs">
-            <div class="blog-card">
-                <h3>All-Season Tires</h3>
-                <p>Learn about the benefits of all-season tires for year-round performance.</p>
-                <a href="all-season-blog.html">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Winter Tires</h3>
-                <p>Discover how winter tires enhance safety in snowy and icy conditions.</p>
-                <a href="winter-tire-blog.html">Read More</a>
-            </div>
-            <div class="blog-card">
-                <h3>Summer Tires</h3>
-                <p>Find out why summer tires are ideal for high-performance driving in warm weather.</p>
-                <a href="summer-tire-blog.html">Read More</a>
+            <h2>Tire Information</h2>
+            <div class="blogs-container">
+                <div class="blog-card">
+                    <h3>4-Season Winter Approved</h3>
+                    <p>Find out why these tires are perfect for winter and summer use.</p>
+                    <a href="blog/winter-approved.html">Learn More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Winter Tires</h3>
+                    <p>Get the ultimate performance and safety during harsh winters.</p>
+                    <a href="blog/winter-tires.html">Learn More</a>
+                </div>
+                <div class="blog-card">
+                    <h3>Summer Tires</h3>
+                    <p>Perfect for hot and dry conditions, delivering excellent grip.</p>
+                    <a href="blog/summer-tires.html">Learn More</a>
+                </div>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2025 TreadMTL. All rights reserved.</p>
+        <p>© 2025 TreadMTL. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
