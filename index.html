@@ -1,56 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMTL - Tires</title>
+    <title>TreadMTL - Your Tire Shop</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="toyo-ties.png" alt="TreadMTL Logo">
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-            <a href="policy.html">Policy</a>
-            <a href="cart.html">Cart (0)</a>
-        </nav>
-        <div class="language-switcher">
-            <a href="#" id="switch-language" onclick="switchLanguage()">EN / FR</a>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="toyo-tires.png" alt="Toyo Tires">
+                <h1>TreadMTL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="cart.html" class="cart-btn">Cart</a>
+                <select id="language-switcher">
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
         </div>
     </header>
 
-    <section class="search-section">
-        <h1>Find Your Perfect Tires</h1>
-        <input type="text" id="tire-size-search" placeholder="Enter tire size (e.g., 215/65R16)">
-        <button onclick="searchTires()">Search</button>
-    </section>
+    <main>
+        <section class="hero">
+            <h2>Find the Perfect Tires for Your Vehicle</h2>
+            <p>Shop from a wide variety of premium tires with free shipping and fast delivery.</p>
+            <div class="search-box">
+                <input type="text" id="search-width" placeholder="Width (e.g., 205)">
+                <input type="text" id="search-aspect" placeholder="Aspect Ratio (e.g., 55)">
+                <input type="text" id="search-diameter" placeholder="Diameter (e.g., 16)">
+                <button id="search-btn">Search Tires</button>
+            </div>
+        </section>
 
-    <section class="tire-types">
-        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=all-season'">
-            <img src="all-season.jpg" alt="All-Season Tire">
-            <h2>All-Season Tires</h2>
-            <button>Learn More</button>
-        </div>
-        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=winter'">
-            <img src="winter.jpg" alt="Winter Tire">
-            <h2>Winter Tires</h2>
-            <button>Learn More</button>
-        </div>
-        <div class="tire-type" onclick="window.location.href='tireDetails.html?type=summer'">
-            <img src="summer.jpg" alt="Summer Tire">
-            <h2>Summer Tires</h2>
-            <button>Learn More</button>
-        </div>
-    </section>
+        <section class="collections">
+            <div class="collection-item">
+                <img src="winter-tires.jpg" alt="Winter Tires">
+                <h3>Winter Tires</h3>
+                <p>Designed for icy and snowy roads. Maximum grip during cold months.</p>
+                <a href="winter-tires.html" class="btn">Shop Winter Tires</a>
+            </div>
+            <div class="collection-item">
+                <img src="all-season-tires.jpg" alt="All-Season Tires">
+                <h3>All-Season Tires</h3>
+                <p>Perfect for year-round use with balanced performance and durability.</p>
+                <a href="all-season-tires.html" class="btn">Shop All-Season Tires</a>
+            </div>
+            <div class="collection-item">
+                <img src="summer-tires.jpg" alt="Summer Tires">
+                <h3>Summer Tires</h3>
+                <p>Ideal for warm weather, providing superior grip and performance.</p>
+                <a href="summer-tires.html" class="btn">Shop Summer Tires</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
+        <div class="container">
+            <p>© 2025 TreadMTL. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
