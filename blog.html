@@ -8,35 +8,64 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="toyo-ties.png" alt="TreadMTL Logo">
+        <div class="top-bar">
+            <div class="logo">
+                <img src="toyo-tires.png" alt="TreadMTL Logo">
+            </div>
+            <div class="language-switch">
+                <button id="lang-en" class="lang-btn">English</button>
+                <button id="lang-fr" class="lang-btn">Français</button>
+            </div>
+            <div class="cart">
+                <a href="cart.html">Cart</a>
+            </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-            <a href="policy.html">Policy</a>
-            <a href="cart.html">Cart (0)</a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="policy.html">Policy</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="blog-posts">
-        <h1>Latest Blog Posts</h1>
-        <article class="blog-post">
-            <h2>Why Winter Tires are Essential for Safe Driving</h2>
-            <p>Winter tires are specially designed to perform better in colder temperatures and on snow and ice. Learn more about the benefits of winter tires and why they are a must-have for your vehicle...</p>
-            <a href="#">Read More</a>
-        </article>
-        <article class="blog-post">
-            <h2>Choosing the Right Tire for Your Vehicle</h2>
-            <p>Choosing the right tire is crucial to ensuring safe and efficient driving. Here’s a guide to help you select the perfect tire based on your vehicle's needs...</p>
-            <a href="#">Read More</a>
-        </article>
-    </section>
+    <main>
+        <section class="blog-header">
+            <h1>Welcome to Our Blog</h1>
+            <p>Discover tips, guides, and updates to help you find the best tires for your needs.</p>
+        </section>
+
+        <section class="blog-list">
+            <article class="blog-entry">
+                <h2>How to Choose the Perfect Tires for Your Vehicle</h2>
+                <p>Tires play a critical role in your vehicle's safety, performance, and efficiency. Learn how to select the right tires for your driving needs.</p>
+                <a href="blog-post1.html" class="read-more">Read Full Blog</a>
+            </article>
+
+            <article class="blog-entry">
+                <h2>Winter Tire Maintenance Tips</h2>
+                <p>Keep your winter tires in top condition with these essential maintenance tips. Ensure safety and performance during the colder months.</p>
+                <a href="blog-post2.html" class="read-more">Read Full Blog</a>
+            </article>
+
+            <article class="blog-entry">
+                <h2>The Benefits of All-Season Tires</h2>
+                <p>Wondering if all-season tires are right for you? Explore their advantages and see how they perform in various conditions.</p>
+                <a href="blog-post3.html" class="read-more">Read Full Blog</a>
+            </article>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
+        <p>&copy; 2025 TreadMTL. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="policy.html">Privacy Policy</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
