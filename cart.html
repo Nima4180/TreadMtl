@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="toyo-ties.png" alt="TreadMTL Logo">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="toyo-tires.png" alt="Toyo Tires">
+                <h1>TreadMTL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-            <a href="policy.html">Policy</a>
-            <a href="cart.html">Cart (0)</a>
-        </nav>
     </header>
 
-    <section id="cart-info">
-        <h1>Your Cart</h1>
-        
-        <div id="cart-items">
-            <p>Your cart is currently empty.</p>
-            <!-- Example Cart Item -->
-            <!-- <div class="cart-item">
-                <img src="tire1.jpg" alt="Tire 1">
-                <div class="item-details">
-                    <h3>Tire Model Name</h3>
-                    <p>Size: 205/55R16</p>
-                    <p>Price: $100</p>
-                    <input type="number" value="1" min="1">
-                    <button class="remove-item">Remove</button>
+    <main>
+        <section class="cart-section">
+            <div class="container">
+                <h1>Your Cart</h1>
+                <table id="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Size</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="cart-summary">
+                    <h2>Total: $<span id="cart-total">0</span></h2>
+                    <button id="checkout-btn">Proceed to Checkout</button>
                 </div>
-            </div> -->
-        </div>
-        
-        <div id="cart-summary">
-            <p><strong>Total: $0</strong></p>
-            <button id="checkout-btn">Proceed to Checkout</button>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
+        <div class="container">
+            <p>© 2025 TreadMTL. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
