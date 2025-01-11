@@ -1,61 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results - TreadMTL</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="toyo-ties.png" alt="TreadMTL Logo">
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <img src="toyo-tires.png" alt="Toyo Tires">
+                <h1>TreadMTL</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="blog.html">Blog</a>
-            <a href="policy.html">Policy</a>
-            <a href="cart.html">Cart (0)</a>
-        </nav>
     </header>
 
-    <section id="search-results">
-        <h1>Search Results for Tire Size: <span id="tire-size"></span></h1>
-        <div id="tire-list"></div>
-    </section>
+    <main>
+        <section class="results">
+            <div class="container">
+                <h1>Search Results</h1>
+                <div id="results-container"></div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 TreadMTL - Quality Tires, Quality Service</p>
+        <div class="container">
+            <p>© 2025 TreadMTL. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const tireSize = urlParams.get('tireSize');
-        document.getElementById('tire-size').textContent = tireSize;
+        const width = urlParams.get('width');
+        const aspect = urlParams.get('aspect');
+        const diameter = urlParams.get('diameter');
 
+        // Simulate fetching data from a JSON file
         const tires = [
-            { size: "215/65R16", type: "All-Season", price: "$99.99", image: "tire1.jpg" },
-            { size: "205/55R16", type: "Winter", price: "$129.99", image: "tire2.jpg" },
-            { size: "225/45R17", type: "Summer", price: "$139.99", image: "tire3.jpg" },
+            { name: "Winter Tire A", size: "205/55/16", price: 120 },
+            { name: "Summer Tire B", size: "205/55/16", price: 100 },
+            { name: "All-Season Tire C", size: "205/60/16", price: 130 },
         ];
 
-        const tireList = document.getElementById('tire-list');
-        tires.forEach(tire => {
-            if (tire.size === tireSize) {
-                const tireItem = document.createElement('div');
-                tireItem.classList.add('tire-item');
-                tireItem.innerHTML = `
-                    <img src="${tire.image}" alt="${tire.type} Tire">
-                    <h3>${tire.type} Tire</h3>
+        const results = tires.filter(tire => tire.size === `${width}/${aspect}/${diameter}`);
+        const container = document.getElementById('results-container');
+
+        if (results.length > 0) {
+            results.forEach(tire => {
+                const tireDiv = document.createElement('div');
+                tireDiv.innerHTML = `
+                    <h2>${tire.name}</h2>
                     <p>Size: ${tire.size}</p>
-                    <p>Price: ${tire.price}</p>
-                    <button>Add to Cart</button>
+                    <p>Price: $${tire.price}</p>
                 `;
-                tireList.appendChild(tireItem);
-            }
-        });
+                container.appendChild(tireDiv);
+            });
+        } else {
+            container.innerHTML = "<p>No tires found for the selected size.</p>";
+        }
     </script>
 </body>
+
 </html>
