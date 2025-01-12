@@ -1,0 +1,18 @@
+[
+  {
+    "carModel": "Toyota Camry",
+    "tireSize": "205/55R16"
+  },
+  {
+    "carModel": "Honda Accord",
+    "tireSize": "215/60R16"
+  },
+  {
+    "carModel": "BMW 3 Series",
+    "tireSize": "225/50R17"
+  },
+  {
+    "carModel": "Chevrolet Malibu",
+    "tireSize": "215/60R16"
+  }
+]
