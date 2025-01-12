@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section id="search-results">
+        <h2>Tires for Your Car</h2>
+        <p>Showing results for: <strong id="car-info-display"></strong></p>
+        <div id="tires-list">
+            <!-- Display tire results here -->
+        </div>
+    </section>
+
+    <script>
+        // Get car info from query parameter
+        const params = new URLSearchParams(window.location.search);
+        const carInfo = params.get('carInfo');
+        document.getElementById('car-info-display').textContent = carInfo;
+
+        // Here you can add logic to fetch and display tires based on the car info
+    </script>
+</body>
+</html>
