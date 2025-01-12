@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TreadMtl - Tires & Wheels</title>
+  <title>TreadMtl - Home</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,45 +14,39 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="#">Cart</a></li>
-        <li><a href="#">My Account</a></li>
-        <li><a href="#">EN / FR</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="account.html">My Account</a></li>
+        <li><a href="#" id="lang-toggle">EN</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <img src="images/car_on_road.jpg" alt="Car on road">
-      <h1>Welcome to TreadMtl</h1>
-      <p>Your destination for quality tires and wheels</p>
-    </section>
-
     <section class="offers">
       <h2>Special Offers</h2>
-      <div class="offer">
-        <img src="images/4 season tire.jpg" alt="4 season tire">
-        <p>12% off when you buy 4 tires</p>
-      </div>
-      <div class="offer">
-        <img src="images/lt tire.jpg" alt="Light truck tire">
-        <p>Free shipping on all orders</p>
-      </div>
+      <p>Get 12% off for every purchase of 4 tires!</p>
+      <p>Free shipping on all orders!</p>
     </section>
 
     <section class="tire-search">
       <h2>Find Your Tire Size</h2>
       <form id="tireSearchForm">
-        <input type="text" id="carModel" placeholder="Enter your car model">
+        <label for="carModel">Car Model:</label>
+        <select id="carModel" required>
+          <option value="">Select Your Car</option>
+        </select>
+
         <button type="submit">Search</button>
       </form>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 TreadMtl. All rights reserved.</p>
-    <p>Contact us: <a href="mailto:info@treadmtl.com">info@treadmtl.com</a></p>
-  </footer>
+      <div id="tireResults"></div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 TreadMtl</p>
+      <p>Contact: info@TreadMtl.com | (438)-838-8480</p>
+    </footer>
+  </main>
 
   <script src="js/script.js"></script>
 </body>
