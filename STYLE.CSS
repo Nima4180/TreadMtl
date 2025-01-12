@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,78 +6,107 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header and Navigation */
 header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
     background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+    color: #fff;
+}
+
+header .logo img {
+    height: 50px;
 }
 
 header nav ul {
     list-style-type: none;
-    padding: 0;
+    display: flex;
+    gap: 20px;
 }
 
-header nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-header nav ul li a {
-    color: white;
+header nav a {
+    color: #fff;
     text-decoration: none;
 }
 
-#hero {
+/* Hero Section */
+.hero {
+    background-color: #f8f8f8;
+    padding: 40px;
     text-align: center;
-    background-color: #1e90ff;
-    color: white;
-    padding: 50px 0;
 }
 
-#contact {
-    padding: 50px;
+/* Tire Search Section */
+.tire-search {
+    padding: 30px;
     background-color: #fff;
+    text-align: center;
 }
 
-#contact h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 16px;
-    display: block;
-}
-
-input, textarea {
-    width: 100%;
+.tire-search input,
+.tire-search select {
+    margin: 10px 0;
     padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 200px;
 }
 
-button {
+.tire-search button {
     padding: 10px 20px;
-    background-color: #1e90ff;
-    color: white;
+    background-color: #28a745;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #007bff;
+/* Offer Section */
+.offer-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #e9ecef;
 }
 
+.season-tire-image {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Brand Logos Section */
+.brand-logos {
+    text-align: center;
+    padding: 20px;
+}
+
+.brand-logos img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Images */
+.section-images {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px 20px;
+}
+
+.section-images img {
+    width: 30%;
+    height: auto;
+}
+
+/* Footer */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }
