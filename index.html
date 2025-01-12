@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TreadMtl Tire Shop</title>
+    <title>TreadMtl - Tire Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="images/Tread/logo.png" alt="TreadMtl Logo">
@@ -27,75 +25,66 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Find the Perfect Tires for Your Car</h1>
-        <p>Browse our wide selection of tires, or use our easy car model search to find the right fit!</p>
+        <h1>Welcome to TreadMtl - Your Tire Experts</h1>
+        <p>We provide top-quality tires with fast and free delivery!</p>
+        <a href="search_results.html" class="button">Find Your Tires</a>
     </section>
 
-    <!-- Tire Size Search Section -->
+    <!-- Tire Search Section -->
     <section class="tire-search">
-        <h2>Search for Your Tire Size</h2>
-        <form action="search_results.html" method="GET">
-            <label for="tire-size">Enter Your Tire Size:</label>
-            <input type="text" id="tire-size" name="tire-size" placeholder="e.g. 205/55R16" required>
-
-            <label for="car-info">Or enter your car details:</label>
-            <select id="car-brand" name="car-brand" required>
-                <option value="">Select Car Brand</option>
-                <!-- Add car brands here -->
-                <option value="Toyota">Toyota</option>
-                <option value="Honda">Honda</option>
-            </select>
-
-            <select id="car-model" name="car-model" required>
-                <option value="">Select Car Model</option>
-                <!-- Add car models here -->
-                <option value="Camry">Camry</option>
-                <option value="Civic">Civic</option>
-            </select>
-
-            <select id="car-year" name="car-year" required>
-                <option value="">Select Car Year</option>
-                <!-- Add car years here -->
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-            </select>
-
+        <h2>Find the Perfect Tires for Your Vehicle</h2>
+        <form>
+            <input type="text" placeholder="Enter your car model" name="car-model">
+            <input type="text" placeholder="Enter tire size" name="tire-size">
             <button type="submit">Search</button>
         </form>
     </section>
 
     <!-- Offer Section -->
     <section class="offer-section">
-        <h2>12% OFF for 4 Tire Purchase!</h2>
-        <img src="images/tire_4_season.jpg" alt="4 Seasons Tire" class="season-tire-image">
-        <p>Get 12% off when you purchase four tires from us. Don’t miss out!</p>
-    </section>
-
-    <!-- Tire Brands Image Section -->
-    <section class="brand-logos">
-        <h3>Tire Brands We Offer</h3>
-        <img src="images/tire-logo-slider-black.png" alt="Tire Brands">
-    </section>
-
-    <!-- Other Sections with Images -->
-    <section class="section-images">
-        <img src="images/Lt_tire.jpg" alt="Heavy Truck Tire">
-        <img src="images/car_on_road.png" alt="Car on Road">
-        <img src="images/performance_car.jpg" alt="Performance Car">
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-info">
-            <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+        <div class="offer-info">
+            <h2>Special Offer: 12% Off on 4 Tires!</h2>
+            <p>Get a 12% discount when you buy 4 tires from us. Free shipping included!</p>
         </div>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="contact.html">Contact</a>
-            <a href="search_results.html">Search Tires</a>
-            <a href="blog.html">Blog</a>
+        <img src="images/tire_4_season.jpg" alt="4 Seasons Tire">
+    </section>
+
+    <!-- Brand Logos Section -->
+    <section class="brand-logos">
+        <h2>Our Trusted Tire Brands</h2>
+        <div class="brands">
+            <img src="images/tire-logo-slider-black.png" alt="Tire Brands">
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>What Our Customers Are Saying</h2>
+        <div class="review">
+            <p>"TreadMtl has the best prices and fast delivery! I highly recommend them." - John D.</p>
+        </div>
+        <div class="review">
+            <p>"Great selection of tires and helpful customer service." - Sarah L.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
-
 </html>
