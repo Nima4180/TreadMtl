@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - TreadMtl</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TreadMtl</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="https://github.com/Nima4180/TreadMtlwebsite/raw/main/images/Tread.png" alt="TreadMtl Logo">
-        </div>
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="mycar.html">Find Tires</a>
-            <a href="brands.html">Brands</a>
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="account.html">My Account</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="contact-form" class="contact-form">
-        <h1>Contact Us</h1>
-        <form action="submit_form.php" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+  <main>
+    <section class="contact-us">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or inquiries, feel free to reach out to us!</p>
+      
+      <form action="mailto:info@TreadMtl.com" method="post" enctype="text/plain">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <p>Or contact us directly:</p>
+      <p>Email: info@TreadMtl.com</p>
+      <p>Phone: (438)-838-8480</p>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2025 TreadMtl. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+    <p>Contact: info@TreadMtl.com | (438)-838-8480</p>
+  </footer>
 </body>
 </html>
