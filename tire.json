@@ -1,26 +1,32 @@
 [
   {
-    "tireModel": "Michelin X-Ice",
-    "size": "205/55R16",
-    "type": "Winter",
-    "price": "$120"
-  },
-  {
-    "tireModel": "Goodyear Eagle",
-    "size": "215/60R16",
-    "type": "All Season",
-    "price": "$130"
-  },
-  {
-    "tireModel": "Bridgestone Potenza",
+    "id": "1",
+    "brand": "BrandName",
+    "model": "ModelName",
     "size": "225/50R17",
-    "type": "Summer",
-    "price": "$150"
+    "type": "All Season",
+    "price": 120.99,
+    "image": "images/tire_225_50r17.jpg",
+    "description": "High-performance tire for all-season use. Offers a smooth and quiet ride."
   },
   {
-    "tireModel": "BFGoodrich All-Terrain",
+    "id": "2",
+    "brand": "BrandName",
+    "model": "ModelName2",
     "size": "215/60R16",
-    "type": "All Terrain",
-    "price": "$140"
+    "type": "Winter",
+    "price": 99.99,
+    "image": "images/tire_215_60r16.jpg",
+    "description": "Winter tire designed to handle snow and icy conditions. Great for cold weather."
+  },
+  {
+    "id": "3",
+    "brand": "BrandName",
+    "model": "ModelName3",
+    "size": "245/45R18",
+    "type": "Summer",
+    "price": 139.99,
+    "image": "images/tire_245_45r18.jpg",
+    "description": "Summer tire for dry and wet conditions. Superior grip and handling."
   }
 ]
