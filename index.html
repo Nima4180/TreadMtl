@@ -1,90 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreadMtl - Tire Shop</title>
+    <title>TreadMtl - Tire Shop Laval</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="images/Tread/logo.png" alt="TreadMtl Logo">
+        <div class="logo-container">
+            <img src="https://github.com/Nima4180/TreadMtlwebsite/raw/main/images/Tread.png" alt="TreadMtl Logo">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="search_results.html">Search Tires</a></li>
-                <li><a href="my_account.html">My Account</a></li>
-            </ul>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="mycar.html">Find Tires</a>
+            <a href="brands.html">Brands</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>Welcome to TreadMtl - Your Tire Experts</h1>
-        <p>We provide top-quality tires with fast and free delivery!</p>
-        <a href="search_results.html" class="button">Find Your Tires</a>
+    <section id="hero" class="hero">
+        <h1>Welcome to TreadMtl</h1>
+        <p>Your trusted tire shop in Laval. Quality tires, fast delivery, great customer service!</p>
+        <a href="mycar.html" class="cta-button">Find Your Tires</a>
     </section>
 
-    <!-- Tire Search Section -->
-    <section class="tire-search">
-        <h2>Find the Perfect Tires for Your Vehicle</h2>
-        <form>
-            <input type="text" placeholder="Enter your car model" name="car-model">
-            <input type="text" placeholder="Enter tire size" name="tire-size">
-            <button type="submit">Search</button>
+    <!-- Special Offer Section -->
+    <section id="offer" class="offer">
+        <h3>Special Offer</h3>
+        <p>Get 12% off when you buy 4 tires. Free Shipping within 24-72 hours!</p>
+        <img src="https://github.com/Nima4180/TreadMtlwebsite/raw/main/images/tire-4-seasons.jpg" alt="Tires Offer">
+    </section>
+
+    <!-- Search Tires Section -->
+    <section id="search" class="search-section">
+        <h3>Search Tires by Vehicle</h3>
+        <form action="mycar.html">
+            <input type="text" placeholder="Enter Car Brand/Model/Year" required>
+            <button type="submit">Search Tires</button>
         </form>
     </section>
 
-    <!-- Offer Section -->
-    <section class="offer-section">
-        <div class="offer-info">
-            <h2>Special Offer: 12% Off on 4 Tires!</h2>
-            <p>Get a 12% discount when you buy 4 tires from us. Free shipping included!</p>
-        </div>
-        <img src="images/tire_4_season.jpg" alt="4 Seasons Tire">
-    </section>
-
-    <!-- Brand Logos Section -->
-    <section class="brand-logos">
-        <h2>Our Trusted Tire Brands</h2>
-        <div class="brands">
-            <img src="images/tire-logo-slider-black.png" alt="Tire Brands">
+    <!-- Trusted Brands Section -->
+    <section id="brands" class="brands">
+        <h3>Our Trusted Tire Brands</h3>
+        <div class="brand-logos">
+            <img src="https://github.com/Nima4180/TreadMtlwebsite/raw/main/images/tire-logo-slider-black.png" alt="All Tire Brands">
         </div>
     </section>
 
-    <!-- Customer Reviews Section -->
-    <section class="reviews">
-        <h2>What Our Customers Are Saying</h2>
-        <div class="review">
-            <p>"TreadMtl has the best prices and fast delivery! I highly recommend them." - John D.</p>
-        </div>
-        <div class="review">
-            <p>"Great selection of tires and helpful customer service." - Sarah L.</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="footer-info">
-                <p>&copy; 2025 TreadMtl. All rights reserved.</p>
-            </div>
-        </div>
+        <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
