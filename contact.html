@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - TreadMtl</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - TreadMtl</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <div class="logo-container">
-            <img src="images/Tread/logo.png" alt="TreadMtl Logo" class="logo">
+        <div class="logo">
+            <img src="images/Tread/logo.png" alt="TreadMtl Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="my_car.html">My Car</a></li>
+                <li><a href="search_results.html">Search Tires</a></li>
                 <li><a href="my_account.html">My Account</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <h1>Welcome to TreadMtl</h1>
-        <p>Your one-stop tire shop</p>
-        <a href="my_car.html">Find Your Tire</a>
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <form action="mailto:info@treadmtl.com" method="POST" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
-    <!-- Add other sections like the search for tire size, car information, etc. -->
-
     <footer>
-        <p>&copy; 2025 TreadMtl. All Rights Reserved.</p>
+        <div class="footer-info">
+            <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="search_results.html">Search Tires</a>
+            <a href="blog.html">Blog</a>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
