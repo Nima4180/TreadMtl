@@ -1,72 +1,228 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4; /* Light grey background */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
-  background-color: #2b2b2b; /* Dark grey background */
+  background-color: #333;
+  color: #fff;
   padding: 10px 0;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-around;
   list-style: none;
-  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
-nav a {
-  color: white;
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
   text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Home Page */
+.hero {
+  background: url('images/car_on_road.jpg') no-repeat center center/cover;
+  height: 300px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Search Section */
+.search-section {
+  background-color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.search-section input {
   padding: 10px;
+  font-size: 16px;
+  margin: 10px 0;
 }
 
-nav a:hover {
-  background-color: #575757;
+.search-section button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
 }
 
-main {
+.search-section button:hover {
+  background-color: #444;
+}
+
+/* About Us Section */
+.about-us {
   padding: 20px;
+  background-color: #fff;
+  margin: 20px 0;
 }
 
-.offers {
-  background-color: #dcdcdc;
+.about-us h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-us p {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+/* Contact Us Section */
+.contact-us {
   padding: 20px;
-  text-align: center;
+  background-color: #fff;
+  margin: 20px 0;
 }
 
-.tire-search {
-  margin-top: 40px;
+.contact-us h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
-footer {
-  background-color: #2b2b2b;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Form Styles */
-form {
+.contact-us form {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-form label {
+.contact-us label {
   margin-bottom: 5px;
+  font-size: 1em;
 }
 
-form select, form button {
+.contact-us input,
+.contact-us textarea {
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 15px;
   font-size: 16px;
+  border: 1px solid #ccc;
 }
 
-#tireResults {
-  margin-top: 20px;
+.contact-us button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+.contact-us button:hover {
+  background-color: #444;
+}
+
+/* Blog Section */
+.blog {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px 0;
+}
+
+.blog h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.blog article {
+  margin-bottom: 20px;
+}
+
+.blog article h3 {
+  font-size: 1.6em;
+  margin-bottom: 10px;
+}
+
+.blog article p {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+
+/* Footer Section */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Cart and Account Links */
+.cart-account-links {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 0;
+}
+
+.cart-account-links a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.cart-account-links a:hover {
+  text-decoration: underline;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Language Toggle */
+.language-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.language-toggle a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.language-toggle a:hover {
+  text-decoration: underline;
 }
