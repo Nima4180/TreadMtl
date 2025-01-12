@@ -1,124 +1,66 @@
-/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text for contrast */
 }
 
-/* Header Styling */
 header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
+  background-color: #444;
+  padding: 10px;
 }
 
-header .logo-container img {
-    width: 150px;
-    margin-bottom: 10px;
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.navbar {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+nav ul li {
+  display: inline;
+  margin-right: 15px;
 }
 
-.navbar a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 1.2rem;
+nav ul li a {
+  color: white;
+  text-decoration: none;
 }
 
-/* Hero Section */
-#hero {
-    background-color: #5cb85c; /* Choose a background close to your logo */
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
+.hero {
+  text-align: center;
+  padding: 50px;
+  background-color: #555;
 }
 
-#hero h1 {
-    font-size: 3rem;
+.hero img {
+  width: 100%;
+  height: auto;
 }
 
-.cta-button {
-    background-color: #333;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    margin-top: 20px;
+.offers {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
 }
 
-.cta-button:hover {
-    background-color: #5cb85c;
+.offer {
+  text-align: center;
+  width: 45%;
 }
 
-/* Special Offer Section */
-#offer {
-    background-color: #f9f9f9;
-    padding: 40px 20px;
-    text-align: center;
+.offer img {
+  width: 100%;
+  height: auto;
 }
 
-#offer img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 20px;
+.tire-search {
+  text-align: center;
+  padding: 20px;
+  background-color: #666;
 }
 
-/* Search Tires Section */
-#search {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#search form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-#search input {
-    padding: 10px;
-    width: 300px;
-    font-size: 1rem;
-}
-
-#search button {
-    padding: 10px 20px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-#search button:hover {
-    background-color: #333;
-}
-
-/* Trusted Brands Section */
-#brands {
-    background-color: #f4f4f4;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#brands img {
-    max-width: 100%;
-    margin-top: 20px;
-}
-
-/* Footer Section */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    margin-top: 50px;
+  text-align: center;
+  padding: 10px;
+  background-color: #444;
 }
