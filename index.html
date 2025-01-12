@@ -1,39 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - TreadMtl</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TreadMtl Tire Shop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <div class="logo-container">
-            <img src="images/Tread/logo.png" alt="TreadMtl Logo" class="logo">
+        <div class="logo">
+            <img src="images/Tread/logo.png" alt="TreadMtl Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="my_car.html">My Car</a></li>
+                <li><a href="search_results.html">Search Tires</a></li>
                 <li><a href="my_account.html">My Account</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <h1>Welcome to TreadMtl</h1>
-        <p>Your one-stop tire shop</p>
-        <a href="my_car.html">Find Your Tire</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find the Perfect Tires for Your Car</h1>
+        <p>Browse our wide selection of tires, or use our easy car model search to find the right fit!</p>
     </section>
 
-    <!-- Add other sections like the search for tire size, car information, etc. -->
+    <!-- Tire Size Search Section -->
+    <section class="tire-search">
+        <h2>Search for Your Tire Size</h2>
+        <form action="search_results.html" method="GET">
+            <label for="tire-size">Enter Your Tire Size:</label>
+            <input type="text" id="tire-size" name="tire-size" placeholder="e.g. 205/55R16" required>
 
+            <label for="car-info">Or enter your car details:</label>
+            <select id="car-brand" name="car-brand" required>
+                <option value="">Select Car Brand</option>
+                <!-- Add car brands here -->
+                <option value="Toyota">Toyota</option>
+                <option value="Honda">Honda</option>
+            </select>
+
+            <select id="car-model" name="car-model" required>
+                <option value="">Select Car Model</option>
+                <!-- Add car models here -->
+                <option value="Camry">Camry</option>
+                <option value="Civic">Civic</option>
+            </select>
+
+            <select id="car-year" name="car-year" required>
+                <option value="">Select Car Year</option>
+                <!-- Add car years here -->
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+            </select>
+
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer-section">
+        <h2>12% OFF for 4 Tire Purchase!</h2>
+        <img src="images/tire_4_season.jpg" alt="4 Seasons Tire" class="season-tire-image">
+        <p>Get 12% off when you purchase four tires from us. Don’t miss out!</p>
+    </section>
+
+    <!-- Tire Brands Image Section -->
+    <section class="brand-logos">
+        <h3>Tire Brands We Offer</h3>
+        <img src="images/tire-logo-slider-black.png" alt="Tire Brands">
+    </section>
+
+    <!-- Other Sections with Images -->
+    <section class="section-images">
+        <img src="images/Lt_tire.jpg" alt="Heavy Truck Tire">
+        <img src="images/car_on_road.png" alt="Car on Road">
+        <img src="images/performance_car.jpg" alt="Performance Car">
+    </section>
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 TreadMtl. All Rights Reserved.</p>
+        <div class="footer-info">
+            <p>&copy; 2025 TreadMtl. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="search_results.html">Search Tires</a>
+            <a href="blog.html">Blog</a>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>
